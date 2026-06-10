@@ -27,11 +27,14 @@ may execute in evaluated runs:
 | --- | --- |
 | telemetry refresh, checkpoint, wait, decisions, camp movement | live-proven |
 | gifts | probe-proven; execution pending a qualifying state |
-| event options (catalog-safe) | selection path proven; catalog coverage growing |
+| event options | live-proven across standard, chain, and letter window classes; identity read from checkpoints |
 | wars, marriage, education, alliances, contracts, lifestyle | implemented, awaiting live certification |
 
 A 100-step unattended baseline run completes with zero human
-interventions at ~310 ms median step latency. Linux/headless operation
+interventions at ~310 ms median step latency; interrupting events resolve
+through the option selector in 150-500 ms with identity extracted from
+checkpoint saves (`scripts/mac-year.sh` runs a full survival-year episode
+unattended). Linux/headless operation
 (virtual display, software Vulkan, no Steam client or launcher) is
 verified through game boot; see `infra/linux/` for the portable runtime
 recipe and its acceptance gates.

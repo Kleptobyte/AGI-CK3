@@ -43,6 +43,10 @@ def main(argv: list[str] | None = None) -> int:
     soak = add("baseline-run", live_flags=True)
     soak.add_argument("--steps", type=int, default=100)
     soak.add_argument("--seed", type=int, default=42)
+    surv = add("survival-run", live_flags=True)
+    surv.add_argument("--days", type=int, default=360)
+    surv.add_argument("--game-dir", type=Path, required=True)
+    surv.add_argument("--checkpoint-save", type=Path, required=True)
     bundle_cmd = add("bundle")
     bundle_cmd.add_argument("--sealed", action="store_true")
     rescore_cmd = sub.add_parser("rescore")
@@ -85,6 +89,15 @@ def main(argv: list[str] | None = None) -> int:
         live=getattr(args, "live", False),
         allow_uncertified=getattr(args, "allow_uncertified", False),
     )
+    if args.command == "survival-run":
+        from .episode import run_survival_episode
+
+        report = run_survival_episode(
+            env, target_days=args.days, game_dir=args.game_dir,
+            checkpoint_save=args.checkpoint_save,
+        )
+        _print(report)
+        return 0
     if args.command == "baseline-run":
         from .baseline import RandomBaseline, run_soak
 
