@@ -245,6 +245,23 @@ class EventIdentityTests(unittest.TestCase):
         self.assertEqual(options[0]["label"], "flavor.2030.a")
 
 
+class EpisodePolicyTests(unittest.TestCase):
+    def test_choose_prefers_first_stable(self):
+        from ck3env.episode import choose_option
+        index, why = choose_option([
+            {"index": 1, "label": "a", "stable": False},
+            {"index": 2, "label": "b", "stable": True},
+        ])
+        self.assertEqual(index, 2)
+        self.assertIn("stable", why)
+
+    def test_choose_falls_back_to_slot_one(self):
+        from ck3env.episode import choose_option
+        index, why = choose_option([{"index": 1, "label": "a", "stable": False}])
+        self.assertEqual(index, 1)
+        self.assertIn("gamble", why)
+
+
 class ScoreTests(unittest.TestCase):
     def test_ladder_from_published_primitives(self):
         snapshot = Snapshot()
