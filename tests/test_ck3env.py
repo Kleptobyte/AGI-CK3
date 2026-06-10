@@ -216,6 +216,35 @@ class CheckpointTests(unittest.TestCase):
         return path
 
 
+class EventIdentityTests(unittest.TestCase):
+    def test_pending_events_filtered_to_player(self):
+        import tempfile
+        save = (b"currently_played_characters={ 777 }\n"
+                b"player_event={\n\tcharacter=999\n\tid=5\n\tevent=\"other.1\"\n}\n"
+                b"player_event={\n\tcharacter=777\n\tid=9\n\tevent=\"flavor.2030\"\n}\n")
+        p = Path(tempfile.mkdtemp(prefix="ck3env-evt-")) / "s.ck3"
+        self.addCleanup(lambda: __import__("shutil").rmtree(p.parent, ignore_errors=True))
+        p.write_bytes(save)
+        events = checkpoint.pending_player_events(p)
+        self.assertEqual(len(events), 1)
+        self.assertEqual(events[0]["event_key"], "flavor.2030")
+        self.assertEqual(events[0]["save_event_id"], 9)
+
+    def test_option_stability_breaks_at_first_trigger(self):
+        import tempfile
+        game = Path(tempfile.mkdtemp(prefix="ck3env-game-"))
+        self.addCleanup(lambda: __import__("shutil").rmtree(game, ignore_errors=True))
+        (game / "events").mkdir(parents=True)
+        (game / "events" / "flavor.txt").write_bytes(
+            b"namespace = flavor\nflavor.2030 = {\n"
+            b"\toption = {\n\t\tname = flavor.2030.a\n\t}\n"
+            b"\toption = {\n\t\ttrigger = { gold > 5 }\n\t\tname = flavor.2030.b\n\t}\n"
+            b"\toption = {\n\t\tname = flavor.2030.c\n\t}\n}\n")
+        options = checkpoint.event_options_from_game("flavor.2030", game)
+        self.assertEqual([o["stable"] for o in options], [True, False, False])
+        self.assertEqual(options[0]["label"], "flavor.2030.a")
+
+
 class ScoreTests(unittest.TestCase):
     def test_ladder_from_published_primitives(self):
         snapshot = Snapshot()
