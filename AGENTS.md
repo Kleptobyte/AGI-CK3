@@ -91,6 +91,19 @@ trigger-gated sibling could shift are `blocked` with the reason; when
 every option is gated, slot 1 is offered with `params.gamble: true` —
 an explicitly recorded sight-unseen choice.
 
+`resolve-event` outcomes and what to do:
+
+| status | meaning | next move |
+| --- | --- | --- |
+| `identified` | identity published | re-observe, pick an option |
+| `no_pending_event` | nothing was pending | carry on |
+| `window_closed` | window closed while identifying (marker race) | re-observe, carry on |
+| `presence_cleared_by_save` | telemetry flag was stale; two fresh saves showed no event, referee cleared it | re-observe, carry on |
+| `unidentified_window` | a window the save cannot explain persists | re-observe; if it persists, finalize honestly |
+
+Selecting an option can immediately chain into a new event window —
+re-observe after every selection; `pending_event` tells the truth.
+
 **5. Finish** — close, score, and bundle (also fine on abandoned runs):
 
 ```bash

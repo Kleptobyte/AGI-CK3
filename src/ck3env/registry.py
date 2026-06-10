@@ -125,8 +125,11 @@ FAMILIES: tuple[Family, ...] = (
         "guardian_assigned", "offline",
     ),
     Family(
+        # Live-proven across standard, chain, and letter window classes
+        # (health.3001, ep3_decisions_event.7000, learning_theology.3024/.3043);
+        # identity read from checkpoint saves, selector armed via dispatch 13.
         "event_option", 13, ("select",), "event_index",
-        "gui:EventOption.IsValid+!dangerous", "event_consumed", "offline",
+        "gui:EventOption.IsValid+!dangerous", "event_consumed", "live_proven",
         params=(Param("event_id", "int", 1, 10**9),),
     ),
     Family(

@@ -269,6 +269,13 @@ class CK3Env:
         report["bundle"] = str(build_bundle(self.run_dir))
         return report
 
+    def clear_stale_event_presence(self) -> None:
+        """Referee override of the edge-triggered presence flag, used only
+        when fresh checkpoint saves (the truth path) contradict it — see
+        identity.resolve_pending_event."""
+        self._snapshot.pending_event = None
+        self._save_snapshot()
+
     # -- internals -----------------------------------------------------------
 
     def _check_episode_open(self, episode: dict[str, Any]) -> dict[str, Any] | None:

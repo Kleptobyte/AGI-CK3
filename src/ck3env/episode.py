@@ -69,8 +69,10 @@ def run_survival_episode(
                 stop_reason = "event_budget_exhausted"
                 break
             resolution = resolve_pending_event(env, game_dir, checkpoint_save)
-            if resolution["status"] in {"window_closed", "no_pending_event"}:
-                continue  # window-close marker race
+            if resolution["status"] in {
+                "window_closed", "no_pending_event", "presence_cleared_by_save",
+            }:
+                continue  # marker race or stale presence flag, now reconciled
             if resolution["status"] != "identified":
                 stop_reason = resolution["status"]
                 break

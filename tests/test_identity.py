@@ -124,6 +124,35 @@ class OptionAffordanceTests(unittest.TestCase):
         self.assertTrue(affordance["params"]["gamble"])
 
 
+class StalePresenceTests(unittest.TestCase):
+    def test_truth_path_outranks_stale_presence_flag(self):
+        # Telemetry says a window is open; two fresh saves say no player
+        # event is queued. The referee must clear the flag, not deadlock.
+        from ck3env.identity import resolve_pending_event
+
+        run = _tmp("ck3env-stale-") / "run"
+        env = CK3Env(run)
+        env.reset("t", seed=1)
+        snapshot = Snapshot()
+        snapshot.pending_event = {"present": "1"}
+        (run / "snapshot.json").write_text(json.dumps(snapshot.to_json()))
+        env = CK3Env(run)
+
+        save_dir = _tmp("ck3env-stale-save-")
+        self.addCleanup(lambda: shutil.rmtree(save_dir, ignore_errors=True))
+        save = save_dir / "s.ck3"
+        save.write_bytes(b"currently_played_characters={ 777 }\n")  # no events
+        game = _game_dir(b"namespace = flavor\n")
+        self.addCleanup(lambda: shutil.rmtree(game, ignore_errors=True))
+
+        result = resolve_pending_event(env, game, save, settle_seconds=0)
+        self.assertEqual(result["status"], "presence_cleared_by_save")
+        observation = env.observe()
+        self.assertIsNone(observation["world"]["pending_event"])
+        wait = next(a for a in observation["affordances"] if a["id"] == "wait.7")
+        self.assertEqual(wait["status"], "available")
+
+
 class IdentityLifecycleTests(unittest.TestCase):
     def _env_with_pending_identity(self) -> CK3Env:
         run = _tmp("ck3env-idrun-") / "run"

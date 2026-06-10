@@ -41,7 +41,8 @@ class RegistryTests(unittest.TestCase):
         self.assertEqual(len(codes), len(set(codes)))
 
     def test_lifecycles_match_gauntlet_evidence(self):
-        live_proven = {"pulse", "checkpoint", "wait", "decision", "move_camp"}
+        live_proven = {"pulse", "checkpoint", "wait", "decision", "move_camp",
+                       "event_option"}
         probeable = {"gift"}  # probes proven; execution awaits a qualifying state
         for family in registry.FAMILIES:
             self.assertIn(family.lifecycle, registry.LIFECYCLES)

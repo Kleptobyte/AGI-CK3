@@ -66,28 +66,42 @@ def resolve_pending_event(
     """Referee duty for live runs: checkpoint the game, identify the
     pending event, and publish event_identity.json so the next observation
     advertises the genuine option set. Saves the game — slow and
-    state-changing, so callers invoke it explicitly, never per-observe."""
-    observation = env.observe()
-    if not observation["world"]["pending_event"]:
-        return {"status": "no_pending_event"}
-    checkpoint = next(
-        (a for a in observation["affordances"]
-         if a["id"] == "checkpoint.save" and a["status"] != "blocked"),
-        None,
-    )
-    if checkpoint is not None:
-        env.step(
-            "checkpoint.save",
-            observation["observation_id"],
-            rationale="Referee: fresh specimen to identify the interrupting event.",
+    state-changing, so callers invoke it explicitly, never per-observe.
+
+    The presence flag is edge-triggered GUI telemetry; checkpoint saves are
+    the truth path. When two fresh saves in a row show no queued player
+    event while telemetry still claims a window, the flag is stale (missed
+    close marker) and the referee clears it rather than deadlocking."""
+
+    def _checkpoint() -> None:
+        observation = env.observe()
+        affordance = next(
+            (a for a in observation["affordances"]
+             if a["id"] == "checkpoint.save" and a["status"] != "blocked"),
+            None,
         )
-    identity = identify_front_event(checkpoint_save, game_dir)
-    if identity is None:
+        if affordance is not None:
+            env.step(
+                "checkpoint.save",
+                observation["observation_id"],
+                rationale="Referee: fresh specimen to identify the interrupting event.",
+            )
+
+    if not env.observe()["world"]["pending_event"]:
+        return {"status": "no_pending_event"}
+    identity = None
+    for attempt in range(2):
+        _checkpoint()
+        identity = identify_front_event(checkpoint_save, game_dir)
+        if identity is not None:
+            break
         # Window-close markers can race the save; give the bus a beat.
         time.sleep(settle_seconds)
         if env.observe()["world"]["pending_event"] is None:
             return {"status": "window_closed"}
-        return {"status": "unidentified_window"}
+    if identity is None:
+        env.clear_stale_event_presence()
+        return {"status": "presence_cleared_by_save"}
     (env.run_dir / "event_identity.json").write_text(
         json.dumps(identity, indent=2, sort_keys=True) + "\n"
     )

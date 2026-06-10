@@ -37,7 +37,10 @@ A 100-step unattended baseline run completes with zero human
 interventions at ~310 ms median step latency; interrupting events resolve
 through the option selector in 150-500 ms with identity extracted from
 checkpoint saves (`scripts/mac-year.sh` runs a full survival-year episode
-unattended). Linux/headless operation
+unattended). The first agent-driven reference episode — Claude Code
+playing through [AGENTS.md](AGENTS.md) verbatim — survived its first year
+as a landless adventurer; its auditable bundle is in
+[`submissions/`](submissions/). Linux/headless operation
 (virtual display, software Vulkan, no Steam client or launcher) is
 verified through game boot; see `infra/linux/` for the portable runtime
 recipe and its acceptance gates.
