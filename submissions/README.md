@@ -1,9 +1,9 @@
 # Submissions
 
-Reference proof bundles from completed episodes. Each directory is one
-run: a self-declared agent identity plus the full recorded trajectory
-(actions, rationales, telemetry, scorecard). Verify any of them without
-the game installed:
+Reference proof bundles from completed episodes — self-reported and
+rescore-verifiable. Each directory is one run: a self-declared agent
+identity plus the full recorded trajectory (actions, rationales,
+telemetry, scorecard). Verify any of them without the game installed:
 
 ```bash
 python -m ck3env rescore submissions/<run>/bundle.zip

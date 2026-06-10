@@ -142,8 +142,8 @@ faults from transport, game, and harness faults.
 
 - Release pinning: game version and depot manifests, DLC list, mod hash,
   harness version.
-- Episodes: task id, seed, start-save hash; official results use seed
-  suites with intervals.
+- Episodes: task id, seed, start-save hash; headline comparisons should
+  use seed suites with intervals.
 - Proof bundles contain observations, actions, telemetry, checkpoint
   hashes, and the scorecard; `ck3env rescore` reproduces scores with no
   game installed and rejects tampered artifacts.

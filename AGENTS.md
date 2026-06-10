@@ -133,6 +133,17 @@ and `finalize` builds the bundle. If your own stack fails mid-run
 design: the episode ends as `agent_stall` or `wall_clock`, and the
 trajectory up to that point still scores.
 
+## What a result means
+
+A bundle is auditable, self-reported evidence. `rescore` proves the
+trajectory and scorecard are internally consistent and untampered — it
+does not prove the run was supervised. That is the intended scope:
+benchmark your agent, your model, and your harness design, and publish
+something others can inspect and re-score. Formal verification regimes
+(sealed runs, controlled rigs, third-party attestation) that would back
+load-bearing public claims are deliberately out of scope for this
+project.
+
 ## Rules of play
 
 - Act only through `step` and the verbs above. No console commands, no
