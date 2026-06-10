@@ -40,10 +40,15 @@ checkpoint saves (`scripts/mac-year.sh` runs a full survival-year episode
 unattended). The first agent-driven reference episode — Claude Code
 playing through [AGENTS.md](AGENTS.md) verbatim — survived its first year
 as a landless adventurer; its auditable bundle is in
-[`submissions/`](submissions/). Linux/headless operation
-(virtual display, software Vulkan, no Steam client or launcher) is
-verified through game boot; see `infra/linux/` for the portable runtime
-recipe and its acceptance gates.
+[`submissions/`](submissions/).
+
+Platforms: the full live loop is proven on macOS desktop (the staged
+console verbs use an AppleScript keystroke shim). On Linux, headless
+game boot is verified (virtual display, software Vulkan, no Steam client
+or launcher) and the input-injection path is specified but not yet wired
+into the transport — see `infra/linux/RUNBOOK.md` for the recipe and its
+acceptance gates. Windows is unsupported until someone contributes a
+keystroke shim.
 
 ## Quick start
 
@@ -56,13 +61,14 @@ make test                      # offline suite, no game required
 python -m ck3env doctor        # environment diagnosis
 ```
 
-Live runs (macOS or Linux desktop today; see `infra/linux/` for servers):
+Live runs (macOS today; Linux pending the input port — see Platforms):
 
-1. Install the mod and generate the per-version GUI overrides:
-   `python -m ck3env install-event-gui ...` and `install-runner ...`
-   (paths printed by `doctor`).
-2. Launch CK3 with `-debug_mode -develop`, the eval mod enabled, and a
-   campaign loaded and paused.
+1. Register the mod and generate the per-version GUI overrides —
+   `doctor` prints every command with concrete paths (`next_steps`):
+   `python -m ck3env install-mod ...`, `install-runner ...`,
+   `install-event-gui ...`, then enable the mod in a launcher playset.
+2. Launch CK3 with `-debug_mode -develop` and a campaign loaded and
+   paused.
 3. Drive an episode (full protocol in [AGENTS.md](AGENTS.md)):
 
 ```bash

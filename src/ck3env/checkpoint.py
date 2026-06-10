@@ -18,8 +18,9 @@ _DATE_RE = re.compile(rb"(?:meta_date|date)=\"?([0-9]{1,4}\.[0-9]{1,2}\.[0-9]{1,
 
 
 class DeferredVerifier(NotImplementedError):
-    """Raised for verifier predicates that land with their family's mod
-    branch (M2). Catching this is a lifecycle gate, not an error path."""
+    """Raised for verifier predicates that land together with their
+    family's mod dispatch branch. Catching this is a lifecycle gate, not
+    an error path."""
 
 
 def read_save_payload(path: Path, limit_bytes: int | None = None) -> bytes:

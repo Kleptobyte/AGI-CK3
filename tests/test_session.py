@@ -132,5 +132,29 @@ class SubmissionRoundTripTests(unittest.TestCase):
         self.assertEqual(verdict["score"], report["score"])
 
 
+class OnboardingTests(unittest.TestCase):
+    def test_install_mod_registers_repo_tree(self):
+        from ck3env.modinstall import register_mod, repo_mod_dir
+
+        user_dir = Path(tempfile.mkdtemp(prefix="ck3env-userdir-"))
+        registration = register_mod(user_dir)
+        body = registration.read_text()
+        self.assertIn('name="AGI CK3 Eval Harness"', body)
+        self.assertIn(f'path="{repo_mod_dir().resolve().as_posix()}"', body)
+        # Idempotent re-run.
+        self.assertEqual(register_mod(user_dir), registration)
+
+    def test_doctor_reports_registration_and_next_steps(self):
+        from ck3env import doctor
+        from ck3env.modinstall import register_mod
+
+        user_dir = Path(tempfile.mkdtemp(prefix="ck3env-userdir-"))
+        report = doctor.run(user_dir)
+        self.assertFalse(report["checks"]["mod_registered"]["ok"])
+        self.assertTrue(any("install-mod" in step for step in report["next_steps"]))
+        register_mod(user_dir)
+        self.assertTrue(doctor.run(user_dir)["checks"]["mod_registered"]["ok"])
+
+
 if __name__ == "__main__":
     unittest.main()

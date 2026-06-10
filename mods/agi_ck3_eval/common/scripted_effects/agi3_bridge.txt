@@ -338,7 +338,7 @@ agi3_decision_execute_effect = {
 	}
 }
 
-# Slot publication (v3-spec D3): MECHANICAL criteria only — courtiers for
+# Slot publication: MECHANICAL criteria only — courtiers for
 # gift, fixed title-holders for move_camp. Never strategic curation: the
 # harness must not hint. Published on pulse.refresh dispatch, not on the
 # at-rest heartbeat (log economy). slot_clear flushes stale slots AND

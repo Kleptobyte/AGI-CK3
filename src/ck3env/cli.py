@@ -65,6 +65,9 @@ def main(argv: list[str] | None = None) -> int:
     rescore_cmd.add_argument("bundle_path", type=Path)
     doctor_cmd = sub.add_parser("doctor")
     doctor_cmd.add_argument("--ck3-user-dir", type=Path, default=None)
+    mod_cmd = sub.add_parser("install-mod")
+    mod_cmd.add_argument("--ck3-user-dir", type=Path, required=True)
+    mod_cmd.add_argument("--mod-dir", type=Path, default=None)
     runner_cmd = sub.add_parser("install-runner")
     runner_cmd.add_argument("--game-gui-dir", type=Path, required=True)
     runner_cmd.add_argument("--mod-gui-dir", type=Path, required=True)
@@ -80,6 +83,15 @@ def main(argv: list[str] | None = None) -> int:
         return 0 if report["ok"] else 1
     if args.command == "rescore":
         _print(rescore(args.bundle_path))
+        return 0
+    if args.command == "install-mod":
+        from .modinstall import register_mod
+
+        registration = register_mod(args.ck3_user_dir, args.mod_dir)
+        _print({
+            "registered": str(registration),
+            "next": "enable 'AGI CK3 Eval Harness' in a Paradox launcher playset, then launch with -debug_mode -develop",
+        })
         return 0
     if args.command == "install-event-gui":
         from .eventgui import generate_event_windows

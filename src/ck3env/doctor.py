@@ -13,9 +13,24 @@ from .transport import runner_installed
 DEFAULT_USER_DIR = Path.home() / "Documents" / "Paradox Interactive" / "Crusader Kings III"
 REPO_MOD_DIR = Path(__file__).resolve().parents[2] / "mods" / "agi_ck3_eval"
 
+# Common Steam install locations; doctor suggests the first that exists so
+# next_steps are paste-ready, and falls back to a placeholder otherwise.
+GAME_DIR_CANDIDATES = (
+    Path.home() / "Library/Application Support/Steam/steamapps/common/Crusader Kings III/game",
+    Path.home() / ".local/share/Steam/steamapps/common/Crusader Kings III/game",
+    Path.home() / ".steam/steam/steamapps/common/Crusader Kings III/game",
+)
+
 
 def _check(ok: bool, blocker: str) -> dict[str, Any]:
     return {"ok": ok, "blocker": None if ok else blocker}
+
+
+def _game_dir_guess() -> str:
+    for candidate in GAME_DIR_CANDIDATES:
+        if candidate.exists():
+            return str(candidate)
+    return "<CK3 install>/game"
 
 
 def run(ck3_user_dir: Path | None = None) -> dict[str, Any]:
@@ -39,23 +54,44 @@ def run(ck3_user_dir: Path | None = None) -> dict[str, Any]:
         (REPO_MOD_DIR / "common" / "scripted_effects" / "agi3_bridge.txt").exists(),
         "agi3_bridge.txt missing from mod",
     )
+    checks["mod_registered"] = _check(
+        (user_dir / "mod" / "agi_ck3_eval.mod").exists(),
+        "mod not registered with the game; run: python -m ck3env install-mod "
+        f'--ck3-user-dir "{user_dir}" (then enable it in a launcher playset)',
+    )
     checks["runner"] = _check(
         runner_installed(REPO_MOD_DIR / "gui"),
-        "auto-runner not installed; run: ck3env install-runner (then restart or `reload gui`)",
+        "auto-runner not installed; see next_steps (then restart or `reload gui`)",
     )
+    # Advisory, not a blocker: an empty allowlist degrades coverage (that
+    # family advertises nothing) but the rig is fully playable without it.
     empty_allowlists = [name for name, values in registry.ALLOWLISTS.items() if not values]
-    checks["allowlists"] = _check(
-        not empty_allowlists,
-        f"allowlists unpopulated: {', '.join(empty_allowlists)} "
-        f"(populated from the installed game at M2; affected families advertise nothing)",
+    advisories = (
+        [f"allowlists unpopulated: {', '.join(empty_allowlists)} — "
+         "affected families advertise nothing until populated from the installed game"]
+        if empty_allowlists else []
     )
+
+    game_dir = _game_dir_guess()
+    next_steps = [
+        f'python -m ck3env install-mod --ck3-user-dir "{user_dir}"',
+        f'python -m ck3env install-runner --game-gui-dir "{game_dir}/gui" '
+        f'--mod-gui-dir "{REPO_MOD_DIR / "gui"}"',
+        f'python -m ck3env install-event-gui --game-gui-dir "{game_dir}/gui" '
+        f'--mod-gui-dir "{REPO_MOD_DIR / "gui"}"',
+        "enable 'AGI CK3 Eval Harness' in a Paradox launcher playset",
+        "launch CK3 with -debug_mode -develop, load a campaign, pause",
+    ]
 
     ok = all(item["ok"] for item in checks.values())
     return {
         "ok": ok,
         "platform": platform.system(),
         "ck3_user_dir": str(user_dir),
+        "game_dir_guess": game_dir,
         "checks": checks,
+        "advisories": advisories,
+        "next_steps": next_steps,
         "claim_table": registry.claim_table(),
     }
 

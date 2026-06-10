@@ -1,5 +1,5 @@
 ﻿l_english:
- # agi3 telemetry (v3-spec 4.2, amended in M2 live proof):
+ # agi3 telemetry line shapes (live-proven constraints; docs/architecture.md):
  # - bracket-free tag: [ ] is loc datatype syntax
  # - GetPlayer.MakeScope.Var(...): ROOT is not bound in debug_log loc context
  # - dates via debug_log_date engine lines, not loc interpolation
