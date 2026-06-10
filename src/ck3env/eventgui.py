@@ -17,6 +17,8 @@ EVENT_WINDOW_NAMES = (
     "character_event.gui",
     "duel_event.gui",
     "fullscreen_event.gui",
+    "anonymous_letter_event.gui",
+    "letter_event.gui",
 )
 INSERT_TARGET = "button_eventoption = {}"
 PATCH_SENTINEL = "agi_ck3_event_option_auto_select"
@@ -55,7 +57,16 @@ def patch_event_windows_gui(vanilla_text: str) -> str:
             inserted += 1
         else:
             patched_lines.append(line)
-    if inserted == 0:
+    letter_lines: list[str] = []
+    letter_inserted = 0
+    for line in patched_lines:
+        letter_lines.append(line)
+        if line.strip() == "button_event_letter = {":
+            indent = line[: len(line) - len(line.lstrip())]
+            letter_lines.append(_indented_patch(indent))
+            letter_inserted += 1
+    patched_lines = letter_lines
+    if inserted == 0 and letter_inserted == 0:
         raise ValueError("could not find CK3 event option item insertion point")
     trailing_newline = "\n" if vanilla_text.endswith("\n") else ""
     return "\n".join(patched_lines) + trailing_newline
