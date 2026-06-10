@@ -91,6 +91,9 @@ def run_soak(
         families[affordance_id.split(".")[0]] = families.get(affordance_id.split(".")[0], 0) + 1
         if record.get("latency_ms"):
             latencies.append(record["latency_ms"])
+        if status == "refused":
+            stop_reason = "episode_complete"
+            break
         if status == "timeout":
             stop_reason = f"transport_{record.get('failure_class') or 'timeout'}"
             break

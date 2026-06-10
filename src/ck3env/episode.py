@@ -13,8 +13,8 @@ import time
 from pathlib import Path
 from typing import Any
 
-from .checkpoint import event_options_from_game, pending_player_events
 from .env import CK3Env
+from .identity import resolve_pending_event
 
 
 def _days(date: str) -> int:
@@ -23,9 +23,14 @@ def _days(date: str) -> int:
 
 
 def choose_option(options: list[dict[str, Any]]) -> tuple[int, str]:
-    stable = [option for option in options if option.get("stable")]
-    if stable:
-        first = stable[0]
+    """Scripted policy over an identity option set: first deliberate safe
+    option, else the recorded slot-1 gamble."""
+    deliberate = [
+        option for option in options
+        if option.get("safe") and not option.get("gamble")
+    ]
+    if deliberate:
+        first = deliberate[0]
         return first["index"], f"stable option {first['index']} ('{first['label']}')"
     return 1, "all options trigger-gated; arming display slot 1 sight-unseen (recorded gamble)"
 
@@ -63,25 +68,17 @@ def run_survival_episode(
             if resolved >= max_event_resolutions:
                 stop_reason = "event_budget_exhausted"
                 break
-            step("checkpoint.save", "Fresh specimen to identify the interrupting event.")
-            events = pending_player_events(checkpoint_save)
-            if not events:
-                time.sleep(4)
-                if env.observe()["world"]["pending_event"] is None:
-                    continue  # window-close marker race
-                stop_reason = "unidentified_window"
+            resolution = resolve_pending_event(env, game_dir, checkpoint_save)
+            if resolution["status"] in {"window_closed", "no_pending_event"}:
+                continue  # window-close marker race
+            if resolution["status"] != "identified":
+                stop_reason = resolution["status"]
                 break
-            key = events[0]["event_key"]
-            options = event_options_from_game(key, game_dir)
-            index, why = choose_option(options)
-            identity = env.run_dir / "event_identity.json"
-            identity.write_text(json.dumps({
-                "event_id": events[0]["save_event_id"] or 1,
-                "event_key": key,
-                "options": [{"index": index, "safe": True, "label": why}],
-            }))
-            result = step(f"event_option.select#{index}", f"Event {key}: {why}")
-            identity.unlink(missing_ok=True)
+            index, why = choose_option(resolution["options"])
+            result = step(
+                f"event_option.select#{index}",
+                f"Event {resolution['event_key']}: {why}",
+            )
             if not result or result["status"] != "executed":
                 stop_reason = "selection_failed"
                 break

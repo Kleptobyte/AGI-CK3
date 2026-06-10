@@ -5,11 +5,14 @@
 An evaluation harness for AI agents playing Crusader Kings III through
 legal, game-guarded actions.
 
-Agents receive structured JSON observations and choose one affordance ID
-per step. A game-side mod re-checks CK3's own availability rules before
-executing anything; the harness verifies results from telemetry and
-checkpoint saves; every run produces a proof bundle that can be re-scored
-without the game installed. The long-term benchmark goal:
+Bring your own agent: any agent that can run a CLI plays by driving the
+observe/step loop itself — its model, memory, and harness design are all
+part of what is evaluated. **[AGENTS.md](AGENTS.md) is the play
+protocol.** A game-side mod re-checks CK3's own availability rules
+before executing anything; the harness referees budgets, records the
+full trajectory (actions, rationales, conduct), and produces a proof
+bundle that can be re-scored without the game installed. The long-term
+benchmark goal:
 
 > Start as a landless adventurer and legally work toward control or
 > restoration of the Holy Roman Empire through normal CK3 mechanics.
@@ -57,18 +60,21 @@ Live runs (macOS or Linux desktop today; see `infra/linux/` for servers):
    (paths printed by `doctor`).
 2. Launch CK3 with `-debug_mode -develop`, the eval mod enabled, and a
    campaign loaded and paused.
-3. Drive an episode:
+3. Drive an episode (full protocol in [AGENTS.md](AGENTS.md)):
 
 ```bash
-python -m ck3env reset --run runs/demo --task smoke --seed 1 --live --ck3-user-dir "<CK3 documents dir>"
+python -m ck3env reset --run runs/demo --task smoke --seed 1 --live --ck3-user-dir "<CK3 documents dir>" \
+  --agent-name "my-agent" --agent-model "model-id"
 python -m ck3env observe --run runs/demo --live --ck3-user-dir "<CK3 documents dir>"
-python -m ck3env step  --run runs/demo --live --ck3-user-dir "<CK3 documents dir>" <affordance_id> <observation_id>
-python -m ck3env bundle --run runs/demo && python -m ck3env rescore runs/demo/bundle.zip
+python -m ck3env step  --run runs/demo --live --ck3-user-dir "<CK3 documents dir>" <affordance_id> <observation_id> --rationale "why"
+python -m ck3env finalize --run runs/demo --live --ck3-user-dir "<CK3 documents dir>"
+python -m ck3env rescore runs/demo/bundle.zip
 ```
 
 `baseline-run` drives the scripted baseline policy for unattended soak
-runs. The Makefile is developer convenience only; the CLI and library are
-the interface.
+runs — the leaderboard floor any evaluated agent should beat. The
+Makefile is developer convenience only; the CLI and library are the
+interface.
 
 ## Documentation
 

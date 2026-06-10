@@ -87,20 +87,40 @@ halts time over a blocking event.
 
 ```python
 class CK3Env:
-    reset(task_id, seed) -> Observation
+    reset(task_id, seed, budgets=None, submission=None) -> Observation
     observe() -> Observation
     legal_actions() -> list[Affordance]
     step(affordance_id, observation_id, rationale=None) -> StepResult
-    score() -> Scorecard
-    bundle() -> Path
+    finalize(reason="finalized") -> Report
 ```
 
-The referee process runs the loop and owns the game's run directory,
-saves, logs, scorer, and bundles. The evaluated agent is a policy:
-observation in, one affordance id out. `step` rejects stale observation
-ids. Lifecycle gates enforce claim hygiene at runtime: families that are
-not live-certified cannot execute in live mode (probeable families may
-probe only); the certification gauntlet runs with an explicit override.
+The evaluated agent drives this loop itself — its own reasoning, memory,
+and harness design are part of what is evaluated (see `AGENTS.md` for
+the play protocol). The environment referees: it owns the game's run
+directory, saves, logs, scorer, and bundles; `step` rejects stale
+observation ids; lifecycle gates enforce claim hygiene at runtime
+(families that are not live-certified cannot execute in live mode,
+probeable families may probe only; the certification gauntlet runs with
+an explicit override).
+
+## Sessions
+
+Every episode opens with a self-declared submission (`agent_name`,
+`agent_model`, `harness_notes`) and referee budgets (`max_steps`,
+`max_invalid_streak`, `max_hours`). The referee — not the agent — closes
+the episode: the first breached budget stamps a `stop_reason`
+(`budget_exhausted`, `agent_stall`, `wall_clock`), after which `step`
+refuses without recording, `observe` remains available, and `finalize`
+scores the run, writes `report.json`, and builds the bundle (idempotent,
+also valid on abandoned runs). Agent-side infrastructure failures are
+deliberately the submitter's problem: an agent that stops acting ends as
+`agent_stall` or `wall_clock` and its trajectory still scores.
+
+Pending events are identified referee-side (`resolve-event`: checkpoint
+save plus the game's own event scripts) and the full option menu is
+advertised honestly — display-index-stable options as available,
+unstable options as blocked with the reason, and an explicit
+`gamble: true` slot-1 affordance when every option is trigger-gated.
 
 ## Scoring
 

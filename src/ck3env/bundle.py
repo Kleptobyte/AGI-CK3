@@ -15,6 +15,8 @@ ARTIFACTS = (
     "snapshot.json",
     "steps.jsonl",
     "transport_state.json",
+    "submission.json",
+    "report.json",
 )
 
 
@@ -39,9 +41,16 @@ def build(run_dir: Path, sealed: bool = False) -> Path:
 
 
 def rescore(bundle_path: Path) -> dict:
-    """Recompute the scorecard purely from bundle contents."""
+    """Recompute the scorecard purely from bundle contents. The episode
+    document rides along: date-derived milestones (survived_first_year)
+    must reproduce identically offline."""
     from .observe import Snapshot
     from .score import compute
+
+    def _read_json(archive: zipfile.ZipFile, manifest: dict, name: str):
+        if name not in manifest["artifacts"]:
+            return None
+        return json.loads(archive.read(name))
 
     with zipfile.ZipFile(bundle_path) as archive:
         manifest = json.loads(archive.read("manifest.json"))
@@ -55,4 +64,11 @@ def rescore(bundle_path: Path) -> dict:
             for line in archive.read("steps.jsonl").decode().splitlines()
             if line
         ] if "steps.jsonl" in manifest["artifacts"] else []
-    return compute(snapshot, steps)
+        episode = _read_json(archive, manifest, "episode.json")
+        report = _read_json(archive, manifest, "report.json")
+        submission = _read_json(archive, manifest, "submission.json")
+    return {
+        "score": compute(snapshot, steps, episode),
+        "stop_reason": (report or {}).get("stop_reason"),
+        "submission": submission,
+    }

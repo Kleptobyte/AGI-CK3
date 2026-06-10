@@ -36,10 +36,22 @@ def main(argv: list[str] | None = None) -> int:
     step = add("step", live_flags=True)
     step.add_argument("affordance_id")
     step.add_argument("observation_id")
+    step.add_argument("--rationale", default=None)
     reset = add("reset", live_flags=True)
     reset.add_argument("--task", required=True)
     reset.add_argument("--seed", type=int, required=True)
+    reset.add_argument("--agent-name", default=None)
+    reset.add_argument("--agent-model", default=None)
+    reset.add_argument("--harness-notes", default=None)
+    reset.add_argument("--max-steps", type=int, default=None)
+    reset.add_argument("--max-invalid-streak", type=int, default=None)
+    reset.add_argument("--max-hours", type=float, default=None)
     add("score", live_flags=True)
+    finalize_cmd = add("finalize", live_flags=True)
+    finalize_cmd.add_argument("--reason", default="finalized")
+    resolve_cmd = add("resolve-event", live_flags=True)
+    resolve_cmd.add_argument("--game-dir", type=Path, required=True)
+    resolve_cmd.add_argument("--checkpoint-save", type=Path, required=True)
     soak = add("baseline-run", live_flags=True)
     soak.add_argument("--steps", type=int, default=100)
     soak.add_argument("--seed", type=int, default=42)
@@ -109,12 +121,39 @@ def main(argv: list[str] | None = None) -> int:
         )
         _print(report)
         return 0
+    if args.command == "resolve-event":
+        from .identity import resolve_pending_event
+
+        _print(resolve_pending_event(env, args.game_dir, args.checkpoint_save))
+        return 0
     if args.command == "observe":
         _print(env.observe())
     elif args.command == "reset":
-        _print(env.reset(args.task, args.seed))
+        budgets = {
+            key: value
+            for key, value in (
+                ("max_steps", args.max_steps),
+                ("max_invalid_streak", args.max_invalid_streak),
+                ("max_hours", args.max_hours),
+            )
+            if value is not None
+        }
+        _print(
+            env.reset(
+                args.task,
+                args.seed,
+                budgets=budgets,
+                submission={
+                    "agent_name": args.agent_name,
+                    "agent_model": args.agent_model,
+                    "harness_notes": args.harness_notes,
+                },
+            )
+        )
     elif args.command == "step":
-        _print(env.step(args.affordance_id, args.observation_id))
+        _print(env.step(args.affordance_id, args.observation_id, rationale=args.rationale))
+    elif args.command == "finalize":
+        _print(env.finalize(args.reason))
     elif args.command == "score":
         _print(env.observe()["score"])
     return 0

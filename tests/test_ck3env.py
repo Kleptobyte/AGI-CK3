@@ -246,18 +246,22 @@ class EventIdentityTests(unittest.TestCase):
 
 
 class EpisodePolicyTests(unittest.TestCase):
-    def test_choose_prefers_first_stable(self):
+    def test_choose_prefers_first_deliberate_safe(self):
         from ck3env.episode import choose_option
         index, why = choose_option([
-            {"index": 1, "label": "a", "stable": False},
-            {"index": 2, "label": "b", "stable": True},
+            {"index": 1, "label": "a", "safe": False},
+            {"index": 2, "label": "b", "safe": True},
         ])
         self.assertEqual(index, 2)
         self.assertIn("stable", why)
 
     def test_choose_falls_back_to_slot_one(self):
         from ck3env.episode import choose_option
-        index, why = choose_option([{"index": 1, "label": "a", "stable": False}])
+        # An identity whose only safe entry is the slot-1 gamble.
+        index, why = choose_option([
+            {"index": 1, "label": "a", "safe": True, "gamble": True},
+            {"index": 2, "label": "b", "safe": False},
+        ])
         self.assertEqual(index, 1)
         self.assertIn("gamble", why)
 

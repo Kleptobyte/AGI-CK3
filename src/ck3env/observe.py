@@ -252,15 +252,25 @@ def build_affordances(
     if front_event and event_identity:
         family = registry.get("event_option")
         for option in event_identity.get("options", []):
-            if not option.get("safe"):
-                continue  # static-safe only; unknown options stay blockers
+            # The full menu is advertised; index-unstable options appear as
+            # blocked so the agent sees the genuine choice set without being
+            # able to arm a slot whose mapping may shift under it.
+            safe = bool(option.get("safe"))
+            params: dict[str, Any] = {
+                "event_id": int(event_identity["event_id"]),
+                "label": option.get("label", ""),
+            }
+            if option.get("gamble"):
+                params["gamble"] = True
             affordances.append({
                 "id": f"event_option.select#{int(option['index'])}",
                 "family": family.id,
-                "status": "available",
-                "blockers": [],
-                "params": {"event_id": int(event_identity["event_id"]),
-                           "label": option.get("label", "")},
+                "status": "available" if safe else "blocked",
+                "blockers": [] if safe else [
+                    "display index unstable: a trigger-gated option above "
+                    "this slot may shift the mapping"
+                ],
+                "params": params,
                 "lifecycle": family.lifecycle,
             })
     for family in registry.FAMILIES:

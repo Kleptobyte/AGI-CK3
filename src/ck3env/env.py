@@ -11,6 +11,7 @@ import time
 from pathlib import Path
 from typing import Any
 
+from . import __version__
 from . import compile as compiler
 from . import registry, score
 from .observe import Snapshot, build_observation
@@ -24,6 +25,10 @@ class Rejection(Exception):
 
 
 class CK3Env:
+    # Referee budgets: every episode ends with a recorded stop_reason no
+    # matter how the driving agent behaves. Overridable at reset.
+    DEFAULT_BUDGETS = {"max_steps": 200, "max_invalid_streak": 8, "max_hours": 6.0}
+
     def __init__(
         self,
         run_dir: Path,
@@ -88,13 +93,47 @@ class CK3Env:
 
     # -- environment API ----------------------------------------------------
 
-    def reset(self, task_id: str, seed: int) -> dict[str, Any]:
+    def reset(
+        self,
+        task_id: str,
+        seed: int,
+        budgets: dict[str, Any] | None = None,
+        submission: dict[str, Any] | None = None,
+    ) -> dict[str, Any]:
         self._save_episode(
-            {"task_id": task_id, "seed": seed, "step": 0, "start_date": None}
+            {
+                "task_id": task_id,
+                "seed": seed,
+                "step": 0,
+                "start_date": None,
+                "budgets": {**self.DEFAULT_BUDGETS, **(budgets or {})},
+                "started_at_epoch": time.time(),
+                "steps_recorded": 0,
+                "invalid_streak": 0,
+                "stop_reason": None,
+            }
+        )
+        declared = submission or {}
+        self._path("submission.json").write_text(
+            json.dumps(
+                {
+                    "agent_name": declared.get("agent_name") or "unspecified",
+                    "agent_model": declared.get("agent_model") or "unspecified",
+                    "harness_notes": declared.get("harness_notes") or "",
+                },
+                indent=2,
+                sort_keys=True,
+            )
+            + "\n"
         )
         self._snapshot = Snapshot()
         self._save_snapshot()
-        for name in ("steps.jsonl", "observation.json"):
+        for name in (
+            "steps.jsonl",
+            "observation.json",
+            "event_identity.json",
+            "report.json",
+        ):
             self._path(name).unlink(missing_ok=True)
         return self.observe()
 
@@ -107,6 +146,10 @@ class CK3Env:
             episode["start_date"] = self._snapshot.date
             self._save_episode(episode)
         identity_path = self._path("event_identity.json")
+        if self._snapshot.pending_event is None:
+            # Identity is bound to the window it described; once the window
+            # is gone its select affordances would be lies.
+            identity_path.unlink(missing_ok=True)
         event_identity = (
             json.loads(identity_path.read_text()) if identity_path.exists() else None
         )
@@ -128,6 +171,13 @@ class CK3Env:
         self, affordance_id: str, observation_id: str, rationale: str | None = None
     ) -> dict[str, Any]:
         started = time.monotonic()
+        episode = self._episode()
+        refusal = self._check_episode_open(episode)
+        if refusal is not None:
+            # A closed episode records no further agent activity: refusals
+            # are returned, never appended to steps.jsonl.
+            return refusal
+        budgets = episode.get("budgets") or {}
         try:
             compiled, affordance = self._validate(affordance_id, observation_id)
         except Rejection as rejection:
@@ -138,6 +188,10 @@ class CK3Env:
                 "rationale": rationale,
             }
             self._append_step(record)
+            episode["steps_recorded"] = int(episode.get("steps_recorded", 0)) + 1
+            episode["invalid_streak"] = int(episode.get("invalid_streak", 0)) + 1
+            self._stamp_stop_reason(episode, budgets)
+            self._save_episode(episode)
             return record
 
         record: dict[str, Any] = {
@@ -174,13 +228,83 @@ class CK3Env:
                 }
             )
         record["elapsed_ms"] = round((time.monotonic() - started) * 1000, 1)
-        episode = self._episode()
+        parsed = registry.parse_affordance_id(compiled.affordance_id)
+        if parsed.family.id == "event_option" and record["status"] != "rejected":
+            # The selection consumed (or, dry, would consume) the window this
+            # identity described.
+            self._path("event_identity.json").unlink(missing_ok=True)
         episode["step"] += 1
+        episode["steps_recorded"] = int(episode.get("steps_recorded", 0)) + 1
+        episode["invalid_streak"] = 0
+        self._stamp_stop_reason(episode, budgets)
         self._save_episode(episode)
         self._append_step(record)
         return record
 
+    def finalize(self, reason: str = "finalized") -> dict[str, Any]:
+        """Close the episode (if the referee has not already), score it, and
+        build the proof bundle. Idempotent; safe on abandoned runs."""
+        episode = self._episode()
+        if not episode.get("stop_reason"):
+            episode["stop_reason"] = reason
+            self._save_episode(episode)
+        observation = self.observe()
+        submission_path = self._path("submission.json")
+        report = {
+            "harness_version": __version__,
+            "stop_reason": episode["stop_reason"],
+            "submission": (
+                json.loads(submission_path.read_text())
+                if submission_path.exists()
+                else None
+            ),
+            "final_date": observation["world"]["date"],
+            "score": observation["score"],
+        }
+        self._path("report.json").write_text(
+            json.dumps(report, indent=2, sort_keys=True) + "\n"
+        )
+        from .bundle import build as build_bundle
+
+        report["bundle"] = str(build_bundle(self.run_dir))
+        return report
+
     # -- internals -----------------------------------------------------------
+
+    def _check_episode_open(self, episode: dict[str, Any]) -> dict[str, Any] | None:
+        """Refusal record if the episode is closed (or closes now on wall
+        clock); None while the episode is open."""
+        budgets = episode.get("budgets") or {}
+        started = episode.get("started_at_epoch")
+        max_hours = budgets.get("max_hours")
+        if (
+            not episode.get("stop_reason")
+            and started
+            and max_hours
+            and time.time() - started > max_hours * 3600
+        ):
+            episode["stop_reason"] = "wall_clock"
+            self._save_episode(episode)
+        if episode.get("stop_reason"):
+            return {
+                "status": "refused",
+                "blocker": (
+                    f"episode complete (stop_reason={episode['stop_reason']}); "
+                    "observe remains available, finalize builds the bundle"
+                ),
+            }
+        return None
+
+    def _stamp_stop_reason(self, episode: dict[str, Any], budgets: dict[str, Any]) -> None:
+        if episode.get("stop_reason"):
+            return
+        max_streak = budgets.get("max_invalid_streak")
+        if max_streak and int(episode.get("invalid_streak", 0)) >= int(max_streak):
+            episode["stop_reason"] = "agent_stall"
+            return
+        max_steps = budgets.get("max_steps")
+        if max_steps and int(episode.get("steps_recorded", 0)) >= int(max_steps):
+            episode["stop_reason"] = "budget_exhausted"
 
     def _validate(
         self, affordance_id: str, observation_id: str
