@@ -1,0 +1,51 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/
+dist/
+build/
+*.egg-info/
+logs/
+*.tmp
+*.ck3
+*.log
+*.sqlite
+*.sqlite-*
+*.sqlite.*
+dlc_load.json
+dlc_load.json.*
+
+# Local game/user data and private run outputs.
+local/
+secrets/
+runs/*/
+runs/**/private/
+runs/**/saves/
+runs/**/screenshots/
+runs/**/captures/
+runs/**/video/
+runs/manual/
+runs/local-sample/
+
+# Generated locally from the user's installed CK3 files; do not commit
+# Paradox-owned GUI source into the public repo.
+mods/agi_ck3_eval/gui/shared/event_windows.gui
+mods/agi_ck3_eval/gui/event_windows/*.gui
+
+# Keep the committed sample run.
+!runs/sample/
+!runs/sample/bridge_request.txt
+!runs/sample/events.jsonl
+!runs/sample/ingress.json
+!runs/sample/last_action.json
+!runs/sample/legal_surface_audit.json
+!runs/sample/run.json
+!runs/sample/spec.json
+!runs/sample/state.json
+# v3: generated/vanilla-derived GUI overrides (recreate via `ck3env install-runner`)
+mods/agi_ck3_eval/gui/hud.gui
+mods/agi_ck3_eval/gui/hud_top.gui
+mods/agi_ck3_eval/gui/console.gui
+
+# session journals stay local
+docs/private/

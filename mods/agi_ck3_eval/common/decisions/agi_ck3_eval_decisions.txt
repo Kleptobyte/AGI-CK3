@@ -1,0 +1,287 @@
+﻿agi_ck3_eval_probe_decision = {
+	sort_order = 900
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty.dds"
+	}
+
+	desc = agi_ck3_eval_probe_decision_desc
+	selection_tooltip = agi_ck3_eval_probe_decision_tooltip
+	confirm_text = agi_ck3_eval_probe_decision_confirm
+
+	is_shown = {
+		is_ai = no
+	}
+
+	is_valid = {
+		always = yes
+	}
+
+	effect = {
+		custom_tooltip = agi_ck3_eval_probe_effect_tooltip
+		agi_ck3_eval_mark_probe_effect = yes
+		trigger_event = agi_ck3_eval.0001
+	}
+
+	ai_check_interval = 0
+}
+
+agi_ck3_eval_status_decision = {
+	sort_order = 899
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+
+	desc = agi_ck3_eval_status_decision_desc
+	selection_tooltip = agi_ck3_eval_status_decision_tooltip
+	confirm_text = agi_ck3_eval_status_decision_confirm
+
+	is_shown = {
+		is_ai = no
+	}
+
+	is_valid = {
+		exists = var:agi_ck3_eval_probe
+	}
+
+	effect = {
+		agi_ck3_eval_refresh_telemetry_effect = yes
+		trigger_event = agi_ck3_eval.0002
+	}
+
+	ai_check_interval = 0
+}
+
+agi_ck3_eval_refresh_telemetry_decision = {
+	sort_order = 898
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+
+	desc = agi_ck3_eval_refresh_telemetry_decision_desc
+	selection_tooltip = agi_ck3_eval_refresh_telemetry_decision_tooltip
+	confirm_text = agi_ck3_eval_refresh_telemetry_decision_confirm
+
+	is_shown = {
+		is_ai = no
+		exists = var:agi_ck3_eval_probe
+	}
+
+	is_valid = {
+		always = yes
+	}
+
+	effect = {
+		agi_ck3_eval_refresh_telemetry_effect = yes
+		trigger_event = agi_ck3_eval.0003
+	}
+
+	ai_check_interval = 0
+}
+
+agi_ck3_eval_lab_noop_decision = {
+	sort_order = 897
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+
+	desc = agi_ck3_eval_lab_noop_decision_desc
+	selection_tooltip = agi_ck3_eval_lab_decision_tooltip
+	confirm_text = agi_ck3_eval_lab_decision_confirm
+
+	is_shown = {
+		is_ai = no
+	}
+
+	is_valid = {
+		always = yes
+	}
+
+	effect = {
+		agi_ck3_eval_event_option_lab_reset_effect = yes
+		trigger_event = agi_ck3_eval.0100
+	}
+
+	ai_check_interval = 0
+}
+
+agi_ck3_eval_lab_multi_decision = {
+	sort_order = 896
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+
+	desc = agi_ck3_eval_lab_multi_decision_desc
+	selection_tooltip = agi_ck3_eval_lab_decision_tooltip
+	confirm_text = agi_ck3_eval_lab_decision_confirm
+
+	is_shown = {
+		is_ai = no
+	}
+
+	is_valid = {
+		always = yes
+	}
+
+	effect = {
+		agi_ck3_eval_event_option_lab_reset_effect = yes
+		trigger_event = agi_ck3_eval.0101
+	}
+
+	ai_check_interval = 0
+}
+
+agi_ck3_eval_lab_after_decision = {
+	sort_order = 895
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+
+	desc = agi_ck3_eval_lab_after_decision_desc
+	selection_tooltip = agi_ck3_eval_lab_decision_tooltip
+	confirm_text = agi_ck3_eval_lab_decision_confirm
+
+	is_shown = {
+		is_ai = no
+	}
+
+	is_valid = {
+		always = yes
+	}
+
+	effect = {
+		agi_ck3_eval_event_option_lab_reset_effect = yes
+		trigger_event = agi_ck3_eval.0102
+	}
+
+	ai_check_interval = 0
+}
+
+agi_ck3_eval_lab_chain_decision = {
+	sort_order = 894
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+
+	desc = agi_ck3_eval_lab_chain_decision_desc
+	selection_tooltip = agi_ck3_eval_lab_decision_tooltip
+	confirm_text = agi_ck3_eval_lab_decision_confirm
+
+	is_shown = {
+		is_ai = no
+	}
+
+	is_valid = {
+		always = yes
+	}
+
+	effect = {
+		agi_ck3_eval_event_option_lab_reset_effect = yes
+		trigger_event = agi_ck3_eval.0103
+	}
+
+	ai_check_interval = 0
+}
+
+agi_ck3_eval_lab_window_character_decision = {
+	sort_order = 893
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+
+	desc = agi_ck3_eval_lab_window_character_decision_desc
+	selection_tooltip = agi_ck3_eval_lab_decision_tooltip
+	confirm_text = agi_ck3_eval_lab_decision_confirm
+
+	is_shown = {
+		is_ai = no
+	}
+
+	is_valid = {
+		always = yes
+	}
+
+	effect = {
+		agi_ck3_eval_event_option_lab_reset_effect = yes
+		trigger_event = agi_ck3_eval.0110
+	}
+
+	ai_check_interval = 0
+}
+
+agi_ck3_eval_lab_window_big_decision = {
+	sort_order = 892
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+
+	desc = agi_ck3_eval_lab_window_big_decision_desc
+	selection_tooltip = agi_ck3_eval_lab_decision_tooltip
+	confirm_text = agi_ck3_eval_lab_decision_confirm
+
+	is_shown = {
+		is_ai = no
+	}
+
+	is_valid = {
+		always = yes
+	}
+
+	effect = {
+		agi_ck3_eval_event_option_lab_reset_effect = yes
+		trigger_event = agi_ck3_eval.0111
+	}
+
+	ai_check_interval = 0
+}
+
+agi_ck3_eval_lab_window_duel_decision = {
+	sort_order = 891
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+
+	desc = agi_ck3_eval_lab_window_duel_decision_desc
+	selection_tooltip = agi_ck3_eval_lab_decision_tooltip
+	confirm_text = agi_ck3_eval_lab_decision_confirm
+
+	is_shown = {
+		is_ai = no
+	}
+
+	is_valid = {
+		always = yes
+	}
+
+	effect = {
+		agi_ck3_eval_event_option_lab_reset_effect = yes
+		trigger_event = agi_ck3_eval.0112
+	}
+
+	ai_check_interval = 0
+}
+
+agi_ck3_eval_lab_window_fullscreen_decision = {
+	sort_order = 890
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+
+	desc = agi_ck3_eval_lab_window_fullscreen_decision_desc
+	selection_tooltip = agi_ck3_eval_lab_decision_tooltip
+	confirm_text = agi_ck3_eval_lab_decision_confirm
+
+	is_shown = {
+		is_ai = no
+	}
+
+	is_valid = {
+		always = yes
+	}
+
+	effect = {
+		agi_ck3_eval_event_option_lab_reset_effect = yes
+		trigger_event = agi_ck3_eval.0113
+	}
+
+	ai_check_interval = 0
+}

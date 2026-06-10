@@ -1,0 +1,20 @@
+﻿agi_ck3_eval_realm_size_value = {
+	value = realm_size
+	round = yes
+}
+
+agi_ck3_eval_primary_title_tier_value = {
+	value = 0
+	if = {
+		limit = {
+			exists = primary_title
+		}
+		value = primary_title.tier
+	}
+	round = yes
+}
+
+agi_ck3_eval_highest_title_tier_value = {
+	value = highest_held_title_tier
+	round = yes
+}

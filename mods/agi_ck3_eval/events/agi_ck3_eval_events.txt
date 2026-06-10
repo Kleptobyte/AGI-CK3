@@ -1,0 +1,176 @@
+﻿namespace = agi_ck3_eval
+
+agi_ck3_eval.0001 = {
+	type = character_event
+	title = agi_ck3_eval.0001.t
+	desc = agi_ck3_eval.0001.desc
+	theme = stewardship
+	left_portrait = root
+
+	option = {
+		name = agi_ck3_eval.0001.a
+	}
+}
+
+agi_ck3_eval.0002 = {
+	type = character_event
+	title = agi_ck3_eval.0002.t
+	desc = agi_ck3_eval.0002.desc
+	theme = stewardship
+	left_portrait = root
+
+	option = {
+		name = agi_ck3_eval.0002.a
+	}
+}
+
+agi_ck3_eval.0003 = {
+	type = character_event
+	title = agi_ck3_eval.0003.t
+	desc = agi_ck3_eval.0003.desc
+	theme = stewardship
+	left_portrait = root
+
+	option = {
+		name = agi_ck3_eval.0003.a
+	}
+}
+
+agi_ck3_eval.0100 = {
+	type = character_event
+	title = agi_ck3_eval.0100.t
+	desc = agi_ck3_eval.0100.desc
+	theme = stewardship
+	left_portrait = root
+
+	option = {
+		name = agi_ck3_eval.0100.a
+	}
+}
+
+agi_ck3_eval.0101 = {
+	type = character_event
+	title = agi_ck3_eval.0101.t
+	desc = agi_ck3_eval.0101.desc
+	theme = stewardship
+	left_portrait = root
+
+	option = {
+		name = agi_ck3_eval.0101.a
+		agi_ck3_eval_event_option_lab_mark_0101_a_effect = yes
+	}
+	option = {
+		name = agi_ck3_eval.0101.b
+		agi_ck3_eval_event_option_lab_mark_0101_b_effect = yes
+	}
+	option = {
+		name = agi_ck3_eval.0101.c
+		agi_ck3_eval_event_option_lab_mark_0101_c_effect = yes
+	}
+}
+
+agi_ck3_eval.0102 = {
+	type = character_event
+	title = agi_ck3_eval.0102.t
+	desc = agi_ck3_eval.0102.desc
+	theme = stewardship
+	left_portrait = root
+
+	after = {
+		agi_ck3_eval_event_option_lab_mark_after_0102_effect = yes
+	}
+
+	option = {
+		name = agi_ck3_eval.0102.a
+	}
+}
+
+agi_ck3_eval.0103 = {
+	type = character_event
+	title = agi_ck3_eval.0103.t
+	desc = agi_ck3_eval.0103.desc
+	theme = stewardship
+	left_portrait = root
+
+	option = {
+		name = agi_ck3_eval.0103.a
+		agi_ck3_eval_event_option_lab_mark_chain_start_effect = yes
+		trigger_event = agi_ck3_eval.0104
+	}
+}
+
+agi_ck3_eval.0104 = {
+	type = character_event
+	title = agi_ck3_eval.0104.t
+	desc = agi_ck3_eval.0104.desc
+	theme = stewardship
+	left_portrait = root
+
+	immediate = {
+		set_variable = {
+			name = agi_ck3_eval_lab_chain_target_seen
+			value = 1
+		}
+	}
+
+	option = {
+		name = agi_ck3_eval.0104.a
+		agi_ck3_eval_event_option_lab_mark_chain_complete_effect = yes
+	}
+}
+
+agi_ck3_eval.0110 = {
+	type = character_event
+	title = agi_ck3_eval.0110.t
+	desc = agi_ck3_eval.0110.desc
+	theme = stewardship
+	left_portrait = root
+
+	option = {
+		name = agi_ck3_eval.0110.a
+		agi_ck3_eval_event_option_lab_mark_window_1_effect = yes
+	}
+}
+
+agi_ck3_eval.0111 = {
+	type = character_event
+	window = big_event_window
+	title = agi_ck3_eval.0111.t
+	desc = agi_ck3_eval.0111.desc
+	theme = stewardship
+	left_portrait = root
+
+	option = {
+		name = agi_ck3_eval.0111.a
+		agi_ck3_eval_event_option_lab_mark_window_2_effect = yes
+	}
+}
+
+agi_ck3_eval.0112 = {
+	type = character_event
+	window = duel_event
+	title = agi_ck3_eval.0112.t
+	desc = agi_ck3_eval.0112.desc
+	theme = stewardship
+	left_portrait = root
+	right_portrait = root
+
+	option = {
+		name = agi_ck3_eval.0112.a
+		agi_ck3_eval_event_option_lab_mark_window_3_effect = yes
+	}
+}
+
+agi_ck3_eval.0113 = {
+	type = character_event
+	window = fullscreen_event
+	title = agi_ck3_eval.0113.t
+	desc = agi_ck3_eval.0113.desc
+	theme = stewardship
+	left_portrait = root
+
+	option = {
+		name = agi_ck3_eval.0113.a
+		agi_ck3_eval_event_option_lab_mark_window_4_effect = yes
+	}
+}

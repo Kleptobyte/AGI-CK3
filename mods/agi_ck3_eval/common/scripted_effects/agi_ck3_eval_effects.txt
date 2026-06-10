@@ -1,0 +1,479 @@
+﻿agi_ck3_eval_mark_probe_effect = {
+	set_variable = {
+		name = agi_ck3_eval_probe
+		value = 1
+	}
+	if = {
+		limit = {
+			NOT = {
+				exists = var:agi_ck3_eval_probe_count
+			}
+		}
+		set_variable = {
+			name = agi_ck3_eval_probe_count
+			value = 0
+		}
+	}
+	change_variable = {
+		name = agi_ck3_eval_probe_count
+		add = 1
+	}
+	agi_ck3_eval_refresh_telemetry_effect = yes
+}
+
+agi_ck3_eval_mark_yearly_tick_effect = {
+	if = {
+		limit = {
+			exists = var:agi_ck3_eval_probe
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_eval_yearly_ticks
+				}
+			}
+			set_variable = {
+				name = agi_ck3_eval_yearly_ticks
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_eval_yearly_ticks
+			add = 1
+		}
+		agi_ck3_eval_refresh_telemetry_effect = yes
+	}
+}
+
+agi_ck3_eval_refresh_telemetry_effect = {
+	set_variable = {
+		name = agi_ck3_eval_telemetry_version
+		value = 1
+	}
+	set_variable = {
+		name = agi_ck3_eval_player_faith_seen
+		value = 1
+	}
+	set_variable = {
+		name = agi_ck3_eval_player_faith
+		value = faith
+	}
+	set_variable = {
+		name = agi_ck3_eval_player_culture_seen
+		value = 1
+	}
+	set_variable = {
+		name = agi_ck3_eval_player_culture
+		value = culture
+	}
+	set_variable = {
+		name = agi_ck3_eval_player_is_christian
+		value = 0
+	}
+	if = {
+		limit = {
+			faith = {
+				religion_tag = christianity_religion
+			}
+		}
+		set_variable = {
+			name = agi_ck3_eval_player_is_christian
+			value = 1
+		}
+	}
+	set_variable = {
+		name = agi_ck3_eval_has_primary_title
+		value = 0
+	}
+	if = {
+		limit = {
+			exists = primary_title
+		}
+		set_variable = {
+			name = agi_ck3_eval_has_primary_title
+			value = 1
+		}
+		set_variable = {
+			name = agi_ck3_eval_primary_title
+			value = primary_title
+		}
+	}
+	set_variable = {
+		name = agi_ck3_eval_primary_title_tier
+		value = agi_ck3_eval_primary_title_tier_value
+	}
+	set_variable = {
+		name = agi_ck3_eval_highest_title_tier
+		value = agi_ck3_eval_highest_title_tier_value
+	}
+	set_variable = {
+		name = agi_ck3_eval_realm_size
+		value = agi_ck3_eval_realm_size_value
+	}
+	set_variable = {
+		name = agi_ck3_eval_is_landed
+		value = 0
+	}
+	if = {
+		limit = {
+			is_landed = yes
+		}
+		set_variable = {
+			name = agi_ck3_eval_is_landed
+			value = 1
+		}
+	}
+	set_variable = {
+		name = agi_ck3_eval_is_landless_adventurer
+		value = 0
+	}
+	if = {
+		limit = {
+			is_landless_adventurer = yes
+		}
+		set_variable = {
+			name = agi_ck3_eval_is_landless_adventurer
+			value = 1
+		}
+	}
+	set_variable = {
+		name = agi_ck3_eval_hre_exists
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_eval_player_controls_hre
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_eval_hre_holder_is_christian
+		value = 0
+	}
+	if = {
+		limit = {
+			exists = title:e_hre.holder
+		}
+		set_variable = {
+			name = agi_ck3_eval_hre_exists
+			value = 1
+		}
+		if = {
+			limit = {
+				has_title = title:e_hre
+			}
+			set_variable = {
+				name = agi_ck3_eval_player_controls_hre
+				value = 1
+			}
+		}
+		title:e_hre.holder = {
+			if = {
+				limit = {
+					faith = {
+						religion_tag = christianity_religion
+					}
+				}
+				root = {
+					set_variable = {
+						name = agi_ck3_eval_hre_holder_is_christian
+						value = 1
+					}
+				}
+			}
+		}
+		agi_ck3_bridge_v2_publish_task_contract_candidate_slots_effect = yes
+	}
+}
+
+agi_ck3_eval_event_option_lab_reset_effect = {
+	set_variable = {
+		name = agi_ck3_eval_lab_version
+		value = 1
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_current_case
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_option_effect_count
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_last_effect_event
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_last_effect_option
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_after_count
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_last_after_event
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_chain_target_seen
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_chain_complete
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_last_window_code
+		value = 0
+	}
+}
+
+agi_ck3_eval_event_option_lab_mark_0101_a_effect = {
+	change_variable = {
+		name = agi_ck3_eval_lab_option_effect_count
+		add = 1
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_current_case
+		value = 101
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_last_effect_event
+		value = 101
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_last_effect_option
+		value = 1
+	}
+}
+
+agi_ck3_eval_event_option_lab_mark_0101_b_effect = {
+	change_variable = {
+		name = agi_ck3_eval_lab_option_effect_count
+		add = 1
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_current_case
+		value = 101
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_last_effect_event
+		value = 101
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_last_effect_option
+		value = 2
+	}
+}
+
+agi_ck3_eval_event_option_lab_mark_0101_c_effect = {
+	change_variable = {
+		name = agi_ck3_eval_lab_option_effect_count
+		add = 1
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_current_case
+		value = 101
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_last_effect_event
+		value = 101
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_last_effect_option
+		value = 3
+	}
+}
+
+agi_ck3_eval_event_option_lab_mark_after_0102_effect = {
+	change_variable = {
+		name = agi_ck3_eval_lab_after_count
+		add = 1
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_last_after_event
+		value = 102
+	}
+}
+
+agi_ck3_eval_event_option_lab_mark_chain_start_effect = {
+	change_variable = {
+		name = agi_ck3_eval_lab_option_effect_count
+		add = 1
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_current_case
+		value = 103
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_last_effect_event
+		value = 103
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_last_effect_option
+		value = 1
+	}
+}
+
+agi_ck3_eval_event_option_lab_mark_chain_complete_effect = {
+	change_variable = {
+		name = agi_ck3_eval_lab_option_effect_count
+		add = 1
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_chain_complete
+		value = 1
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_last_effect_event
+		value = 104
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_last_effect_option
+		value = 1
+	}
+}
+
+agi_ck3_eval_event_option_lab_mark_window_1_effect = {
+	change_variable = {
+		name = agi_ck3_eval_lab_option_effect_count
+		add = 1
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_last_window_code
+		value = 1
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_last_effect_event
+		value = 110
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_last_effect_option
+		value = 1
+	}
+}
+
+agi_ck3_eval_event_option_lab_mark_window_2_effect = {
+	change_variable = {
+		name = agi_ck3_eval_lab_option_effect_count
+		add = 1
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_last_window_code
+		value = 2
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_last_effect_event
+		value = 111
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_last_effect_option
+		value = 1
+	}
+}
+
+agi_ck3_eval_event_option_lab_mark_window_3_effect = {
+	change_variable = {
+		name = agi_ck3_eval_lab_option_effect_count
+		add = 1
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_last_window_code
+		value = 3
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_last_effect_event
+		value = 112
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_last_effect_option
+		value = 1
+	}
+}
+
+agi_ck3_eval_event_option_lab_mark_window_4_effect = {
+	change_variable = {
+		name = agi_ck3_eval_lab_option_effect_count
+		add = 1
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_last_window_code
+		value = 4
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_last_effect_event
+		value = 113
+	}
+	set_variable = {
+		name = agi_ck3_eval_lab_last_effect_option
+		value = 1
+	}
+}
+
+agi_ck3_eval_bridge_mark_success_effect = {
+	if = {
+		limit = {
+			NOT = {
+				exists = var:agi_ck3_bridge_action_count
+			}
+		}
+		set_variable = {
+			name = agi_ck3_bridge_action_count
+			value = 0
+		}
+	}
+	change_variable = {
+		name = agi_ck3_bridge_action_count
+		add = 1
+	}
+	set_variable = {
+		name = agi_ck3_bridge_last_status
+		value = 1
+	}
+	agi_ck3_eval_refresh_telemetry_effect = yes
+}
+
+agi_ck3_eval_bridge_refresh_telemetry_effect = {
+	set_variable = {
+		name = agi_ck3_bridge_last_action_type
+		value = 1
+	}
+	if = {
+		limit = {
+			NOT = {
+				exists = var:agi_ck3_bridge_refresh_telemetry_count
+			}
+		}
+		set_variable = {
+			name = agi_ck3_bridge_refresh_telemetry_count
+			value = 0
+		}
+	}
+	change_variable = {
+		name = agi_ck3_bridge_refresh_telemetry_count
+		add = 1
+	}
+	agi_ck3_eval_bridge_mark_success_effect = yes
+}
+
+agi_ck3_eval_bridge_advance_time_effect = {
+	set_variable = {
+		name = agi_ck3_bridge_last_action_type
+		value = 2
+	}
+	if = {
+		limit = {
+			NOT = {
+				exists = var:agi_ck3_bridge_advance_time_count
+			}
+		}
+		set_variable = {
+			name = agi_ck3_bridge_advance_time_count
+			value = 0
+		}
+	}
+	change_variable = {
+		name = agi_ck3_bridge_advance_time_count
+		add = 1
+	}
+	agi_ck3_eval_bridge_mark_success_effect = yes
+}

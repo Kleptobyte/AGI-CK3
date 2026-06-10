@@ -1,0 +1,5068 @@
+﻿agi_ck3_bridge_v2_initialize_variables_effect = {
+	set_variable = {
+		name = agi_ck3_bridge_v2_protocol_version
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_request_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_action_type
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_actor_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_event_option_request_present
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_event_option_count
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_event_option_requested_event_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_event_option_requested_index
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_event_option_requested_option_code
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_interaction_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_interaction_kind
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_target_id
+		value = 0
+	}
+		set_variable = {
+			name = agi_ck3_bridge_v2_target_resolver
+			value = 0
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_target_match_count
+			value = 0
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_target_title
+			value = 0
+		}
+	set_variable = {
+		name = agi_ck3_bridge_v2_requested_days
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_task_contract_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_task_contract_type
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_task_contract_tier
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_task_contract_slot
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_task_contract_location_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_task_contract_destination_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_task_contract_resolver
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_task_contract_candidate_slot_count
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_task_contract_candidate_slot_overflow
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_task_contract_probe_slot
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_task_contract_accept_slot
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_focus_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_decision_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_war_target_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_war_target_title
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_war_cb
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_war_target_resolver
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_war_claimant_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_war_claimant_resolver
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_camp_target_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_camp_target_title
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_camp_target_resolver
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_marriage_candidate_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_marriage_recipient_resolver
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_marriage_secondary_actor_resolver
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_marriage_secondary_recipient_resolver
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_marriage_matrilineal
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_education_candidate_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_education_recipient_resolver
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_education_secondary_actor_resolver
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_education_secondary_recipient_resolver
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_protocol_version
+		value = 2
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_request_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_action_type
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_actor_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_status
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_reason
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_consumed
+		value = 1
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_enqueue_count
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_before_dispatch_count
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_after_dispatch_count
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_result_status
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_result_reason
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_interaction_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_interaction_kind
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_target_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_target_resolver
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_target_title
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_requested_days
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_task_contract_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_task_contract_type
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_task_contract_tier
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_task_contract_slot
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_task_contract_location_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_task_contract_destination_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_task_contract_resolver
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_focus_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_decision_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_war_target_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_war_target_title
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_war_cb
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_war_target_resolver
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_war_claimant_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_war_claimant_resolver
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_camp_target_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_camp_target_title
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_camp_target_resolver
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_marriage_candidate_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_marriage_recipient_resolver
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_marriage_secondary_actor_resolver
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_marriage_secondary_recipient_resolver
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_marriage_matrilineal
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_education_candidate_id
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_education_recipient_resolver
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_education_secondary_actor_resolver
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_education_secondary_recipient_resolver
+		value = 0
+	}
+	agi_ck3_bridge_v2_clear_result_effect = yes
+}
+
+agi_ck3_bridge_v2_clear_result_effect = {
+	set_variable = {
+		name = agi_ck3_bridge_v2_last_status
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_last_reason
+		value = 0
+	}
+		set_variable = {
+			name = agi_ck3_bridge_v2_target_resolved
+			value = 0
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_target_match_count
+			value = 0
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_available
+			value = 0
+		}
+	set_variable = {
+		name = agi_ck3_bridge_v2_task_contract_resolved
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_task_contract_available
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_focus_available
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_decision_available
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_war_target_resolved
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_war_claimant_resolved
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_war_available
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_camp_target_resolved
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_camp_available
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_marriage_target_resolved
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_marriage_available
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_marriage_match_count
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_education_target_resolved
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_education_available
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_education_match_count
+		value = 0
+	}
+}
+
+agi_ck3_bridge_v2_1_enqueue_request_effect = {
+	if = {
+		limit = {
+			NOT = {
+				exists = var:agi_ck3_bridge_v2_dispatch_count
+			}
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_dispatch_count
+			value = 0
+		}
+	}
+	if = {
+		limit = {
+			NOT = {
+				exists = var:agi_ck3_bridge_v2_queue_enqueue_count
+			}
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_queue_enqueue_count
+			value = 0
+		}
+	}
+	change_variable = {
+		name = agi_ck3_bridge_v2_queue_enqueue_count
+		add = 1
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_protocol_version
+		value = 2
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_request_id
+		value = var:agi_ck3_bridge_v2_request_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_action_type
+		value = var:agi_ck3_bridge_v2_action_type
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_actor_id
+		value = var:agi_ck3_bridge_v2_actor_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_status
+		value = 2
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_reason
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_consumed
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_before_dispatch_count
+		value = var:agi_ck3_bridge_v2_dispatch_count
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_after_dispatch_count
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_result_status
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_result_reason
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_interaction_id
+		value = var:agi_ck3_bridge_v2_interaction_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_interaction_kind
+		value = var:agi_ck3_bridge_v2_interaction_kind
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_target_id
+		value = var:agi_ck3_bridge_v2_target_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_target_resolver
+		value = var:agi_ck3_bridge_v2_target_resolver
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_target_title
+		value = var:agi_ck3_bridge_v2_target_title
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_requested_days
+		value = var:agi_ck3_bridge_v2_requested_days
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_task_contract_id
+		value = var:agi_ck3_bridge_v2_task_contract_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_task_contract_type
+		value = var:agi_ck3_bridge_v2_task_contract_type
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_task_contract_tier
+		value = var:agi_ck3_bridge_v2_task_contract_tier
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_task_contract_slot
+		value = var:agi_ck3_bridge_v2_task_contract_slot
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_task_contract_location_id
+		value = var:agi_ck3_bridge_v2_task_contract_location_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_task_contract_destination_id
+		value = var:agi_ck3_bridge_v2_task_contract_destination_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_task_contract_resolver
+		value = var:agi_ck3_bridge_v2_task_contract_resolver
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_focus_id
+		value = var:agi_ck3_bridge_v2_focus_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_decision_id
+		value = var:agi_ck3_bridge_v2_decision_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_war_target_id
+		value = var:agi_ck3_bridge_v2_war_target_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_war_target_title
+		value = var:agi_ck3_bridge_v2_war_target_title
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_war_cb
+		value = var:agi_ck3_bridge_v2_war_cb
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_war_target_resolver
+		value = var:agi_ck3_bridge_v2_war_target_resolver
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_war_claimant_id
+		value = var:agi_ck3_bridge_v2_war_claimant_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_war_claimant_resolver
+		value = var:agi_ck3_bridge_v2_war_claimant_resolver
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_camp_target_id
+		value = var:agi_ck3_bridge_v2_camp_target_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_camp_target_title
+		value = var:agi_ck3_bridge_v2_camp_target_title
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_camp_target_resolver
+		value = var:agi_ck3_bridge_v2_camp_target_resolver
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_marriage_candidate_id
+		value = var:agi_ck3_bridge_v2_marriage_candidate_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_marriage_recipient_resolver
+		value = var:agi_ck3_bridge_v2_marriage_recipient_resolver
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_marriage_secondary_actor_resolver
+		value = var:agi_ck3_bridge_v2_marriage_secondary_actor_resolver
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_marriage_secondary_recipient_resolver
+		value = var:agi_ck3_bridge_v2_marriage_secondary_recipient_resolver
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_marriage_matrilineal
+		value = var:agi_ck3_bridge_v2_marriage_matrilineal
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_education_candidate_id
+		value = var:agi_ck3_bridge_v2_education_candidate_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_education_recipient_resolver
+		value = var:agi_ck3_bridge_v2_education_recipient_resolver
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_education_secondary_actor_resolver
+		value = var:agi_ck3_bridge_v2_education_secondary_actor_resolver
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_queue_education_secondary_recipient_resolver
+		value = var:agi_ck3_bridge_v2_education_secondary_recipient_resolver
+	}
+}
+
+agi_ck3_bridge_v2_1_load_queued_request_effect = {
+	set_variable = {
+		name = agi_ck3_bridge_v2_request_id
+		value = var:agi_ck3_bridge_v2_queue_request_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_action_type
+		value = var:agi_ck3_bridge_v2_queue_action_type
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_actor_id
+		value = var:agi_ck3_bridge_v2_queue_actor_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_interaction_id
+		value = var:agi_ck3_bridge_v2_queue_interaction_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_interaction_kind
+		value = var:agi_ck3_bridge_v2_queue_interaction_kind
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_target_id
+		value = var:agi_ck3_bridge_v2_queue_target_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_target_resolver
+		value = var:agi_ck3_bridge_v2_queue_target_resolver
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_target_title
+		value = var:agi_ck3_bridge_v2_queue_target_title
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_requested_days
+		value = var:agi_ck3_bridge_v2_queue_requested_days
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_task_contract_id
+		value = var:agi_ck3_bridge_v2_queue_task_contract_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_task_contract_type
+		value = var:agi_ck3_bridge_v2_queue_task_contract_type
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_task_contract_tier
+		value = var:agi_ck3_bridge_v2_queue_task_contract_tier
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_task_contract_slot
+		value = var:agi_ck3_bridge_v2_queue_task_contract_slot
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_task_contract_location_id
+		value = var:agi_ck3_bridge_v2_queue_task_contract_location_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_task_contract_destination_id
+		value = var:agi_ck3_bridge_v2_queue_task_contract_destination_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_task_contract_resolver
+		value = var:agi_ck3_bridge_v2_queue_task_contract_resolver
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_focus_id
+		value = var:agi_ck3_bridge_v2_queue_focus_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_decision_id
+		value = var:agi_ck3_bridge_v2_queue_decision_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_war_target_id
+		value = var:agi_ck3_bridge_v2_queue_war_target_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_war_target_title
+		value = var:agi_ck3_bridge_v2_queue_war_target_title
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_war_cb
+		value = var:agi_ck3_bridge_v2_queue_war_cb
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_war_target_resolver
+		value = var:agi_ck3_bridge_v2_queue_war_target_resolver
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_war_claimant_id
+		value = var:agi_ck3_bridge_v2_queue_war_claimant_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_war_claimant_resolver
+		value = var:agi_ck3_bridge_v2_queue_war_claimant_resolver
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_camp_target_id
+		value = var:agi_ck3_bridge_v2_queue_camp_target_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_camp_target_title
+		value = var:agi_ck3_bridge_v2_queue_camp_target_title
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_camp_target_resolver
+		value = var:agi_ck3_bridge_v2_queue_camp_target_resolver
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_marriage_candidate_id
+		value = var:agi_ck3_bridge_v2_queue_marriage_candidate_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_marriage_recipient_resolver
+		value = var:agi_ck3_bridge_v2_queue_marriage_recipient_resolver
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_marriage_secondary_actor_resolver
+		value = var:agi_ck3_bridge_v2_queue_marriage_secondary_actor_resolver
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_marriage_secondary_recipient_resolver
+		value = var:agi_ck3_bridge_v2_queue_marriage_secondary_recipient_resolver
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_marriage_matrilineal
+		value = var:agi_ck3_bridge_v2_queue_marriage_matrilineal
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_education_candidate_id
+		value = var:agi_ck3_bridge_v2_queue_education_candidate_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_education_recipient_resolver
+		value = var:agi_ck3_bridge_v2_queue_education_recipient_resolver
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_education_secondary_actor_resolver
+		value = var:agi_ck3_bridge_v2_queue_education_secondary_actor_resolver
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_education_secondary_recipient_resolver
+		value = var:agi_ck3_bridge_v2_queue_education_secondary_recipient_resolver
+	}
+}
+
+agi_ck3_bridge_v2_1_consume_queue_effect = {
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_queue_consumed = 0
+		}
+		agi_ck3_bridge_v2_1_load_queued_request_effect = yes
+		agi_ck3_bridge_v2_dispatch_effect = yes
+		set_variable = {
+			name = agi_ck3_bridge_v2_queue_consumed
+			value = 1
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_queue_after_dispatch_count
+			value = var:agi_ck3_bridge_v2_dispatch_count
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_queue_result_status
+			value = var:agi_ck3_bridge_v2_last_status
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_queue_result_reason
+			value = var:agi_ck3_bridge_v2_last_reason
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_queue_status
+			value = var:agi_ck3_bridge_v2_last_status
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_queue_reason
+			value = var:agi_ck3_bridge_v2_last_reason
+		}
+	}
+	else = {
+		set_variable = {
+			name = agi_ck3_bridge_v2_queue_status
+			value = 3
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_queue_reason
+			value = 0
+		}
+	}
+}
+
+agi_ck3_bridge_v2_1_enqueue_and_consume_effect = {
+	agi_ck3_bridge_v2_1_enqueue_request_effect = yes
+	agi_ck3_bridge_v2_1_consume_queue_effect = yes
+}
+
+agi_ck3_bridge_v2_mark_success_effect = {
+	if = {
+		limit = {
+			NOT = {
+				exists = var:agi_ck3_bridge_v2_dispatch_count
+			}
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_dispatch_count
+			value = 0
+		}
+	}
+	change_variable = {
+		name = agi_ck3_bridge_v2_dispatch_count
+		add = 1
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_last_status
+		value = 1
+	}
+}
+
+agi_ck3_bridge_v2_mark_rejected_effect = {
+	if = {
+		limit = {
+			NOT = {
+				exists = var:agi_ck3_bridge_v2_dispatch_count
+			}
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_dispatch_count
+			value = 0
+		}
+	}
+	change_variable = {
+		name = agi_ck3_bridge_v2_dispatch_count
+		add = 1
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_last_status
+		value = 3
+	}
+	set_variable = {
+		name = agi_ck3_bridge_last_status
+		value = 3
+	}
+	agi_ck3_eval_refresh_telemetry_effect = yes
+}
+
+agi_ck3_bridge_v2_mark_unimplemented_effect = {
+	if = {
+		limit = {
+			NOT = {
+				exists = var:agi_ck3_bridge_v2_dispatch_count
+			}
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_dispatch_count
+			value = 0
+		}
+	}
+	change_variable = {
+		name = agi_ck3_bridge_v2_dispatch_count
+		add = 1
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_last_reason
+		value = 1
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_last_status
+		value = 4
+	}
+	set_variable = {
+		name = agi_ck3_bridge_last_status
+		value = 3
+	}
+	agi_ck3_eval_refresh_telemetry_effect = yes
+}
+
+agi_ck3_bridge_v2_record_interaction_request_effect = {
+	set_variable = {
+		name = agi_ck3_bridge_interact_requested_id
+		value = var:agi_ck3_bridge_v2_interaction_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_interact_kind
+		value = var:agi_ck3_bridge_v2_interaction_kind
+	}
+	set_variable = {
+		name = agi_ck3_bridge_interact_target_id
+		value = var:agi_ck3_bridge_v2_target_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_interact_target_resolver
+		value = var:agi_ck3_bridge_v2_target_resolver
+	}
+	set_variable = {
+		name = agi_ck3_bridge_interact_target_title_code
+		value = var:agi_ck3_bridge_v2_target_title
+	}
+	set_variable = {
+		name = agi_ck3_bridge_interact_target_resolved
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_interact_available
+		value = 0
+	}
+}
+
+agi_ck3_bridge_v2_resolve_target_character_effect = {
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_target_resolver = 1
+			exists = title:e_hre.holder
+		}
+		title:e_hre.holder = {
+			save_scope_as = agi_ck3_bridge_v2_target_character
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_target_resolved
+			value = 1
+		}
+		set_variable = {
+			name = agi_ck3_bridge_interact_target_resolved
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_target_resolver = 2
+			exists = primary_spouse
+		}
+		primary_spouse = {
+			save_scope_as = agi_ck3_bridge_v2_target_character
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_target_resolved
+			value = 1
+		}
+		set_variable = {
+			name = agi_ck3_bridge_interact_target_resolved
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_target_resolver = 4
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_target_match_count
+			value = 0
+		}
+		every_pool_guest = {
+			limit = {
+				is_alive = yes
+				is_ruler = no
+			}
+			save_scope_as = agi_ck3_bridge_v2_recruit_guest_candidate
+			if = {
+				limit = {
+					root = {
+						is_character_interaction_valid = {
+							interaction = recruit_guest_interaction
+							recipient = scope:agi_ck3_bridge_v2_recruit_guest_candidate
+						}
+					}
+				}
+				root = {
+					change_variable = {
+						name = agi_ck3_bridge_v2_target_match_count
+						add = 1
+					}
+				}
+				save_scope_as = agi_ck3_bridge_v2_target_character
+			}
+		}
+		if = {
+			limit = {
+				var:agi_ck3_bridge_v2_target_match_count = 1
+				exists = scope:agi_ck3_bridge_v2_target_character
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_target_resolved
+				value = 1
+			}
+			set_variable = {
+				name = agi_ck3_bridge_interact_target_resolved
+				value = 1
+			}
+		}
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_target_resolver = 5
+			exists = liege
+		}
+		liege = {
+			save_scope_as = agi_ck3_bridge_v2_target_character
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_target_resolved
+			value = 1
+		}
+		set_variable = {
+			name = agi_ck3_bridge_interact_target_resolved
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_target_resolver = 6
+			exists = scope:agi_ck3_bridge_v2_target_character
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_target_resolved
+			value = 1
+		}
+		set_variable = {
+			name = agi_ck3_bridge_interact_target_resolved
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_target_resolver = 3
+			var:agi_ck3_bridge_v2_target_title = 536132
+			exists = title:e_hre.holder
+		}
+		title:e_hre.holder = {
+			save_scope_as = agi_ck3_bridge_v2_target_character
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_target_resolved
+			value = 1
+		}
+		set_variable = {
+			name = agi_ck3_bridge_interact_target_resolved
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_target_resolver = 3
+			var:agi_ck3_bridge_v2_target_title = 176588
+			exists = title:c_plzen.holder
+		}
+		title:c_plzen.holder = {
+			save_scope_as = agi_ck3_bridge_v2_target_character
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_target_resolved
+			value = 1
+		}
+		set_variable = {
+			name = agi_ck3_bridge_interact_target_resolved
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_target_resolver = 3
+			var:agi_ck3_bridge_v2_target_title = 868742
+			exists = title:d_saxony.holder
+		}
+		title:d_saxony.holder = {
+			save_scope_as = agi_ck3_bridge_v2_target_character
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_target_resolved
+			value = 1
+		}
+		set_variable = {
+			name = agi_ck3_bridge_interact_target_resolved
+			value = 1
+		}
+	}
+		if = {
+			limit = {
+				var:agi_ck3_bridge_v2_target_resolver = 3
+				var:agi_ck3_bridge_v2_target_title = 119040
+				exists = title:k_bohemia.holder
+		}
+		title:k_bohemia.holder = {
+			save_scope_as = agi_ck3_bridge_v2_target_character
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_target_resolved
+			value = 1
+		}
+		set_variable = {
+			name = agi_ck3_bridge_interact_target_resolved
+			value = 1
+		}
+	}
+}
+
+agi_ck3_bridge_v2_finish_probe_interact_effect = {
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_available = 0
+			var:agi_ck3_bridge_v2_target_resolved = 0
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_last_reason
+			value = 3
+		}
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_available = 0
+			var:agi_ck3_bridge_v2_target_resolved = 1
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_last_reason
+			value = 4
+		}
+	}
+	if = {
+		limit = {
+			NOT = {
+				exists = var:agi_ck3_bridge_v2_probe_count
+			}
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_probe_count
+			value = 0
+		}
+	}
+	change_variable = {
+		name = agi_ck3_bridge_v2_probe_count
+		add = 1
+	}
+	if = {
+		limit = {
+			NOT = {
+				exists = var:agi_ck3_bridge_interact_probe_count
+			}
+		}
+		set_variable = {
+			name = agi_ck3_bridge_interact_probe_count
+			value = 0
+		}
+	}
+	change_variable = {
+		name = agi_ck3_bridge_interact_probe_count
+		add = 1
+	}
+	agi_ck3_eval_bridge_mark_success_effect = yes
+	agi_ck3_bridge_v2_mark_success_effect = yes
+}
+
+agi_ck3_bridge_v2_mark_interact_available_effect = {
+	set_variable = {
+		name = agi_ck3_bridge_v2_target_resolved
+		value = 1
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_available
+		value = 1
+	}
+	set_variable = {
+		name = agi_ck3_bridge_interact_target_resolved
+		value = 1
+	}
+	set_variable = {
+		name = agi_ck3_bridge_interact_available
+		value = 1
+	}
+}
+
+agi_ck3_bridge_v2_mark_scheme_available_effect = {
+	agi_ck3_bridge_v2_mark_interact_available_effect = yes
+}
+
+agi_ck3_bridge_v2_probe_scheme_befriend_effect = {
+	agi_ck3_bridge_v2_resolve_target_character_effect = yes
+	if = {
+		limit = {
+			exists = scope:agi_ck3_bridge_v2_target_character
+			can_start_scheme = {
+				type = befriend
+				target_character = scope:agi_ck3_bridge_v2_target_character
+			}
+		}
+		agi_ck3_bridge_v2_mark_scheme_available_effect = yes
+	}
+	agi_ck3_bridge_v2_finish_probe_interact_effect = yes
+}
+
+agi_ck3_bridge_v2_probe_scheme_learn_language_effect = {
+	agi_ck3_bridge_v2_resolve_target_character_effect = yes
+	if = {
+		limit = {
+			exists = scope:agi_ck3_bridge_v2_target_character
+			can_start_scheme = {
+				type = learn_language
+				target_character = scope:agi_ck3_bridge_v2_target_character
+			}
+		}
+		agi_ck3_bridge_v2_mark_scheme_available_effect = yes
+	}
+	agi_ck3_bridge_v2_finish_probe_interact_effect = yes
+}
+
+agi_ck3_bridge_v2_probe_scheme_murder_effect = {
+	agi_ck3_bridge_v2_resolve_target_character_effect = yes
+	if = {
+		limit = {
+			exists = scope:agi_ck3_bridge_v2_target_character
+			can_start_scheme = {
+				type = murder
+				target_character = scope:agi_ck3_bridge_v2_target_character
+			}
+		}
+		agi_ck3_bridge_v2_mark_scheme_available_effect = yes
+	}
+	agi_ck3_bridge_v2_finish_probe_interact_effect = yes
+}
+
+agi_ck3_bridge_v2_probe_scheme_seduce_effect = {
+	agi_ck3_bridge_v2_resolve_target_character_effect = yes
+	if = {
+		limit = {
+			exists = scope:agi_ck3_bridge_v2_target_character
+			can_start_scheme = {
+				type = seduce
+				target_character = scope:agi_ck3_bridge_v2_target_character
+			}
+		}
+		agi_ck3_bridge_v2_mark_scheme_available_effect = yes
+	}
+	agi_ck3_bridge_v2_finish_probe_interact_effect = yes
+}
+
+agi_ck3_bridge_v2_probe_scheme_sway_effect = {
+	agi_ck3_bridge_v2_resolve_target_character_effect = yes
+	if = {
+		limit = {
+			exists = scope:agi_ck3_bridge_v2_target_character
+			can_start_scheme = {
+				type = sway
+				target_character = scope:agi_ck3_bridge_v2_target_character
+			}
+		}
+		agi_ck3_bridge_v2_mark_scheme_available_effect = yes
+	}
+	agi_ck3_bridge_v2_finish_probe_interact_effect = yes
+}
+
+	agi_ck3_bridge_v2_probe_offer_vassalization_effect = {
+		agi_ck3_bridge_v2_resolve_target_character_effect = yes
+		if = {
+		limit = {
+			exists = scope:agi_ck3_bridge_v2_target_character
+			is_character_interaction_valid = {
+				interaction = offer_vassalization_interaction
+				recipient = scope:agi_ck3_bridge_v2_target_character
+			}
+		}
+		agi_ck3_bridge_v2_mark_interact_available_effect = yes
+	}
+		agi_ck3_bridge_v2_finish_probe_interact_effect = yes
+	}
+
+		agi_ck3_bridge_v2_probe_recruit_guest_effect = {
+			agi_ck3_bridge_v2_resolve_target_character_effect = yes
+			if = {
+				limit = {
+				var:agi_ck3_bridge_v2_target_resolved = 1
+				exists = scope:agi_ck3_bridge_v2_target_character
+				is_character_interaction_valid = {
+					interaction = recruit_guest_interaction
+					recipient = scope:agi_ck3_bridge_v2_target_character
+				}
+			}
+			agi_ck3_bridge_v2_mark_interact_available_effect = yes
+		}
+			agi_ck3_bridge_v2_finish_probe_interact_effect = yes
+		}
+
+		agi_ck3_bridge_v2_probe_send_gift_effect = {
+			agi_ck3_bridge_v2_resolve_target_character_effect = yes
+			if = {
+				limit = {
+					var:agi_ck3_bridge_v2_target_resolved = 1
+					exists = scope:agi_ck3_bridge_v2_target_character
+					is_character_interaction_valid = {
+						interaction = gift_interaction
+						recipient = scope:agi_ck3_bridge_v2_target_character
+					}
+				}
+				agi_ck3_bridge_v2_mark_interact_available_effect = yes
+			}
+			agi_ck3_bridge_v2_finish_probe_interact_effect = yes
+		}
+
+		agi_ck3_bridge_v2_probe_negotiate_alliance_effect = {
+			agi_ck3_bridge_v2_resolve_target_character_effect = yes
+			if = {
+				limit = {
+					var:agi_ck3_bridge_v2_target_resolved = 1
+					exists = scope:agi_ck3_bridge_v2_target_character
+					is_character_interaction_valid = {
+						interaction = negotiate_alliance_interaction
+						recipient = scope:agi_ck3_bridge_v2_target_character
+					}
+				}
+				agi_ck3_bridge_v2_mark_interact_available_effect = yes
+			}
+			agi_ck3_bridge_v2_finish_probe_interact_effect = yes
+		}
+
+		agi_ck3_bridge_v2_probe_start_independence_faction_effect = {
+			agi_ck3_bridge_v2_resolve_target_character_effect = yes
+			if = {
+				limit = {
+					var:agi_ck3_bridge_v2_target_resolved = 1
+					exists = scope:agi_ck3_bridge_v2_target_character
+					is_character_interaction_valid = {
+						interaction = start_independence_faction_interaction
+						recipient = scope:agi_ck3_bridge_v2_target_character
+					}
+				}
+				agi_ck3_bridge_v2_mark_interact_available_effect = yes
+			}
+			agi_ck3_bridge_v2_finish_probe_interact_effect = yes
+		}
+
+		agi_ck3_bridge_v2_probe_join_independence_faction_effect = {
+			agi_ck3_bridge_v2_resolve_target_character_effect = yes
+			if = {
+				limit = {
+					var:agi_ck3_bridge_v2_target_resolved = 1
+					exists = scope:agi_ck3_bridge_v2_target_character
+					is_character_interaction_valid = {
+						interaction = join_independence_faction_interaction
+						recipient = scope:agi_ck3_bridge_v2_target_character
+					}
+				}
+				agi_ck3_bridge_v2_mark_interact_available_effect = yes
+			}
+			agi_ck3_bridge_v2_finish_probe_interact_effect = yes
+		}
+
+agi_ck3_bridge_v2_probe_interact_effect = {
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_interaction_id = 1
+		}
+		agi_ck3_bridge_v2_probe_scheme_befriend_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_interaction_id = 2
+		}
+		agi_ck3_bridge_v2_probe_scheme_learn_language_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_interaction_id = 3
+		}
+		agi_ck3_bridge_v2_probe_scheme_murder_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_interaction_id = 4
+		}
+		agi_ck3_bridge_v2_probe_scheme_seduce_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_interaction_id = 5
+		}
+		agi_ck3_bridge_v2_probe_scheme_sway_effect = yes
+	}
+		if = {
+			limit = {
+				var:agi_ck3_bridge_v2_interaction_id = 6
+			}
+			agi_ck3_bridge_v2_probe_offer_vassalization_effect = yes
+		}
+			if = {
+				limit = {
+					var:agi_ck3_bridge_v2_interaction_id = 7
+				}
+				agi_ck3_bridge_v2_probe_recruit_guest_effect = yes
+			}
+			if = {
+				limit = {
+					var:agi_ck3_bridge_v2_interaction_id = 8
+				}
+				agi_ck3_bridge_v2_probe_send_gift_effect = yes
+			}
+			if = {
+				limit = {
+					var:agi_ck3_bridge_v2_interaction_id = 9
+				}
+				agi_ck3_bridge_v2_probe_negotiate_alliance_effect = yes
+			}
+			if = {
+				limit = {
+					var:agi_ck3_bridge_v2_interaction_id = 10
+				}
+				agi_ck3_bridge_v2_probe_start_independence_faction_effect = yes
+			}
+			if = {
+				limit = {
+					var:agi_ck3_bridge_v2_interaction_id = 11
+				}
+				agi_ck3_bridge_v2_probe_join_independence_faction_effect = yes
+			}
+			if = {
+				limit = {
+					var:agi_ck3_bridge_v2_last_status = 0
+		}
+		agi_ck3_bridge_v2_mark_unimplemented_effect = yes
+	}
+}
+
+agi_ck3_bridge_v2_finish_execute_interact_success_effect = {
+	if = {
+		limit = {
+			NOT = {
+				exists = var:agi_ck3_bridge_v2_execute_count
+			}
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			value = 0
+		}
+	}
+	change_variable = {
+		name = agi_ck3_bridge_v2_execute_count
+		add = 1
+	}
+	if = {
+		limit = {
+			NOT = {
+				exists = var:agi_ck3_bridge_interact_count
+			}
+		}
+		set_variable = {
+			name = agi_ck3_bridge_interact_count
+			value = 0
+		}
+	}
+	change_variable = {
+		name = agi_ck3_bridge_interact_count
+		add = 1
+	}
+	agi_ck3_eval_bridge_mark_success_effect = yes
+	agi_ck3_bridge_v2_mark_success_effect = yes
+}
+
+agi_ck3_bridge_v2_finish_execute_interact_rejected_effect = {
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_target_resolved = 0
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_last_reason
+			value = 3
+		}
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_target_resolved = 1
+			var:agi_ck3_bridge_v2_available = 0
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_last_reason
+			value = 4
+		}
+	}
+	agi_ck3_bridge_v2_mark_rejected_effect = yes
+}
+
+agi_ck3_bridge_v2_execute_scheme_befriend_effect = {
+	agi_ck3_bridge_v2_resolve_target_character_effect = yes
+	if = {
+		limit = {
+			exists = scope:agi_ck3_bridge_v2_target_character
+			can_start_scheme = {
+				type = befriend
+				target_character = scope:agi_ck3_bridge_v2_target_character
+			}
+		}
+		agi_ck3_bridge_v2_mark_scheme_available_effect = yes
+		start_scheme = {
+			type = befriend
+			target_character = scope:agi_ck3_bridge_v2_target_character
+		}
+		agi_ck3_bridge_v2_finish_execute_interact_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_last_status = 0
+		}
+		agi_ck3_bridge_v2_finish_execute_interact_rejected_effect = yes
+	}
+}
+
+agi_ck3_bridge_v2_execute_scheme_learn_language_effect = {
+	agi_ck3_bridge_v2_resolve_target_character_effect = yes
+	if = {
+		limit = {
+			exists = scope:agi_ck3_bridge_v2_target_character
+			can_start_scheme = {
+				type = learn_language
+				target_character = scope:agi_ck3_bridge_v2_target_character
+			}
+		}
+		agi_ck3_bridge_v2_mark_scheme_available_effect = yes
+		start_scheme = {
+			type = learn_language
+			target_character = scope:agi_ck3_bridge_v2_target_character
+		}
+		agi_ck3_bridge_v2_finish_execute_interact_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_last_status = 0
+		}
+		agi_ck3_bridge_v2_finish_execute_interact_rejected_effect = yes
+	}
+}
+
+agi_ck3_bridge_v2_execute_scheme_murder_effect = {
+	agi_ck3_bridge_v2_resolve_target_character_effect = yes
+	if = {
+		limit = {
+			exists = scope:agi_ck3_bridge_v2_target_character
+			can_start_scheme = {
+				type = murder
+				target_character = scope:agi_ck3_bridge_v2_target_character
+			}
+		}
+		agi_ck3_bridge_v2_mark_scheme_available_effect = yes
+		start_scheme = {
+			type = murder
+			target_character = scope:agi_ck3_bridge_v2_target_character
+		}
+		agi_ck3_bridge_v2_finish_execute_interact_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_last_status = 0
+		}
+		agi_ck3_bridge_v2_finish_execute_interact_rejected_effect = yes
+	}
+}
+
+agi_ck3_bridge_v2_execute_scheme_seduce_effect = {
+	agi_ck3_bridge_v2_resolve_target_character_effect = yes
+	if = {
+		limit = {
+			exists = scope:agi_ck3_bridge_v2_target_character
+			can_start_scheme = {
+				type = seduce
+				target_character = scope:agi_ck3_bridge_v2_target_character
+			}
+		}
+		agi_ck3_bridge_v2_mark_scheme_available_effect = yes
+		start_scheme = {
+			type = seduce
+			target_character = scope:agi_ck3_bridge_v2_target_character
+		}
+		agi_ck3_bridge_v2_finish_execute_interact_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_last_status = 0
+		}
+		agi_ck3_bridge_v2_finish_execute_interact_rejected_effect = yes
+	}
+}
+
+agi_ck3_bridge_v2_execute_scheme_sway_effect = {
+	agi_ck3_bridge_v2_resolve_target_character_effect = yes
+	if = {
+		limit = {
+			exists = scope:agi_ck3_bridge_v2_target_character
+			can_start_scheme = {
+				type = sway
+				target_character = scope:agi_ck3_bridge_v2_target_character
+			}
+		}
+		agi_ck3_bridge_v2_mark_scheme_available_effect = yes
+		start_scheme = {
+			type = sway
+			target_character = scope:agi_ck3_bridge_v2_target_character
+		}
+		agi_ck3_bridge_v2_finish_execute_interact_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_last_status = 0
+		}
+		agi_ck3_bridge_v2_finish_execute_interact_rejected_effect = yes
+	}
+}
+
+	agi_ck3_bridge_v2_execute_offer_vassalization_effect = {
+		agi_ck3_bridge_v2_resolve_target_character_effect = yes
+		if = {
+		limit = {
+			exists = scope:agi_ck3_bridge_v2_target_character
+			is_character_interaction_valid = {
+				interaction = offer_vassalization_interaction
+				recipient = scope:agi_ck3_bridge_v2_target_character
+			}
+		}
+		agi_ck3_bridge_v2_mark_interact_available_effect = yes
+		run_interaction = {
+			interaction = offer_vassalization_interaction
+			actor = root
+			recipient = scope:agi_ck3_bridge_v2_target_character
+			execute_threshold = accept
+		}
+		agi_ck3_bridge_v2_finish_execute_interact_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_last_status = 0
+		}
+			agi_ck3_bridge_v2_finish_execute_interact_rejected_effect = yes
+		}
+	}
+
+		agi_ck3_bridge_v2_execute_recruit_guest_effect = {
+			agi_ck3_bridge_v2_resolve_target_character_effect = yes
+			if = {
+				limit = {
+				var:agi_ck3_bridge_v2_target_resolved = 1
+				exists = scope:agi_ck3_bridge_v2_target_character
+				is_character_interaction_valid = {
+					interaction = recruit_guest_interaction
+					recipient = scope:agi_ck3_bridge_v2_target_character
+				}
+			}
+			agi_ck3_bridge_v2_mark_interact_available_effect = yes
+			run_interaction = {
+				interaction = recruit_guest_interaction
+				actor = root
+				recipient = scope:agi_ck3_bridge_v2_target_character
+				execute_threshold = accept
+			}
+			agi_ck3_bridge_v2_finish_execute_interact_success_effect = yes
+		}
+		if = {
+			limit = {
+				var:agi_ck3_bridge_v2_last_status = 0
+			}
+				agi_ck3_bridge_v2_finish_execute_interact_rejected_effect = yes
+			}
+		}
+
+		agi_ck3_bridge_v2_execute_send_gift_effect = {
+			agi_ck3_bridge_v2_resolve_target_character_effect = yes
+			if = {
+				limit = {
+					var:agi_ck3_bridge_v2_target_resolved = 1
+					exists = scope:agi_ck3_bridge_v2_target_character
+					is_character_interaction_valid = {
+						interaction = gift_interaction
+						recipient = scope:agi_ck3_bridge_v2_target_character
+					}
+				}
+				agi_ck3_bridge_v2_mark_interact_available_effect = yes
+				run_interaction = {
+					interaction = gift_interaction
+					actor = root
+					recipient = scope:agi_ck3_bridge_v2_target_character
+					execute_threshold = accept
+				}
+				agi_ck3_bridge_v2_finish_execute_interact_success_effect = yes
+			}
+			if = {
+				limit = {
+					var:agi_ck3_bridge_v2_last_status = 0
+				}
+				agi_ck3_bridge_v2_finish_execute_interact_rejected_effect = yes
+			}
+		}
+
+		agi_ck3_bridge_v2_execute_negotiate_alliance_effect = {
+			agi_ck3_bridge_v2_resolve_target_character_effect = yes
+			if = {
+				limit = {
+					var:agi_ck3_bridge_v2_target_resolved = 1
+					exists = scope:agi_ck3_bridge_v2_target_character
+					is_character_interaction_valid = {
+						interaction = negotiate_alliance_interaction
+						recipient = scope:agi_ck3_bridge_v2_target_character
+					}
+				}
+				agi_ck3_bridge_v2_mark_interact_available_effect = yes
+				run_interaction = {
+					interaction = negotiate_alliance_interaction
+					actor = root
+					recipient = scope:agi_ck3_bridge_v2_target_character
+					execute_threshold = accept
+				}
+				agi_ck3_bridge_v2_finish_execute_interact_success_effect = yes
+			}
+			if = {
+				limit = {
+					var:agi_ck3_bridge_v2_last_status = 0
+				}
+				agi_ck3_bridge_v2_finish_execute_interact_rejected_effect = yes
+			}
+		}
+
+		agi_ck3_bridge_v2_execute_start_independence_faction_effect = {
+			agi_ck3_bridge_v2_resolve_target_character_effect = yes
+			if = {
+				limit = {
+					var:agi_ck3_bridge_v2_target_resolved = 1
+					exists = scope:agi_ck3_bridge_v2_target_character
+					is_character_interaction_valid = {
+						interaction = start_independence_faction_interaction
+						recipient = scope:agi_ck3_bridge_v2_target_character
+					}
+				}
+				agi_ck3_bridge_v2_mark_interact_available_effect = yes
+				run_interaction = {
+					interaction = start_independence_faction_interaction
+					actor = root
+					recipient = scope:agi_ck3_bridge_v2_target_character
+					execute_threshold = accept
+				}
+				agi_ck3_bridge_v2_finish_execute_interact_success_effect = yes
+			}
+			if = {
+				limit = {
+					var:agi_ck3_bridge_v2_last_status = 0
+				}
+				agi_ck3_bridge_v2_finish_execute_interact_rejected_effect = yes
+			}
+		}
+
+		agi_ck3_bridge_v2_execute_join_independence_faction_effect = {
+			agi_ck3_bridge_v2_resolve_target_character_effect = yes
+			if = {
+				limit = {
+					var:agi_ck3_bridge_v2_target_resolved = 1
+					exists = scope:agi_ck3_bridge_v2_target_character
+					is_character_interaction_valid = {
+						interaction = join_independence_faction_interaction
+						recipient = scope:agi_ck3_bridge_v2_target_character
+					}
+				}
+				agi_ck3_bridge_v2_mark_interact_available_effect = yes
+				run_interaction = {
+					interaction = join_independence_faction_interaction
+					actor = root
+					recipient = scope:agi_ck3_bridge_v2_target_character
+					execute_threshold = accept
+				}
+				agi_ck3_bridge_v2_finish_execute_interact_success_effect = yes
+			}
+			if = {
+				limit = {
+					var:agi_ck3_bridge_v2_last_status = 0
+				}
+				agi_ck3_bridge_v2_finish_execute_interact_rejected_effect = yes
+			}
+		}
+
+agi_ck3_bridge_v2_execute_interact_effect = {
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_interaction_id = 1
+		}
+		agi_ck3_bridge_v2_execute_scheme_befriend_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_interaction_id = 2
+		}
+		agi_ck3_bridge_v2_execute_scheme_learn_language_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_interaction_id = 3
+		}
+		agi_ck3_bridge_v2_execute_scheme_murder_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_interaction_id = 4
+		}
+		agi_ck3_bridge_v2_execute_scheme_seduce_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_interaction_id = 5
+		}
+		agi_ck3_bridge_v2_execute_scheme_sway_effect = yes
+	}
+		if = {
+			limit = {
+				var:agi_ck3_bridge_v2_interaction_id = 6
+			}
+			agi_ck3_bridge_v2_execute_offer_vassalization_effect = yes
+		}
+			if = {
+				limit = {
+					var:agi_ck3_bridge_v2_interaction_id = 7
+				}
+				agi_ck3_bridge_v2_execute_recruit_guest_effect = yes
+			}
+			if = {
+				limit = {
+					var:agi_ck3_bridge_v2_interaction_id = 8
+				}
+				agi_ck3_bridge_v2_execute_send_gift_effect = yes
+			}
+			if = {
+				limit = {
+					var:agi_ck3_bridge_v2_interaction_id = 9
+				}
+				agi_ck3_bridge_v2_execute_negotiate_alliance_effect = yes
+			}
+			if = {
+				limit = {
+					var:agi_ck3_bridge_v2_interaction_id = 10
+				}
+				agi_ck3_bridge_v2_execute_start_independence_faction_effect = yes
+			}
+			if = {
+				limit = {
+					var:agi_ck3_bridge_v2_interaction_id = 11
+				}
+				agi_ck3_bridge_v2_execute_join_independence_faction_effect = yes
+			}
+			if = {
+				limit = {
+					var:agi_ck3_bridge_v2_last_status = 0
+		}
+		agi_ck3_bridge_v2_mark_unimplemented_effect = yes
+	}
+}
+
+agi_ck3_bridge_v2_record_lifestyle_focus_request_effect = {
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 13
+		}
+		set_variable = {
+			name = agi_ck3_bridge_focus_probe_requested_id
+			value = var:agi_ck3_bridge_v2_focus_id
+		}
+		set_variable = {
+			name = agi_ck3_bridge_focus_probe_available
+			value = 0
+		}
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 8
+		}
+		set_variable = {
+			name = agi_ck3_bridge_select_focus_requested_id
+			value = var:agi_ck3_bridge_v2_focus_id
+		}
+		set_variable = {
+			name = agi_ck3_bridge_select_focus_available
+			value = 0
+		}
+	}
+}
+
+agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = {
+	set_variable = {
+		name = agi_ck3_bridge_v2_available
+		value = 1
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_focus_available
+		value = 1
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 13
+		}
+		set_variable = {
+			name = agi_ck3_bridge_focus_probe_available
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 8
+		}
+		set_variable = {
+			name = agi_ck3_bridge_select_focus_available
+			value = 1
+		}
+	}
+}
+
+agi_ck3_bridge_v2_probe_lifestyle_focus_effect = {
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 1
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			government_has_flag = government_is_landless_adventurer
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 2
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 3
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 4
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 5
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			government_has_flag = government_is_landless_adventurer
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 6
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 7
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 8
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 9
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			government_has_flag = government_is_landless_adventurer
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 10
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 11
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 12
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 13
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			government_has_flag = government_is_landless_adventurer
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 14
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 15
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 16
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 17
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			government_has_flag = government_is_landless_adventurer
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 18
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 19
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 20
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_available = 0
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_last_reason
+			value = 4
+		}
+	}
+	if = {
+		limit = {
+			NOT = {
+				exists = var:agi_ck3_bridge_focus_probe_count
+			}
+		}
+		set_variable = {
+			name = agi_ck3_bridge_focus_probe_count
+			value = 0
+		}
+	}
+	change_variable = {
+		name = agi_ck3_bridge_focus_probe_count
+		add = 1
+	}
+	if = {
+		limit = {
+			NOT = {
+				exists = var:agi_ck3_bridge_v2_probe_count
+			}
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_probe_count
+			value = 0
+		}
+	}
+	change_variable = {
+		name = agi_ck3_bridge_v2_probe_count
+		add = 1
+	}
+	agi_ck3_eval_bridge_mark_success_effect = yes
+	agi_ck3_bridge_v2_mark_success_effect = yes
+}
+
+agi_ck3_bridge_v2_finish_select_lifestyle_focus_success_effect = {
+	if = {
+		limit = {
+			NOT = {
+				exists = var:agi_ck3_bridge_select_focus_count
+			}
+		}
+		set_variable = {
+			name = agi_ck3_bridge_select_focus_count
+			value = 0
+		}
+	}
+	change_variable = {
+		name = agi_ck3_bridge_select_focus_count
+		add = 1
+	}
+	if = {
+		limit = {
+			NOT = {
+				exists = var:agi_ck3_bridge_v2_execute_count
+			}
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			value = 0
+		}
+	}
+	change_variable = {
+		name = agi_ck3_bridge_v2_execute_count
+		add = 1
+	}
+	agi_ck3_eval_bridge_mark_success_effect = yes
+	agi_ck3_bridge_v2_mark_success_effect = yes
+}
+
+agi_ck3_bridge_v2_select_lifestyle_focus_effect = {
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 1
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			government_has_flag = government_is_landless_adventurer
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+		set_focus = diplomacy_adventurer_focus
+		agi_ck3_bridge_v2_finish_select_lifestyle_focus_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 2
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+		set_focus = diplomacy_family_focus
+		agi_ck3_bridge_v2_finish_select_lifestyle_focus_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 3
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+		set_focus = diplomacy_foreign_affairs_focus
+		agi_ck3_bridge_v2_finish_select_lifestyle_focus_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 4
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+		set_focus = diplomacy_majesty_focus
+		agi_ck3_bridge_v2_finish_select_lifestyle_focus_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 5
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			government_has_flag = government_is_landless_adventurer
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+		set_focus = intrigue_adventurer_focus
+		agi_ck3_bridge_v2_finish_select_lifestyle_focus_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 6
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+		set_focus = intrigue_intimidation_focus
+		agi_ck3_bridge_v2_finish_select_lifestyle_focus_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 7
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+		set_focus = intrigue_skulduggery_focus
+		agi_ck3_bridge_v2_finish_select_lifestyle_focus_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 8
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+		set_focus = intrigue_temptation_focus
+		agi_ck3_bridge_v2_finish_select_lifestyle_focus_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 9
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			government_has_flag = government_is_landless_adventurer
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+		set_focus = learning_adventurer_focus
+		agi_ck3_bridge_v2_finish_select_lifestyle_focus_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 10
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+		set_focus = learning_medicine_focus
+		agi_ck3_bridge_v2_finish_select_lifestyle_focus_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 11
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+		set_focus = learning_scholarship_focus
+		agi_ck3_bridge_v2_finish_select_lifestyle_focus_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 12
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+		set_focus = learning_theology_focus
+		agi_ck3_bridge_v2_finish_select_lifestyle_focus_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 13
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			government_has_flag = government_is_landless_adventurer
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+		set_focus = martial_adventurer_focus
+		agi_ck3_bridge_v2_finish_select_lifestyle_focus_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 14
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+		set_focus = martial_authority_focus
+		agi_ck3_bridge_v2_finish_select_lifestyle_focus_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 15
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+		set_focus = martial_chivalry_focus
+		agi_ck3_bridge_v2_finish_select_lifestyle_focus_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 16
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+		set_focus = martial_strategy_focus
+		agi_ck3_bridge_v2_finish_select_lifestyle_focus_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 17
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			government_has_flag = government_is_landless_adventurer
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+		set_focus = stewardship_adventurer_focus
+		agi_ck3_bridge_v2_finish_select_lifestyle_focus_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 18
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+		set_focus = stewardship_domain_focus
+		agi_ck3_bridge_v2_finish_select_lifestyle_focus_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 19
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+		set_focus = stewardship_duty_focus
+		agi_ck3_bridge_v2_finish_select_lifestyle_focus_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_focus_id = 20
+			can_select_lifestyle_focus = yes
+			has_any_focus = no
+			NOT = { government_has_flag = government_is_landless_adventurer }
+		}
+		agi_ck3_bridge_v2_mark_lifestyle_focus_available_effect = yes
+		set_focus = stewardship_wealth_focus
+		agi_ck3_bridge_v2_finish_select_lifestyle_focus_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_last_status = 0
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_last_reason
+			value = 4
+		}
+		agi_ck3_bridge_v2_mark_rejected_effect = yes
+	}
+}
+
+agi_ck3_bridge_v2_record_war_request_effect = {
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 9
+		}
+		set_variable = {
+			name = agi_ck3_bridge_war_probe_target_id
+			value = var:agi_ck3_bridge_v2_war_target_id
+		}
+		set_variable = {
+			name = agi_ck3_bridge_war_probe_target_title_code
+			value = var:agi_ck3_bridge_v2_war_target_title
+		}
+		set_variable = {
+			name = agi_ck3_bridge_war_probe_requested_cb
+			value = var:agi_ck3_bridge_v2_war_cb
+		}
+		set_variable = {
+			name = agi_ck3_bridge_war_probe_target_resolver
+			value = var:agi_ck3_bridge_v2_war_target_resolver
+		}
+		set_variable = {
+			name = agi_ck3_bridge_war_probe_target_resolved
+			value = 0
+		}
+		set_variable = {
+			name = agi_ck3_bridge_war_probe_claimant_id
+			value = var:agi_ck3_bridge_v2_war_claimant_id
+		}
+		set_variable = {
+			name = agi_ck3_bridge_war_probe_claimant_resolved
+			value = 0
+		}
+		set_variable = {
+			name = agi_ck3_bridge_war_probe_available
+			value = 0
+		}
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 12
+		}
+		set_variable = {
+			name = agi_ck3_bridge_war_declare_target_id
+			value = var:agi_ck3_bridge_v2_war_target_id
+		}
+		set_variable = {
+			name = agi_ck3_bridge_war_declare_target_title_code
+			value = var:agi_ck3_bridge_v2_war_target_title
+		}
+		set_variable = {
+			name = agi_ck3_bridge_war_declare_requested_cb
+			value = var:agi_ck3_bridge_v2_war_cb
+		}
+		set_variable = {
+			name = agi_ck3_bridge_war_declare_target_resolver
+			value = var:agi_ck3_bridge_v2_war_target_resolver
+		}
+		set_variable = {
+			name = agi_ck3_bridge_war_declare_target_resolved
+			value = 0
+		}
+		set_variable = {
+			name = agi_ck3_bridge_war_declare_claimant_id
+			value = var:agi_ck3_bridge_v2_war_claimant_id
+		}
+		set_variable = {
+			name = agi_ck3_bridge_war_declare_claimant_resolved
+			value = 0
+		}
+		set_variable = {
+			name = agi_ck3_bridge_war_declare_available
+			value = 0
+		}
+	}
+}
+
+agi_ck3_bridge_v2_mark_war_target_resolved_effect = {
+	set_variable = {
+		name = agi_ck3_bridge_v2_war_target_resolved
+		value = 1
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 9
+		}
+		set_variable = {
+			name = agi_ck3_bridge_war_probe_target_resolved
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 12
+		}
+		set_variable = {
+			name = agi_ck3_bridge_war_declare_target_resolved
+			value = 1
+		}
+	}
+}
+
+agi_ck3_bridge_v2_mark_war_claimant_resolved_effect = {
+	set_variable = {
+		name = agi_ck3_bridge_v2_war_claimant_resolved
+		value = 1
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 9
+		}
+		set_variable = {
+			name = agi_ck3_bridge_war_probe_claimant_resolved
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 12
+		}
+		set_variable = {
+			name = agi_ck3_bridge_war_declare_claimant_resolved
+			value = 1
+		}
+	}
+}
+
+agi_ck3_bridge_v2_resolve_war_claimant_effect = {
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_war_claimant_resolver = 1
+		}
+		save_scope_as = agi_ck3_bridge_v2_war_claimant_character
+		agi_ck3_bridge_v2_mark_war_claimant_resolved_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_war_claimant_resolver = 2
+			exists = primary_spouse
+		}
+		primary_spouse = {
+			save_scope_as = agi_ck3_bridge_v2_war_claimant_character
+		}
+		agi_ck3_bridge_v2_mark_war_claimant_resolved_effect = yes
+	}
+}
+
+agi_ck3_bridge_v2_resolve_war_target_effect = {
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_war_target_resolver = 1
+			var:agi_ck3_bridge_v2_war_target_title = 536132
+			var:agi_ck3_bridge_v2_war_cb = 1
+			exists = title:e_hre
+			exists = title:e_hre.holder
+		}
+		title:e_hre = {
+			save_scope_as = agi_ck3_bridge_v2_war_target_title_scope
+		}
+		title:e_hre.holder = {
+			save_scope_as = agi_ck3_bridge_v2_war_target_character
+		}
+		agi_ck3_bridge_v2_mark_war_target_resolved_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_war_target_resolver = 1
+			var:agi_ck3_bridge_v2_war_target_title = 176588
+			var:agi_ck3_bridge_v2_war_cb = 1
+			exists = title:c_plzen
+			exists = title:c_plzen.holder
+		}
+		title:c_plzen = {
+			save_scope_as = agi_ck3_bridge_v2_war_target_title_scope
+		}
+		title:c_plzen.holder = {
+			save_scope_as = agi_ck3_bridge_v2_war_target_character
+		}
+		agi_ck3_bridge_v2_mark_war_target_resolved_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_war_target_resolver = 1
+			var:agi_ck3_bridge_v2_war_target_title = 868742
+			var:agi_ck3_bridge_v2_war_cb = 1
+			exists = title:d_saxony
+			exists = title:d_saxony.holder
+		}
+		title:d_saxony = {
+			save_scope_as = agi_ck3_bridge_v2_war_target_title_scope
+		}
+		title:d_saxony.holder = {
+			save_scope_as = agi_ck3_bridge_v2_war_target_character
+		}
+		agi_ck3_bridge_v2_mark_war_target_resolved_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_war_target_resolver = 1
+			var:agi_ck3_bridge_v2_war_target_title = 119040
+			var:agi_ck3_bridge_v2_war_cb = 1
+			exists = title:k_bohemia
+			exists = title:k_bohemia.holder
+		}
+		title:k_bohemia = {
+			save_scope_as = agi_ck3_bridge_v2_war_target_title_scope
+		}
+		title:k_bohemia.holder = {
+			save_scope_as = agi_ck3_bridge_v2_war_target_character
+		}
+		agi_ck3_bridge_v2_mark_war_target_resolved_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_war_target_resolver = 2
+			var:agi_ck3_bridge_v2_war_cb = 1
+			exists = scope:agi_ck3_bridge_v2_war_target_title_scope
+			exists = scope:agi_ck3_bridge_v2_war_target_character
+		}
+		agi_ck3_bridge_v2_mark_war_target_resolved_effect = yes
+	}
+}
+
+agi_ck3_bridge_v2_mark_war_available_effect = {
+	set_variable = {
+		name = agi_ck3_bridge_v2_available
+		value = 1
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_war_available
+		value = 1
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 9
+		}
+		set_variable = {
+			name = agi_ck3_bridge_war_probe_available
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 12
+		}
+		set_variable = {
+			name = agi_ck3_bridge_war_declare_available
+			value = 1
+		}
+	}
+}
+
+agi_ck3_bridge_v2_set_war_reason_effect = {
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_war_target_resolved = 0
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_last_reason
+			value = 3
+		}
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_war_target_resolved = 1
+			var:agi_ck3_bridge_v2_war_claimant_resolved = 0
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_last_reason
+			value = 3
+		}
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_war_target_resolved = 1
+			var:agi_ck3_bridge_v2_war_claimant_resolved = 1
+			var:agi_ck3_bridge_v2_war_available = 0
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_last_reason
+			value = 4
+		}
+	}
+}
+
+agi_ck3_bridge_v2_probe_declare_war_effect = {
+	agi_ck3_bridge_v2_resolve_war_claimant_effect = yes
+	agi_ck3_bridge_v2_resolve_war_target_effect = yes
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_war_target_resolved = 1
+			var:agi_ck3_bridge_v2_war_claimant_resolved = 1
+			exists = scope:agi_ck3_bridge_v2_war_target_character
+			exists = scope:agi_ck3_bridge_v2_war_target_title_scope
+			exists = scope:agi_ck3_bridge_v2_war_claimant_character
+			can_declare_war = {
+				defender = scope:agi_ck3_bridge_v2_war_target_character
+				casus_belli = claim_cb
+				claimant = scope:agi_ck3_bridge_v2_war_claimant_character
+				target_titles = { scope:agi_ck3_bridge_v2_war_target_title_scope }
+			}
+		}
+		agi_ck3_bridge_v2_mark_war_available_effect = yes
+	}
+	agi_ck3_bridge_v2_set_war_reason_effect = yes
+	if = {
+		limit = {
+			NOT = {
+				exists = var:agi_ck3_bridge_war_probe_count
+			}
+		}
+		set_variable = {
+			name = agi_ck3_bridge_war_probe_count
+			value = 0
+		}
+	}
+	change_variable = {
+		name = agi_ck3_bridge_war_probe_count
+		add = 1
+	}
+	if = {
+		limit = {
+			NOT = {
+				exists = var:agi_ck3_bridge_v2_probe_count
+			}
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_probe_count
+			value = 0
+		}
+	}
+	change_variable = {
+		name = agi_ck3_bridge_v2_probe_count
+		add = 1
+	}
+	agi_ck3_eval_bridge_mark_success_effect = yes
+	agi_ck3_bridge_v2_mark_success_effect = yes
+}
+
+agi_ck3_bridge_v2_declare_war_effect = {
+	agi_ck3_bridge_v2_resolve_war_claimant_effect = yes
+	agi_ck3_bridge_v2_resolve_war_target_effect = yes
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_war_target_resolved = 1
+			var:agi_ck3_bridge_v2_war_claimant_resolved = 1
+			exists = scope:agi_ck3_bridge_v2_war_target_character
+			exists = scope:agi_ck3_bridge_v2_war_target_title_scope
+			exists = scope:agi_ck3_bridge_v2_war_claimant_character
+			can_declare_war = {
+				defender = scope:agi_ck3_bridge_v2_war_target_character
+				casus_belli = claim_cb
+				claimant = scope:agi_ck3_bridge_v2_war_claimant_character
+				target_titles = { scope:agi_ck3_bridge_v2_war_target_title_scope }
+			}
+		}
+		agi_ck3_bridge_v2_mark_war_available_effect = yes
+		start_war = {
+			casus_belli = claim_cb
+			target = scope:agi_ck3_bridge_v2_war_target_character
+			claimant = scope:agi_ck3_bridge_v2_war_claimant_character
+			target_title = scope:agi_ck3_bridge_v2_war_target_title_scope
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_war_declare_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_war_declare_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_war_declare_count
+			add = 1
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_last_status = 0
+		}
+		agi_ck3_bridge_v2_set_war_reason_effect = yes
+		agi_ck3_bridge_v2_mark_rejected_effect = yes
+	}
+}
+
+agi_ck3_bridge_v2_record_task_contract_request_effect = {
+	set_variable = {
+		name = agi_ck3_bridge_task_contract_resolver
+		value = var:agi_ck3_bridge_v2_task_contract_resolver
+	}
+	set_variable = {
+		name = agi_ck3_bridge_task_contract_match_count
+		value = 0
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 14
+		}
+		set_variable = {
+			name = agi_ck3_bridge_task_contract_probe_requested_id
+			value = var:agi_ck3_bridge_v2_task_contract_id
+		}
+		set_variable = {
+			name = agi_ck3_bridge_task_contract_probe_slot
+			value = var:agi_ck3_bridge_v2_task_contract_slot
+		}
+		set_variable = {
+			name = agi_ck3_bridge_task_contract_probe_resolved
+			value = 0
+		}
+		set_variable = {
+			name = agi_ck3_bridge_task_contract_probe_available
+			value = 0
+		}
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 15
+		}
+		set_variable = {
+			name = agi_ck3_bridge_task_contract_accept_requested_id
+			value = var:agi_ck3_bridge_v2_task_contract_id
+		}
+		set_variable = {
+			name = agi_ck3_bridge_task_contract_accept_slot
+			value = var:agi_ck3_bridge_v2_task_contract_slot
+		}
+		set_variable = {
+			name = agi_ck3_bridge_task_contract_accept_resolved
+			value = 0
+		}
+		set_variable = {
+			name = agi_ck3_bridge_task_contract_accept_available
+			value = 0
+		}
+	}
+}
+
+agi_ck3_bridge_v2_publish_task_contract_candidate_slots_effect = {
+	save_scope_as = agi_ck3_bridge_v2_task_contract_slot_actor
+	set_variable = {
+		name = agi_ck3_bridge_task_contract_candidate_slot_count
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_task_contract_candidate_slot_overflow
+		value = 0
+	}
+	every_character_task_contract = {
+		set_variable = {
+			name = agi_ck3_bridge_task_contract_candidate_slot
+			value = 0
+		}
+	}
+	every_character_active_contract = {
+		add_to_temporary_list = agi_ck3_bridge_v2_active_task_contracts
+	}
+	every_character_task_contract = {
+		limit = {
+			NOT = { is_in_list = agi_ck3_bridge_v2_active_task_contracts }
+			OR = {
+				has_task_contract_type = laamp_base_1001
+				has_task_contract_type = laamp_base_6021
+				has_task_contract_type = laamp_base_0011
+				has_task_contract_type = laamp_base_2031
+				has_task_contract_type = laamp_base_6001
+			}
+		}
+		scope:agi_ck3_bridge_v2_task_contract_slot_actor = {
+			change_variable = {
+				name = agi_ck3_bridge_task_contract_candidate_slot_count
+				add = 1
+			}
+		}
+		if = {
+			limit = { scope:agi_ck3_bridge_v2_task_contract_slot_actor = { var:agi_ck3_bridge_task_contract_candidate_slot_count = 1 } }
+			set_variable = { name = agi_ck3_bridge_task_contract_candidate_slot value = 1 }
+		}
+		if = {
+			limit = { scope:agi_ck3_bridge_v2_task_contract_slot_actor = { var:agi_ck3_bridge_task_contract_candidate_slot_count = 2 } }
+			set_variable = { name = agi_ck3_bridge_task_contract_candidate_slot value = 2 }
+		}
+		if = {
+			limit = { scope:agi_ck3_bridge_v2_task_contract_slot_actor = { var:agi_ck3_bridge_task_contract_candidate_slot_count = 3 } }
+			set_variable = { name = agi_ck3_bridge_task_contract_candidate_slot value = 3 }
+		}
+		if = {
+			limit = { scope:agi_ck3_bridge_v2_task_contract_slot_actor = { var:agi_ck3_bridge_task_contract_candidate_slot_count = 4 } }
+			set_variable = { name = agi_ck3_bridge_task_contract_candidate_slot value = 4 }
+		}
+		if = {
+			limit = { scope:agi_ck3_bridge_v2_task_contract_slot_actor = { var:agi_ck3_bridge_task_contract_candidate_slot_count = 5 } }
+			set_variable = { name = agi_ck3_bridge_task_contract_candidate_slot value = 5 }
+		}
+		if = {
+			limit = { scope:agi_ck3_bridge_v2_task_contract_slot_actor = { var:agi_ck3_bridge_task_contract_candidate_slot_count = 6 } }
+			set_variable = { name = agi_ck3_bridge_task_contract_candidate_slot value = 6 }
+		}
+		if = {
+			limit = { scope:agi_ck3_bridge_v2_task_contract_slot_actor = { var:agi_ck3_bridge_task_contract_candidate_slot_count = 7 } }
+			set_variable = { name = agi_ck3_bridge_task_contract_candidate_slot value = 7 }
+		}
+		if = {
+			limit = { scope:agi_ck3_bridge_v2_task_contract_slot_actor = { var:agi_ck3_bridge_task_contract_candidate_slot_count = 8 } }
+			set_variable = { name = agi_ck3_bridge_task_contract_candidate_slot value = 8 }
+		}
+		if = {
+			limit = { scope:agi_ck3_bridge_v2_task_contract_slot_actor = { var:agi_ck3_bridge_task_contract_candidate_slot_count = 9 } }
+			set_variable = { name = agi_ck3_bridge_task_contract_candidate_slot value = 9 }
+		}
+		if = {
+			limit = { scope:agi_ck3_bridge_v2_task_contract_slot_actor = { var:agi_ck3_bridge_task_contract_candidate_slot_count = 10 } }
+			set_variable = { name = agi_ck3_bridge_task_contract_candidate_slot value = 10 }
+		}
+		if = {
+			limit = { scope:agi_ck3_bridge_v2_task_contract_slot_actor = { var:agi_ck3_bridge_task_contract_candidate_slot_count = 11 } }
+			set_variable = { name = agi_ck3_bridge_task_contract_candidate_slot value = 11 }
+		}
+		if = {
+			limit = { scope:agi_ck3_bridge_v2_task_contract_slot_actor = { var:agi_ck3_bridge_task_contract_candidate_slot_count = 12 } }
+			set_variable = { name = agi_ck3_bridge_task_contract_candidate_slot value = 12 }
+		}
+		if = {
+			limit = { scope:agi_ck3_bridge_v2_task_contract_slot_actor = { var:agi_ck3_bridge_task_contract_candidate_slot_count = 13 } }
+			set_variable = { name = agi_ck3_bridge_task_contract_candidate_slot value = 13 }
+		}
+		if = {
+			limit = { scope:agi_ck3_bridge_v2_task_contract_slot_actor = { var:agi_ck3_bridge_task_contract_candidate_slot_count = 14 } }
+			set_variable = { name = agi_ck3_bridge_task_contract_candidate_slot value = 14 }
+		}
+		if = {
+			limit = { scope:agi_ck3_bridge_v2_task_contract_slot_actor = { var:agi_ck3_bridge_task_contract_candidate_slot_count = 15 } }
+			set_variable = { name = agi_ck3_bridge_task_contract_candidate_slot value = 15 }
+		}
+		if = {
+			limit = { scope:agi_ck3_bridge_v2_task_contract_slot_actor = { var:agi_ck3_bridge_task_contract_candidate_slot_count = 16 } }
+			set_variable = { name = agi_ck3_bridge_task_contract_candidate_slot value = 16 }
+		}
+		if = {
+			limit = {
+				scope:agi_ck3_bridge_v2_task_contract_slot_actor = {
+					NOT = {
+						OR = {
+							var:agi_ck3_bridge_task_contract_candidate_slot_count = 1
+							var:agi_ck3_bridge_task_contract_candidate_slot_count = 2
+							var:agi_ck3_bridge_task_contract_candidate_slot_count = 3
+							var:agi_ck3_bridge_task_contract_candidate_slot_count = 4
+							var:agi_ck3_bridge_task_contract_candidate_slot_count = 5
+							var:agi_ck3_bridge_task_contract_candidate_slot_count = 6
+							var:agi_ck3_bridge_task_contract_candidate_slot_count = 7
+							var:agi_ck3_bridge_task_contract_candidate_slot_count = 8
+							var:agi_ck3_bridge_task_contract_candidate_slot_count = 9
+							var:agi_ck3_bridge_task_contract_candidate_slot_count = 10
+							var:agi_ck3_bridge_task_contract_candidate_slot_count = 11
+							var:agi_ck3_bridge_task_contract_candidate_slot_count = 12
+							var:agi_ck3_bridge_task_contract_candidate_slot_count = 13
+							var:agi_ck3_bridge_task_contract_candidate_slot_count = 14
+							var:agi_ck3_bridge_task_contract_candidate_slot_count = 15
+							var:agi_ck3_bridge_task_contract_candidate_slot_count = 16
+						}
+					}
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_task_contract_candidate_slot
+				value = 0
+			}
+			scope:agi_ck3_bridge_v2_task_contract_slot_actor = {
+				set_variable = {
+					name = agi_ck3_bridge_task_contract_candidate_slot_overflow
+					value = 1
+				}
+			}
+		}
+	}
+}
+
+agi_ck3_bridge_v2_resolve_task_contract_effect = {
+	save_scope_as = agi_ck3_bridge_v2_task_contract_actor
+	every_character_active_contract = {
+		add_to_temporary_list = agi_ck3_bridge_v2_active_task_contracts
+	}
+	every_character_task_contract = {
+		limit = {
+			scope:agi_ck3_bridge_v2_task_contract_actor = {
+				var:agi_ck3_bridge_v2_task_contract_resolver = 3
+				var:agi_ck3_bridge_task_contract_candidate_slot_overflow = 0
+				OR = {
+					var:agi_ck3_bridge_v2_task_contract_slot = 1
+					var:agi_ck3_bridge_v2_task_contract_slot = 2
+					var:agi_ck3_bridge_v2_task_contract_slot = 3
+					var:agi_ck3_bridge_v2_task_contract_slot = 4
+					var:agi_ck3_bridge_v2_task_contract_slot = 5
+					var:agi_ck3_bridge_v2_task_contract_slot = 6
+					var:agi_ck3_bridge_v2_task_contract_slot = 7
+					var:agi_ck3_bridge_v2_task_contract_slot = 8
+					var:agi_ck3_bridge_v2_task_contract_slot = 9
+					var:agi_ck3_bridge_v2_task_contract_slot = 10
+					var:agi_ck3_bridge_v2_task_contract_slot = 11
+					var:agi_ck3_bridge_v2_task_contract_slot = 12
+					var:agi_ck3_bridge_v2_task_contract_slot = 13
+					var:agi_ck3_bridge_v2_task_contract_slot = 14
+					var:agi_ck3_bridge_v2_task_contract_slot = 15
+					var:agi_ck3_bridge_v2_task_contract_slot = 16
+				}
+			}
+			NOT = { is_in_list = agi_ck3_bridge_v2_active_task_contracts }
+			OR = {
+				AND = {
+					scope:agi_ck3_bridge_v2_task_contract_actor = { var:agi_ck3_bridge_v2_task_contract_slot = 1 }
+					var:agi_ck3_bridge_task_contract_candidate_slot = 1
+				}
+				AND = {
+					scope:agi_ck3_bridge_v2_task_contract_actor = { var:agi_ck3_bridge_v2_task_contract_slot = 2 }
+					var:agi_ck3_bridge_task_contract_candidate_slot = 2
+				}
+				AND = {
+					scope:agi_ck3_bridge_v2_task_contract_actor = { var:agi_ck3_bridge_v2_task_contract_slot = 3 }
+					var:agi_ck3_bridge_task_contract_candidate_slot = 3
+				}
+				AND = {
+					scope:agi_ck3_bridge_v2_task_contract_actor = { var:agi_ck3_bridge_v2_task_contract_slot = 4 }
+					var:agi_ck3_bridge_task_contract_candidate_slot = 4
+				}
+				AND = {
+					scope:agi_ck3_bridge_v2_task_contract_actor = { var:agi_ck3_bridge_v2_task_contract_slot = 5 }
+					var:agi_ck3_bridge_task_contract_candidate_slot = 5
+				}
+				AND = {
+					scope:agi_ck3_bridge_v2_task_contract_actor = { var:agi_ck3_bridge_v2_task_contract_slot = 6 }
+					var:agi_ck3_bridge_task_contract_candidate_slot = 6
+				}
+				AND = {
+					scope:agi_ck3_bridge_v2_task_contract_actor = { var:agi_ck3_bridge_v2_task_contract_slot = 7 }
+					var:agi_ck3_bridge_task_contract_candidate_slot = 7
+				}
+				AND = {
+					scope:agi_ck3_bridge_v2_task_contract_actor = { var:agi_ck3_bridge_v2_task_contract_slot = 8 }
+					var:agi_ck3_bridge_task_contract_candidate_slot = 8
+				}
+				AND = {
+					scope:agi_ck3_bridge_v2_task_contract_actor = { var:agi_ck3_bridge_v2_task_contract_slot = 9 }
+					var:agi_ck3_bridge_task_contract_candidate_slot = 9
+				}
+				AND = {
+					scope:agi_ck3_bridge_v2_task_contract_actor = { var:agi_ck3_bridge_v2_task_contract_slot = 10 }
+					var:agi_ck3_bridge_task_contract_candidate_slot = 10
+				}
+				AND = {
+					scope:agi_ck3_bridge_v2_task_contract_actor = { var:agi_ck3_bridge_v2_task_contract_slot = 11 }
+					var:agi_ck3_bridge_task_contract_candidate_slot = 11
+				}
+				AND = {
+					scope:agi_ck3_bridge_v2_task_contract_actor = { var:agi_ck3_bridge_v2_task_contract_slot = 12 }
+					var:agi_ck3_bridge_task_contract_candidate_slot = 12
+				}
+				AND = {
+					scope:agi_ck3_bridge_v2_task_contract_actor = { var:agi_ck3_bridge_v2_task_contract_slot = 13 }
+					var:agi_ck3_bridge_task_contract_candidate_slot = 13
+				}
+				AND = {
+					scope:agi_ck3_bridge_v2_task_contract_actor = { var:agi_ck3_bridge_v2_task_contract_slot = 14 }
+					var:agi_ck3_bridge_task_contract_candidate_slot = 14
+				}
+				AND = {
+					scope:agi_ck3_bridge_v2_task_contract_actor = { var:agi_ck3_bridge_v2_task_contract_slot = 15 }
+					var:agi_ck3_bridge_task_contract_candidate_slot = 15
+				}
+				AND = {
+					scope:agi_ck3_bridge_v2_task_contract_actor = { var:agi_ck3_bridge_v2_task_contract_slot = 16 }
+					var:agi_ck3_bridge_task_contract_candidate_slot = 16
+				}
+			}
+			OR = {
+				AND = {
+					scope:agi_ck3_bridge_v2_task_contract_actor = { var:agi_ck3_bridge_v2_task_contract_type = 1 }
+					has_task_contract_type = laamp_base_1001
+				}
+				AND = {
+					scope:agi_ck3_bridge_v2_task_contract_actor = { var:agi_ck3_bridge_v2_task_contract_type = 2 }
+					has_task_contract_type = laamp_base_6021
+				}
+				AND = {
+					scope:agi_ck3_bridge_v2_task_contract_actor = { var:agi_ck3_bridge_v2_task_contract_type = 3 }
+					has_task_contract_type = laamp_base_0011
+				}
+				AND = {
+					scope:agi_ck3_bridge_v2_task_contract_actor = { var:agi_ck3_bridge_v2_task_contract_type = 4 }
+					has_task_contract_type = laamp_base_2031
+				}
+				AND = {
+					scope:agi_ck3_bridge_v2_task_contract_actor = { var:agi_ck3_bridge_v2_task_contract_type = 5 }
+					has_task_contract_type = laamp_base_6001
+				}
+			}
+			OR = {
+				scope:agi_ck3_bridge_v2_task_contract_actor = { var:agi_ck3_bridge_v2_task_contract_tier = 0 }
+				AND = {
+					scope:agi_ck3_bridge_v2_task_contract_actor = { var:agi_ck3_bridge_v2_task_contract_tier = 1 }
+					task_contract_tier = 1
+				}
+				AND = {
+					scope:agi_ck3_bridge_v2_task_contract_actor = { var:agi_ck3_bridge_v2_task_contract_tier = 2 }
+					task_contract_tier = 2
+				}
+				AND = {
+					scope:agi_ck3_bridge_v2_task_contract_actor = { var:agi_ck3_bridge_v2_task_contract_tier = 3 }
+					task_contract_tier = 3
+				}
+				AND = {
+					scope:agi_ck3_bridge_v2_task_contract_actor = { var:agi_ck3_bridge_v2_task_contract_tier = 4 }
+					task_contract_tier = 4
+				}
+				AND = {
+					scope:agi_ck3_bridge_v2_task_contract_actor = { var:agi_ck3_bridge_v2_task_contract_tier = 5 }
+					task_contract_tier = 5
+				}
+			}
+		}
+		save_scope_as = agi_ck3_bridge_v2_task_contract
+		scope:agi_ck3_bridge_v2_task_contract_actor = {
+			change_variable = {
+				name = agi_ck3_bridge_task_contract_match_count
+				add = 1
+			}
+		}
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_task_contract_match_count = 1
+			exists = scope:agi_ck3_bridge_v2_task_contract
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_task_contract_resolved
+			value = 1
+		}
+		if = {
+			limit = {
+				var:agi_ck3_bridge_v2_action_type = 14
+			}
+			set_variable = {
+				name = agi_ck3_bridge_task_contract_probe_resolved
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				var:agi_ck3_bridge_v2_action_type = 15
+			}
+			set_variable = {
+				name = agi_ck3_bridge_task_contract_accept_resolved
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				var:agi_ck3_bridge_v2_target_resolver = 4
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_target_match_count
+				value = 0
+			}
+			every_pool_guest = {
+				limit = {
+					is_alive = yes
+					is_ruler = no
+				}
+				save_scope_as = agi_ck3_bridge_v2_recruit_guest_candidate
+				if = {
+					limit = {
+						root = {
+							is_character_interaction_valid = {
+								interaction = recruit_guest_interaction
+								recipient = scope:agi_ck3_bridge_v2_recruit_guest_candidate
+							}
+						}
+					}
+					root = {
+						change_variable = {
+							name = agi_ck3_bridge_v2_target_match_count
+							add = 1
+						}
+					}
+					save_scope_as = agi_ck3_bridge_v2_target_character
+				}
+			}
+			if = {
+				limit = {
+					var:agi_ck3_bridge_v2_target_match_count = 1
+					exists = scope:agi_ck3_bridge_v2_target_character
+				}
+				set_variable = {
+					name = agi_ck3_bridge_v2_target_resolved
+					value = 1
+				}
+				set_variable = {
+					name = agi_ck3_bridge_interact_target_resolved
+					value = 1
+				}
+			}
+		}
+	}
+}
+
+agi_ck3_bridge_v2_mark_task_contract_available_effect = {
+	set_variable = {
+		name = agi_ck3_bridge_v2_available
+		value = 1
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_task_contract_available
+		value = 1
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 14
+		}
+		set_variable = {
+			name = agi_ck3_bridge_task_contract_probe_available
+			value = 1
+		}
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 15
+		}
+		set_variable = {
+			name = agi_ck3_bridge_task_contract_accept_available
+			value = 1
+		}
+	}
+}
+
+agi_ck3_bridge_v2_set_task_contract_reason_effect = {
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_task_contract_resolved = 0
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_last_reason
+			value = 3
+		}
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_task_contract_resolved = 1
+			var:agi_ck3_bridge_v2_task_contract_available = 0
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_last_reason
+			value = 4
+		}
+	}
+}
+
+agi_ck3_bridge_v2_probe_task_contract_effect = {
+	agi_ck3_bridge_v2_resolve_task_contract_effect = yes
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_task_contract_resolved = 1
+			var:agi_ck3_bridge_task_contract_probe_resolved = 1
+			var:agi_ck3_bridge_task_contract_probe_available = 1
+			OR = {
+				AND = {
+					var:agi_ck3_bridge_v2_task_contract_slot = 1
+					var:agi_ck3_bridge_task_contract_probe_slot = 1
+				}
+				AND = {
+					var:agi_ck3_bridge_v2_task_contract_slot = 2
+					var:agi_ck3_bridge_task_contract_probe_slot = 2
+				}
+				AND = {
+					var:agi_ck3_bridge_v2_task_contract_slot = 3
+					var:agi_ck3_bridge_task_contract_probe_slot = 3
+				}
+				AND = {
+					var:agi_ck3_bridge_v2_task_contract_slot = 4
+					var:agi_ck3_bridge_task_contract_probe_slot = 4
+				}
+				AND = {
+					var:agi_ck3_bridge_v2_task_contract_slot = 5
+					var:agi_ck3_bridge_task_contract_probe_slot = 5
+				}
+				AND = {
+					var:agi_ck3_bridge_v2_task_contract_slot = 6
+					var:agi_ck3_bridge_task_contract_probe_slot = 6
+				}
+				AND = {
+					var:agi_ck3_bridge_v2_task_contract_slot = 7
+					var:agi_ck3_bridge_task_contract_probe_slot = 7
+				}
+				AND = {
+					var:agi_ck3_bridge_v2_task_contract_slot = 8
+					var:agi_ck3_bridge_task_contract_probe_slot = 8
+				}
+				AND = {
+					var:agi_ck3_bridge_v2_task_contract_slot = 9
+					var:agi_ck3_bridge_task_contract_probe_slot = 9
+				}
+				AND = {
+					var:agi_ck3_bridge_v2_task_contract_slot = 10
+					var:agi_ck3_bridge_task_contract_probe_slot = 10
+				}
+				AND = {
+					var:agi_ck3_bridge_v2_task_contract_slot = 11
+					var:agi_ck3_bridge_task_contract_probe_slot = 11
+				}
+				AND = {
+					var:agi_ck3_bridge_v2_task_contract_slot = 12
+					var:agi_ck3_bridge_task_contract_probe_slot = 12
+				}
+				AND = {
+					var:agi_ck3_bridge_v2_task_contract_slot = 13
+					var:agi_ck3_bridge_task_contract_probe_slot = 13
+				}
+				AND = {
+					var:agi_ck3_bridge_v2_task_contract_slot = 14
+					var:agi_ck3_bridge_task_contract_probe_slot = 14
+				}
+				AND = {
+					var:agi_ck3_bridge_v2_task_contract_slot = 15
+					var:agi_ck3_bridge_task_contract_probe_slot = 15
+				}
+				AND = {
+					var:agi_ck3_bridge_v2_task_contract_slot = 16
+					var:agi_ck3_bridge_task_contract_probe_slot = 16
+				}
+			}
+			exists = scope:agi_ck3_bridge_v2_task_contract
+			scope:agi_ck3_bridge_v2_task_contract = {
+				task_contract_taker = {
+					valid_laamp_basic_accept_only_trigger = yes
+				}
+				valid_laamp_basic_trigger = {
+					EMPLOYER = scope:agi_ck3_bridge_v2_task_contract.task_contract_employer
+					LAAMP = scope:agi_ck3_bridge_v2_task_contract.task_contract_taker
+				}
+				task_contract_employer = {
+					is_landed = yes
+				}
+			}
+		}
+		agi_ck3_bridge_v2_mark_task_contract_available_effect = yes
+	}
+	agi_ck3_bridge_v2_set_task_contract_reason_effect = yes
+	if = {
+		limit = {
+			NOT = {
+				exists = var:agi_ck3_bridge_task_contract_probe_count
+			}
+		}
+		set_variable = {
+			name = agi_ck3_bridge_task_contract_probe_count
+			value = 0
+		}
+	}
+	change_variable = {
+		name = agi_ck3_bridge_task_contract_probe_count
+		add = 1
+	}
+	if = {
+		limit = {
+			NOT = {
+				exists = var:agi_ck3_bridge_v2_probe_count
+			}
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_probe_count
+			value = 0
+		}
+	}
+	change_variable = {
+		name = agi_ck3_bridge_v2_probe_count
+		add = 1
+	}
+	agi_ck3_eval_bridge_mark_success_effect = yes
+	agi_ck3_bridge_v2_mark_success_effect = yes
+}
+
+agi_ck3_bridge_v2_accept_task_contract_effect = {
+	agi_ck3_bridge_v2_resolve_task_contract_effect = yes
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_task_contract_resolved = 1
+			exists = scope:agi_ck3_bridge_v2_task_contract
+			scope:agi_ck3_bridge_v2_task_contract = {
+				task_contract_taker = {
+					valid_laamp_basic_accept_only_trigger = yes
+				}
+				valid_laamp_basic_trigger = {
+					EMPLOYER = scope:agi_ck3_bridge_v2_task_contract.task_contract_employer
+					LAAMP = scope:agi_ck3_bridge_v2_task_contract.task_contract_taker
+				}
+				task_contract_employer = {
+					is_landed = yes
+				}
+			}
+		}
+		agi_ck3_bridge_v2_mark_task_contract_available_effect = yes
+		accept_task_contract = scope:agi_ck3_bridge_v2_task_contract
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_task_contract_accept_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_task_contract_accept_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_task_contract_accept_count
+			add = 1
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	else = {
+		agi_ck3_bridge_v2_set_task_contract_reason_effect = yes
+		agi_ck3_bridge_v2_mark_rejected_effect = yes
+	}
+}
+
+agi_ck3_bridge_v2_record_decision_request_effect = {
+	set_variable = {
+		name = agi_ck3_bridge_v2_decision_available
+		value = 0
+	}
+}
+
+agi_ck3_bridge_v2_mark_decision_available_effect = {
+	set_variable = {
+		name = agi_ck3_bridge_v2_available
+		value = 1
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_decision_available
+		value = 1
+	}
+}
+
+agi_ck3_bridge_v2_set_decision_unavailable_reason_effect = {
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_available = 0
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_last_reason
+			value = 4
+		}
+	}
+}
+
+agi_ck3_bridge_v2_probe_take_decision_effect = {
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 1
+			can_execute_decision = invite_claimants_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 2
+			can_execute_decision = invite_knights_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 3
+			can_execute_decision = scrape_the_barrel_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 4
+			can_execute_decision = invite_poets_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 5
+			can_execute_decision = hold_court_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 6
+			can_execute_decision = train_for_tournament_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 7
+			can_execute_decision = convert_to_local_culture_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 8
+			can_execute_decision = restore_holy_roman_empire_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 9
+			can_execute_decision = reform_carolingian_empire_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 10
+			can_execute_decision = change_election_candidacy_status_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 11
+			can_execute_decision = visit_local_settlement_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 12
+			can_execute_decision = gather_provisions_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 13
+			can_execute_decision = go_fishing_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 14
+			can_execute_decision = zealous_missionary_prep_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 15
+			can_execute_decision = zealous_missionary_start_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 101
+			can_execute_decision = agi_ck3_eval_lab_noop_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 102
+			can_execute_decision = agi_ck3_eval_lab_multi_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 103
+			can_execute_decision = agi_ck3_eval_lab_after_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 104
+			can_execute_decision = agi_ck3_eval_lab_chain_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 105
+			can_execute_decision = agi_ck3_eval_lab_window_character_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 106
+			can_execute_decision = agi_ck3_eval_lab_window_big_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 107
+			can_execute_decision = agi_ck3_eval_lab_window_duel_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 108
+			can_execute_decision = agi_ck3_eval_lab_window_fullscreen_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+	}
+	agi_ck3_bridge_v2_set_decision_unavailable_reason_effect = yes
+	if = {
+		limit = {
+			NOT = {
+				exists = var:agi_ck3_bridge_v2_probe_count
+			}
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_probe_count
+			value = 0
+		}
+	}
+	change_variable = {
+		name = agi_ck3_bridge_v2_probe_count
+		add = 1
+	}
+	agi_ck3_eval_bridge_mark_success_effect = yes
+	agi_ck3_bridge_v2_mark_success_effect = yes
+}
+
+agi_ck3_bridge_v2_take_decision_effect = {
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 1
+			can_execute_decision = invite_claimants_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+		execute_decision = invite_claimants_decision
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 2
+			can_execute_decision = invite_knights_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+		execute_decision = invite_knights_decision
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 3
+			can_execute_decision = scrape_the_barrel_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+		execute_decision = scrape_the_barrel_decision
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 4
+			can_execute_decision = invite_poets_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+		execute_decision = invite_poets_decision
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 5
+			can_execute_decision = hold_court_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+		execute_decision = hold_court_decision
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 6
+			can_execute_decision = train_for_tournament_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+		execute_decision = train_for_tournament_decision
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 7
+			can_execute_decision = convert_to_local_culture_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+		execute_decision = convert_to_local_culture_decision
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 8
+			can_execute_decision = restore_holy_roman_empire_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+		execute_decision = restore_holy_roman_empire_decision
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 9
+			can_execute_decision = reform_carolingian_empire_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+		execute_decision = reform_carolingian_empire_decision
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 10
+			can_execute_decision = change_election_candidacy_status_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+		execute_decision = change_election_candidacy_status_decision
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 11
+			can_execute_decision = visit_local_settlement_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+		execute_decision = visit_local_settlement_decision
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 12
+			can_execute_decision = gather_provisions_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+		execute_decision = gather_provisions_decision
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 13
+			can_execute_decision = go_fishing_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+		execute_decision = go_fishing_decision
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 14
+			can_execute_decision = zealous_missionary_prep_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+		execute_decision = zealous_missionary_prep_decision
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 15
+			can_execute_decision = zealous_missionary_start_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+		execute_decision = zealous_missionary_start_decision
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 101
+			can_execute_decision = agi_ck3_eval_lab_noop_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+		execute_decision = agi_ck3_eval_lab_noop_decision
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 102
+			can_execute_decision = agi_ck3_eval_lab_multi_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+		execute_decision = agi_ck3_eval_lab_multi_decision
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 103
+			can_execute_decision = agi_ck3_eval_lab_after_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+		execute_decision = agi_ck3_eval_lab_after_decision
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 104
+			can_execute_decision = agi_ck3_eval_lab_chain_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+		execute_decision = agi_ck3_eval_lab_chain_decision
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 105
+			can_execute_decision = agi_ck3_eval_lab_window_character_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+		execute_decision = agi_ck3_eval_lab_window_character_decision
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 106
+			can_execute_decision = agi_ck3_eval_lab_window_big_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+		execute_decision = agi_ck3_eval_lab_window_big_decision
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 107
+			can_execute_decision = agi_ck3_eval_lab_window_duel_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+		execute_decision = agi_ck3_eval_lab_window_duel_decision
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_decision_id = 108
+			can_execute_decision = agi_ck3_eval_lab_window_fullscreen_decision
+		}
+		agi_ck3_bridge_v2_mark_decision_available_effect = yes
+		execute_decision = agi_ck3_eval_lab_window_fullscreen_decision
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_last_status = 0
+		}
+		agi_ck3_bridge_v2_set_decision_unavailable_reason_effect = yes
+		agi_ck3_bridge_v2_mark_rejected_effect = yes
+	}
+}
+
+agi_ck3_bridge_v2_record_camp_relocation_request_effect = {
+	set_variable = {
+		name = agi_ck3_bridge_v2_camp_target_resolved
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_camp_available
+		value = 0
+	}
+}
+
+agi_ck3_bridge_v2_mark_camp_relocation_resolved_effect = {
+	set_variable = {
+		name = agi_ck3_bridge_v2_camp_target_resolved
+		value = 1
+	}
+}
+
+agi_ck3_bridge_v2_resolve_camp_relocation_target_effect = {
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_camp_target_resolver = 1
+			var:agi_ck3_bridge_v2_camp_target_title = 536132
+			exists = title:e_hre.holder
+		}
+		title:e_hre.holder = {
+			save_scope_as = agi_ck3_bridge_v2_camp_target_character
+		}
+		agi_ck3_bridge_v2_mark_camp_relocation_resolved_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_camp_target_resolver = 1
+			var:agi_ck3_bridge_v2_camp_target_title = 176588
+			exists = title:c_plzen.holder
+		}
+		title:c_plzen.holder = {
+			save_scope_as = agi_ck3_bridge_v2_camp_target_character
+		}
+		agi_ck3_bridge_v2_mark_camp_relocation_resolved_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_camp_target_resolver = 1
+			var:agi_ck3_bridge_v2_camp_target_title = 868742
+			exists = title:d_saxony.holder
+		}
+		title:d_saxony.holder = {
+			save_scope_as = agi_ck3_bridge_v2_camp_target_character
+		}
+		agi_ck3_bridge_v2_mark_camp_relocation_resolved_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_camp_target_resolver = 1
+			var:agi_ck3_bridge_v2_camp_target_title = 119040
+			exists = title:k_bohemia.holder
+		}
+		title:k_bohemia.holder = {
+			save_scope_as = agi_ck3_bridge_v2_camp_target_character
+		}
+		agi_ck3_bridge_v2_mark_camp_relocation_resolved_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_camp_target_resolver = 2
+			exists = scope:agi_ck3_bridge_v2_camp_target_character
+		}
+		agi_ck3_bridge_v2_mark_camp_relocation_resolved_effect = yes
+	}
+}
+
+agi_ck3_bridge_v2_mark_camp_relocation_available_effect = {
+	set_variable = {
+		name = agi_ck3_bridge_v2_available
+		value = 1
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_camp_available
+		value = 1
+	}
+}
+
+agi_ck3_bridge_v2_set_camp_relocation_reason_effect = {
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_camp_target_resolved = 0
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_last_reason
+			value = 3
+		}
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_camp_target_resolved = 1
+			var:agi_ck3_bridge_v2_camp_available = 0
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_last_reason
+			value = 4
+		}
+	}
+}
+
+agi_ck3_bridge_v2_probe_move_camp_effect = {
+	agi_ck3_bridge_v2_resolve_camp_relocation_target_effect = yes
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_camp_target_resolved = 1
+			exists = scope:agi_ck3_bridge_v2_camp_target_character
+			is_character_interaction_valid = {
+				interaction = relocate_camp_to_interaction
+				recipient = scope:agi_ck3_bridge_v2_camp_target_character
+			}
+		}
+		agi_ck3_bridge_v2_mark_camp_relocation_available_effect = yes
+	}
+	agi_ck3_bridge_v2_set_camp_relocation_reason_effect = yes
+	if = {
+		limit = {
+			NOT = {
+				exists = var:agi_ck3_bridge_v2_probe_count
+			}
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_probe_count
+			value = 0
+		}
+	}
+	change_variable = {
+		name = agi_ck3_bridge_v2_probe_count
+		add = 1
+	}
+	agi_ck3_eval_bridge_mark_success_effect = yes
+	agi_ck3_bridge_v2_mark_success_effect = yes
+}
+
+agi_ck3_bridge_v2_move_camp_effect = {
+	agi_ck3_bridge_v2_resolve_camp_relocation_target_effect = yes
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_camp_target_resolved = 1
+			exists = scope:agi_ck3_bridge_v2_camp_target_character
+			is_character_interaction_valid = {
+				interaction = relocate_camp_to_interaction
+				recipient = scope:agi_ck3_bridge_v2_camp_target_character
+			}
+		}
+		agi_ck3_bridge_v2_mark_camp_relocation_available_effect = yes
+		run_interaction = {
+			interaction = relocate_camp_to_interaction
+			actor = root
+			recipient = scope:agi_ck3_bridge_v2_camp_target_character
+			execute_threshold = accept
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_last_status = 0
+		}
+		agi_ck3_bridge_v2_set_camp_relocation_reason_effect = yes
+		agi_ck3_bridge_v2_mark_rejected_effect = yes
+	}
+}
+
+agi_ck3_bridge_v2_record_marriage_request_effect = {
+	set_variable = {
+		name = agi_ck3_bridge_v2_marriage_target_resolved
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_marriage_available
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_marriage_match_count
+		value = 0
+	}
+}
+
+agi_ck3_bridge_v2_mark_marriage_resolved_effect = {
+	set_variable = {
+		name = agi_ck3_bridge_v2_marriage_target_resolved
+		value = 1
+	}
+}
+
+agi_ck3_bridge_v2_resolve_marriage_target_effect = {
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_marriage_recipient_resolver = 1
+			var:agi_ck3_bridge_v2_marriage_secondary_actor_resolver = 1
+			var:agi_ck3_bridge_v2_marriage_secondary_recipient_resolver = 2
+			is_married = no
+			is_betrothed = no
+			is_adult = yes
+		}
+		save_scope_as = agi_ck3_bridge_v2_marriage_recipient_character
+		save_scope_as = agi_ck3_bridge_v2_marriage_secondary_actor_character
+		every_courtier_or_guest = {
+			limit = {
+				is_alive = yes
+				is_married = no
+				is_betrothed = no
+				is_adult = yes
+				can_marry_character_trigger = { CHARACTER = root }
+			}
+			save_scope_as = agi_ck3_bridge_v2_marriage_secondary_recipient_character
+			root = {
+				change_variable = {
+					name = agi_ck3_bridge_v2_marriage_match_count
+					add = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				var:agi_ck3_bridge_v2_marriage_match_count = 1
+				exists = scope:agi_ck3_bridge_v2_marriage_recipient_character
+				exists = scope:agi_ck3_bridge_v2_marriage_secondary_actor_character
+				exists = scope:agi_ck3_bridge_v2_marriage_secondary_recipient_character
+			}
+			agi_ck3_bridge_v2_mark_marriage_resolved_effect = yes
+		}
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_marriage_recipient_resolver = 1
+			var:agi_ck3_bridge_v2_marriage_secondary_actor_resolver = 1
+			var:agi_ck3_bridge_v2_marriage_secondary_recipient_resolver = 3
+			is_married = no
+			is_betrothed = no
+			is_adult = yes
+			exists = scope:agi_ck3_bridge_v2_marriage_secondary_recipient_character
+			scope:agi_ck3_bridge_v2_marriage_secondary_recipient_character = {
+				is_alive = yes
+				is_married = no
+				is_betrothed = no
+				is_adult = yes
+				can_marry_character_trigger = { CHARACTER = root }
+			}
+		}
+		save_scope_as = agi_ck3_bridge_v2_marriage_recipient_character
+		save_scope_as = agi_ck3_bridge_v2_marriage_secondary_actor_character
+		set_variable = {
+			name = agi_ck3_bridge_v2_marriage_match_count
+			value = 1
+		}
+		agi_ck3_bridge_v2_mark_marriage_resolved_effect = yes
+	}
+}
+
+agi_ck3_bridge_v2_mark_marriage_available_effect = {
+	set_variable = {
+		name = agi_ck3_bridge_v2_available
+		value = 1
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_marriage_available
+		value = 1
+	}
+}
+
+agi_ck3_bridge_v2_set_marriage_reason_effect = {
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_marriage_target_resolved = 0
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_last_reason
+			value = 3
+		}
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_marriage_target_resolved = 1
+			var:agi_ck3_bridge_v2_marriage_available = 0
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_last_reason
+			value = 4
+		}
+	}
+}
+
+agi_ck3_bridge_v2_probe_arrange_marriage_effect = {
+	agi_ck3_bridge_v2_resolve_marriage_target_effect = yes
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_marriage_target_resolved = 1
+			exists = scope:agi_ck3_bridge_v2_marriage_recipient_character
+			exists = scope:agi_ck3_bridge_v2_marriage_secondary_actor_character
+			exists = scope:agi_ck3_bridge_v2_marriage_secondary_recipient_character
+			is_character_interaction_valid = {
+				interaction = arrange_marriage_interaction
+				recipient = scope:agi_ck3_bridge_v2_marriage_recipient_character
+				secondary_actor = scope:agi_ck3_bridge_v2_marriage_secondary_actor_character
+				secondary_recipient = scope:agi_ck3_bridge_v2_marriage_secondary_recipient_character
+			}
+		}
+		agi_ck3_bridge_v2_mark_marriage_available_effect = yes
+	}
+	agi_ck3_bridge_v2_set_marriage_reason_effect = yes
+	if = {
+		limit = {
+			NOT = {
+				exists = var:agi_ck3_bridge_v2_probe_count
+			}
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_probe_count
+			value = 0
+		}
+	}
+	change_variable = {
+		name = agi_ck3_bridge_v2_probe_count
+		add = 1
+	}
+	agi_ck3_eval_bridge_mark_success_effect = yes
+	agi_ck3_bridge_v2_mark_success_effect = yes
+}
+
+agi_ck3_bridge_v2_arrange_marriage_effect = {
+	agi_ck3_bridge_v2_resolve_marriage_target_effect = yes
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_marriage_target_resolved = 1
+			exists = scope:agi_ck3_bridge_v2_marriage_recipient_character
+			exists = scope:agi_ck3_bridge_v2_marriage_secondary_actor_character
+			exists = scope:agi_ck3_bridge_v2_marriage_secondary_recipient_character
+			is_character_interaction_valid = {
+				interaction = arrange_marriage_interaction
+				recipient = scope:agi_ck3_bridge_v2_marriage_recipient_character
+				secondary_actor = scope:agi_ck3_bridge_v2_marriage_secondary_actor_character
+				secondary_recipient = scope:agi_ck3_bridge_v2_marriage_secondary_recipient_character
+			}
+		}
+		agi_ck3_bridge_v2_mark_marriage_available_effect = yes
+		run_interaction = {
+			interaction = arrange_marriage_interaction
+			actor = root
+			recipient = scope:agi_ck3_bridge_v2_marriage_recipient_character
+			secondary_actor = scope:agi_ck3_bridge_v2_marriage_secondary_actor_character
+			secondary_recipient = scope:agi_ck3_bridge_v2_marriage_secondary_recipient_character
+			execute_threshold = accept
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_last_status = 0
+		}
+		agi_ck3_bridge_v2_set_marriage_reason_effect = yes
+		agi_ck3_bridge_v2_mark_rejected_effect = yes
+	}
+}
+
+agi_ck3_bridge_v2_record_education_request_effect = {
+	set_variable = {
+		name = agi_ck3_bridge_v2_education_target_resolved
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_education_available
+		value = 0
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_education_match_count
+		value = 0
+	}
+}
+
+agi_ck3_bridge_v2_mark_education_resolved_effect = {
+	set_variable = {
+		name = agi_ck3_bridge_v2_education_target_resolved
+		value = 1
+	}
+}
+
+agi_ck3_bridge_v2_resolve_education_target_effect = {
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_education_recipient_resolver = 1
+			var:agi_ck3_bridge_v2_education_secondary_actor_resolver = 1
+			var:agi_ck3_bridge_v2_education_secondary_recipient_resolver = 2
+			is_physically_able_adult = yes
+			num_of_relation_ward < 2
+		}
+		save_scope_as = agi_ck3_bridge_v2_education_recipient_character
+		save_scope_as = agi_ck3_bridge_v2_education_secondary_actor_character
+		every_courtier = {
+			limit = {
+				is_available_quick = {
+					adult = no
+					alive = yes
+					imprisoned = no
+					incapable = no
+				}
+				num_of_relation_guardian = 0
+			}
+			save_scope_as = agi_ck3_bridge_v2_education_secondary_recipient_character
+			root = {
+				change_variable = {
+					name = agi_ck3_bridge_v2_education_match_count
+					add = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				var:agi_ck3_bridge_v2_education_match_count = 1
+				exists = scope:agi_ck3_bridge_v2_education_recipient_character
+				exists = scope:agi_ck3_bridge_v2_education_secondary_actor_character
+				exists = scope:agi_ck3_bridge_v2_education_secondary_recipient_character
+			}
+			agi_ck3_bridge_v2_mark_education_resolved_effect = yes
+		}
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_education_recipient_resolver = 1
+			var:agi_ck3_bridge_v2_education_secondary_actor_resolver = 1
+			var:agi_ck3_bridge_v2_education_secondary_recipient_resolver = 3
+			is_physically_able_adult = yes
+			num_of_relation_ward < 2
+			exists = scope:agi_ck3_bridge_v2_education_secondary_recipient_character
+			scope:agi_ck3_bridge_v2_education_secondary_recipient_character = {
+				is_available_quick = {
+					adult = no
+					alive = yes
+					imprisoned = no
+					incapable = no
+				}
+				num_of_relation_guardian = 0
+			}
+		}
+		save_scope_as = agi_ck3_bridge_v2_education_recipient_character
+		save_scope_as = agi_ck3_bridge_v2_education_secondary_actor_character
+		set_variable = {
+			name = agi_ck3_bridge_v2_education_match_count
+			value = 1
+		}
+		agi_ck3_bridge_v2_mark_education_resolved_effect = yes
+	}
+}
+
+agi_ck3_bridge_v2_mark_education_available_effect = {
+	set_variable = {
+		name = agi_ck3_bridge_v2_available
+		value = 1
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_education_available
+		value = 1
+	}
+}
+
+agi_ck3_bridge_v2_set_education_reason_effect = {
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_education_target_resolved = 0
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_last_reason
+			value = 3
+		}
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_education_target_resolved = 1
+			var:agi_ck3_bridge_v2_education_available = 0
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_last_reason
+			value = 4
+		}
+	}
+}
+
+agi_ck3_bridge_v2_probe_educate_child_effect = {
+	agi_ck3_bridge_v2_resolve_education_target_effect = yes
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_education_target_resolved = 1
+			exists = scope:agi_ck3_bridge_v2_education_recipient_character
+			exists = scope:agi_ck3_bridge_v2_education_secondary_actor_character
+			exists = scope:agi_ck3_bridge_v2_education_secondary_recipient_character
+			is_character_interaction_valid = {
+				interaction = educate_child_interaction
+				recipient = scope:agi_ck3_bridge_v2_education_recipient_character
+				secondary_actor = scope:agi_ck3_bridge_v2_education_secondary_actor_character
+				secondary_recipient = scope:agi_ck3_bridge_v2_education_secondary_recipient_character
+			}
+		}
+		agi_ck3_bridge_v2_mark_education_available_effect = yes
+	}
+	agi_ck3_bridge_v2_set_education_reason_effect = yes
+	if = {
+		limit = {
+			NOT = {
+				exists = var:agi_ck3_bridge_v2_probe_count
+			}
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_probe_count
+			value = 0
+		}
+	}
+	change_variable = {
+		name = agi_ck3_bridge_v2_probe_count
+		add = 1
+	}
+	agi_ck3_eval_bridge_mark_success_effect = yes
+	agi_ck3_bridge_v2_mark_success_effect = yes
+}
+
+agi_ck3_bridge_v2_educate_child_effect = {
+	agi_ck3_bridge_v2_resolve_education_target_effect = yes
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_education_target_resolved = 1
+			exists = scope:agi_ck3_bridge_v2_education_recipient_character
+			exists = scope:agi_ck3_bridge_v2_education_secondary_actor_character
+			exists = scope:agi_ck3_bridge_v2_education_secondary_recipient_character
+			is_character_interaction_valid = {
+				interaction = educate_child_interaction
+				recipient = scope:agi_ck3_bridge_v2_education_recipient_character
+				secondary_actor = scope:agi_ck3_bridge_v2_education_secondary_actor_character
+				secondary_recipient = scope:agi_ck3_bridge_v2_education_secondary_recipient_character
+			}
+		}
+		agi_ck3_bridge_v2_mark_education_available_effect = yes
+		run_interaction = {
+			interaction = educate_child_interaction
+			actor = root
+			recipient = scope:agi_ck3_bridge_v2_education_recipient_character
+			secondary_actor = scope:agi_ck3_bridge_v2_education_secondary_actor_character
+			secondary_recipient = scope:agi_ck3_bridge_v2_education_secondary_recipient_character
+			execute_threshold = accept
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = var:agi_ck3_bridge_v2_execute_count
+				}
+			}
+			set_variable = {
+				name = agi_ck3_bridge_v2_execute_count
+				value = 0
+			}
+		}
+		change_variable = {
+			name = agi_ck3_bridge_v2_execute_count
+			add = 1
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_last_status = 0
+		}
+		agi_ck3_bridge_v2_set_education_reason_effect = yes
+		agi_ck3_bridge_v2_mark_rejected_effect = yes
+	}
+}
+
+agi_ck3_bridge_v2_dispatch_effect = {
+	agi_ck3_bridge_v2_clear_result_effect = yes
+	set_variable = {
+		name = agi_ck3_bridge_v2_last_request_id
+		value = var:agi_ck3_bridge_v2_request_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_v2_last_action_type
+		value = var:agi_ck3_bridge_v2_action_type
+	}
+	set_variable = {
+		name = agi_ck3_bridge_last_action_id
+		value = var:agi_ck3_bridge_v2_request_id
+	}
+	set_variable = {
+		name = agi_ck3_bridge_last_action_type
+		value = var:agi_ck3_bridge_v2_action_type
+	}
+	if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 1
+		}
+		agi_ck3_eval_bridge_refresh_telemetry_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	else_if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 4
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	else_if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 5
+		}
+		set_variable = {
+			name = agi_ck3_bridge_advance_time_requested_days
+			value = var:agi_ck3_bridge_v2_requested_days
+		}
+		agi_ck3_eval_bridge_mark_success_effect = yes
+		agi_ck3_bridge_v2_mark_success_effect = yes
+	}
+	else_if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 17
+		}
+		agi_ck3_bridge_v2_record_decision_request_effect = yes
+		agi_ck3_bridge_v2_probe_take_decision_effect = yes
+	}
+	else_if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 3
+		}
+		agi_ck3_bridge_v2_record_decision_request_effect = yes
+		agi_ck3_bridge_v2_take_decision_effect = yes
+	}
+	else_if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 13
+		}
+		agi_ck3_bridge_v2_record_lifestyle_focus_request_effect = yes
+		agi_ck3_bridge_v2_probe_lifestyle_focus_effect = yes
+	}
+	else_if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 8
+		}
+		agi_ck3_bridge_v2_record_lifestyle_focus_request_effect = yes
+		agi_ck3_bridge_v2_select_lifestyle_focus_effect = yes
+	}
+	else_if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 9
+		}
+		agi_ck3_bridge_v2_record_war_request_effect = yes
+		agi_ck3_bridge_v2_probe_declare_war_effect = yes
+	}
+	else_if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 12
+		}
+		agi_ck3_bridge_v2_record_war_request_effect = yes
+		agi_ck3_bridge_v2_declare_war_effect = yes
+	}
+	else_if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 10
+		}
+		agi_ck3_bridge_v2_record_interaction_request_effect = yes
+		agi_ck3_bridge_v2_probe_interact_effect = yes
+	}
+	else_if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 14
+		}
+		agi_ck3_bridge_v2_record_task_contract_request_effect = yes
+		agi_ck3_bridge_v2_probe_task_contract_effect = yes
+	}
+	else_if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 11
+		}
+		agi_ck3_bridge_v2_record_interaction_request_effect = yes
+		agi_ck3_bridge_v2_execute_interact_effect = yes
+	}
+	else_if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 15
+		}
+		agi_ck3_bridge_v2_record_task_contract_request_effect = yes
+		agi_ck3_bridge_v2_accept_task_contract_effect = yes
+	}
+	else_if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 18
+		}
+		agi_ck3_bridge_v2_record_camp_relocation_request_effect = yes
+		agi_ck3_bridge_v2_probe_move_camp_effect = yes
+	}
+	else_if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 19
+		}
+		agi_ck3_bridge_v2_record_camp_relocation_request_effect = yes
+		agi_ck3_bridge_v2_move_camp_effect = yes
+	}
+	else_if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 20
+		}
+		agi_ck3_bridge_v2_record_marriage_request_effect = yes
+		agi_ck3_bridge_v2_probe_arrange_marriage_effect = yes
+	}
+	else_if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 21
+		}
+		agi_ck3_bridge_v2_record_marriage_request_effect = yes
+		agi_ck3_bridge_v2_arrange_marriage_effect = yes
+	}
+	else_if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 22
+		}
+		agi_ck3_bridge_v2_record_education_request_effect = yes
+		agi_ck3_bridge_v2_probe_educate_child_effect = yes
+	}
+	else_if = {
+		limit = {
+			var:agi_ck3_bridge_v2_action_type = 23
+		}
+		agi_ck3_bridge_v2_record_education_request_effect = yes
+		agi_ck3_bridge_v2_educate_child_effect = yes
+	}
+	else = {
+		agi_ck3_bridge_v2_mark_unimplemented_effect = yes
+	}
+}

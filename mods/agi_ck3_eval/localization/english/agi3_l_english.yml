@@ -1,0 +1,19 @@
+﻿l_english:
+ # agi3 telemetry (v3-spec 4.2, amended in M2 live proof):
+ # - bracket-free tag: [ ] is loc datatype syntax
+ # - GetPlayer.MakeScope.Var(...): ROOT is not bound in debug_log loc context
+ # - dates via debug_log_date engine lines, not loc interpolation
+ agi3_hb_line:0 "agi3> v=1 kind=hb seq=[GetPlayer.MakeScope.Var('agi3_seq').GetValue] req_last=[GetPlayer.MakeScope.Var('agi3_last_consumed').GetValue]"
+ agi3_ack_line:0 "agi3> v=1 kind=ack req=[GetPlayer.MakeScope.Var('agi3_req_id').GetValue]"
+ agi3_result_line:0 "agi3> v=1 kind=result req=[GetPlayer.MakeScope.Var('agi3_last_consumed').GetValue] status=executed family_code=[GetPlayer.MakeScope.Var('agi3_action').GetValue]"
+ agi3_reject_line:0 "agi3> v=1 kind=reject req=[GetPlayer.MakeScope.Var('agi3_req_id').GetValue] reason=unimplemented_family"
+ agi3_state_line:0 "agi3> v=1 kind=state gold=[GetPlayer.MakeScope.Var('agi3_f_gold').GetValue] prestige=[GetPlayer.MakeScope.Var('agi3_f_prestige').GetValue] tier=[GetPlayer.MakeScope.Var('agi3_f_tier').GetValue] hre=[GetPlayer.MakeScope.Var('agi3_f_hre').GetValue] landless=[GetPlayer.MakeScope.Var('agi3_f_landless').GetValue] evt_consumed=[GetPlayer.MakeScope.Var('agi_ck3_bridge_event_option_count').GetValue]"
+ agi3_probe_ok_line:0 "agi3> v=1 kind=result req=[GetPlayer.MakeScope.Var('agi3_last_consumed').GetValue] family_code=[GetPlayer.MakeScope.Var('agi3_action').GetValue] verb_code=1 slot=[GetPlayer.MakeScope.Var('agi3_slot').GetValue] guard=ok status=executed"
+ agi3_probe_blocked_line:0 "agi3> v=1 kind=result req=[GetPlayer.MakeScope.Var('agi3_last_consumed').GetValue] family_code=[GetPlayer.MakeScope.Var('agi3_action').GetValue] verb_code=1 slot=[GetPlayer.MakeScope.Var('agi3_slot').GetValue] guard=blocked status=executed"
+ agi3_exec_ok_line:0 "agi3> v=1 kind=result req=[GetPlayer.MakeScope.Var('agi3_last_consumed').GetValue] family_code=[GetPlayer.MakeScope.Var('agi3_action').GetValue] verb_code=2 slot=[GetPlayer.MakeScope.Var('agi3_slot').GetValue] guard=ok status=executed"
+ agi3_exec_blocked_line:0 "agi3> v=1 kind=result req=[GetPlayer.MakeScope.Var('agi3_last_consumed').GetValue] family_code=[GetPlayer.MakeScope.Var('agi3_action').GetValue] verb_code=2 slot=[GetPlayer.MakeScope.Var('agi3_slot').GetValue] guard=blocked status=guard_failed"
+ agi3_slot_clear_gift_line:0 "agi3> v=1 kind=slot_clear family_code=5"
+ agi3_slot_clear_camp_line:0 "agi3> v=1 kind=slot_clear family_code=4"
+ agi3_slot_gift_line:0 "agi3> v=1 kind=slot family_code=5 i=[GetPlayer.MakeScope.Var('agi3_pub_i').GetValue] char=[GetPlayer.MakeScope.Var('agi3_pub_char').Char.GetID] ok=yes"
+ agi3_slot_camp_line:0 "agi3> v=1 kind=slot family_code=4 i=[GetPlayer.MakeScope.Var('agi3_pub_i').GetValue] char=[GetPlayer.MakeScope.Var('agi3_pub_char').Char.GetID] ok=yes"
+ agi3_event_line:0 "agi3> v=1 kind=event present=[GetPlayer.MakeScope.Var('agi3_evt_present').GetValue]"

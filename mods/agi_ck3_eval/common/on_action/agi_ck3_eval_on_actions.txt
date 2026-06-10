@@ -1,0 +1,29 @@
+﻿on_yearly_playable = {
+	on_actions = {
+		agi_ck3_eval_yearly_marker_on_action
+	}
+}
+
+on_game_start_after_lobby = {
+	on_actions = {
+		agi_ck3_eval_initialize_bridge_variables_on_action
+	}
+}
+
+agi_ck3_eval_initialize_bridge_variables_on_action = {
+	effect = {
+		every_player = {
+			agi_ck3_bridge_v2_initialize_variables_effect = yes
+		}
+	}
+}
+
+agi_ck3_eval_yearly_marker_on_action = {
+	trigger = {
+		is_ai = no
+		exists = var:agi_ck3_eval_probe
+	}
+	effect = {
+		agi_ck3_eval_mark_yearly_tick_effect = yes
+	}
+}

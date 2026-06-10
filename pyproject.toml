@@ -1,0 +1,13 @@
+[project]
+name = "agi-ck3"
+version = "0.1.0"
+description = "Portable proof-of-concept harness for agentic Crusader Kings III runs."
+requires-python = ">=3.11"
+license = {file = "LICENSE"}
+dependencies = []
+
+[project.scripts]
+ck3agi = "ck3agi.__main__:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

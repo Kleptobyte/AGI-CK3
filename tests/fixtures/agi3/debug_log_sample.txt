@@ -1,0 +1,12 @@
+[21:30:25][D][pdx_gui_animation_datatype_valuehelpers.h:147]: Trying to trigger an animation with glow_alpha for a widget which has no glow
+[21:45:40][D][jomini_effect_impl.cpp:450]: file: run/agi3_request.txt line: 1: agi3> v=1 kind=hb seq=41 req_last=6 date=1096.11.1 paused=yes
+[21:45:40][D][effectimpl.cpp:965]: DATE: yes - 1096.11.1
+[21:45:41][D][jomini_effect_impl.cpp:450]: file: run/agi3_request.txt line: 2: agi3> v=1 kind=state date=1096.11.1 gold=12 landed=no
+[21:45:41][D][jomini_effect_impl.cpp:450]: file: run/agi3_request.txt line: 3: agi3> v=1 kind=slot family=gift i=3 char=33643 ok=yes
+[21:45:41][D][jomini_effect_impl.cpp:450]: file: run/agi3_request.txt line: 4: agi3> v=1 kind=slot family=gift i=5 char=16817638 ok=no
+[21:45:42][D][jomini_effect_impl.cpp:450]: file: run/agi3_request.txt line: 5: agi3> v=1 kind=slot family_code=4 i=0 char=900001 ok=yes
+[21:45:43][D][console.cpp:1164]: Running console command: run agi3_request.txt
+[21:45:43][D][jomini_effect_impl.cpp:450]: file: run/agi3_request.txt line: 6: agi3> v=1 kind=result req=7 family=gift verb=probe slot=3 guard=ok status=executed
+[21:45:44][D][jomini_effect_impl.cpp:450]: file: run/agi3_request.txt line: 7: agi3> v=1 kind=conduct tag=imprisonment target=1881 date=1096.11.2
+[21:45:44][D][jomini_effect_impl.cpp:450]: file: run/agi3_request.txt line: 8: agi3> v=0 kind=hb seq=999
+[21:45:45][D][jomini_effect_impl.cpp:450]: file: run/agi3_request.txt line: 9: agi3> malformed token without equals

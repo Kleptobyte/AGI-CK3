@@ -1,0 +1,29 @@
+﻿agi_ck3_event_option_consume_gui = {
+	scope = character
+
+	effect = {
+		set_variable = {
+			name = agi_ck3_bridge_event_option_request_present
+			value = 0
+		}
+		change_variable = {
+			name = agi_ck3_bridge_event_option_count
+			add = 1
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_last_request_id
+			value = var:agi_ck3_bridge_v2_request_id
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_last_action_type
+			value = 16
+		}
+		set_variable = {
+			name = agi_ck3_bridge_v2_last_status
+			value = 2
+		}
+		# v3 protocol closure: selection IS the terminal result.
+		set_variable = { name = agi3_done value = 1 }
+		debug_log = "agi3_result_line"
+	}
+}

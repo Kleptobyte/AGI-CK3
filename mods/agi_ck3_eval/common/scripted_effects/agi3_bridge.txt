@@ -1,0 +1,705 @@
+﻿# agi3 bridge v3. Design: docs/architecture.md.
+#
+# Contract:
+# - Python writes request files that ONLY set agi3_* numeric variables and
+#   call agi3_consume_effect (request-only invariant, enforced Python-side).
+# - agi3_consume_effect consumes a req_id at most once; redelivered requests
+#   re-emit the result line for the last consumed id (idempotent ACK).
+# - Console-level verbs (save/tick_day) cannot run from script. The runner
+#   GUI fires FIXED command strings gated by agi3_want_* variables; this is
+#   why wait has enumerated variants (7/30/90), not a free integer.
+# - All emission goes through debug_log loc lines (agi3_l_english.yml).
+
+agi3_init_effect = {
+	set_variable = { name = agi3_last_consumed value = 0 }
+	set_variable = { name = agi3_seq value = 0 }
+	set_variable = { name = agi3_done value = 1 }
+	set_variable = { name = agi3_evt_present value = 0 }
+	set_variable = { name = agi3_want_save value = 0 }
+	set_variable = { name = agi3_want_tick_7 value = 0 }
+	set_variable = { name = agi3_want_tick_30 value = 0 }
+	set_variable = { name = agi3_want_tick_90 value = 0 }
+}
+
+agi3_pulse = {
+	if = {
+		limit = { NOT = { exists = var:agi3_seq } }
+		agi3_init_effect = yes
+	}
+	change_variable = { name = agi3_seq add = 1 }
+	debug_log = "agi3_hb_line"
+	debug_log_date = yes
+}
+
+agi3_emit_result_effect = {
+	debug_log = "agi3_result_line"
+}
+
+agi3_consume_effect = {
+	if = {
+		limit = { NOT = { exists = var:agi3_last_consumed } }
+		agi3_init_effect = yes
+	}
+	if = {
+		# Redelivery of an already-consumed request: re-ACK, change nothing.
+		# Result only if its staged work completed; ack while in flight.
+		limit = {
+			exists = var:agi3_req_id
+			NOT = { var:agi3_req_id > var:agi3_last_consumed }
+		}
+		if = {
+			limit = { var:agi3_done = 1 }
+			agi3_emit_result_effect = yes
+		}
+		else = {
+			debug_log = "agi3_ack_line"
+		}
+	}
+	else_if = {
+		limit = { exists = var:agi3_req_id }
+		set_variable = { name = agi3_last_consumed value = var:agi3_req_id }
+		agi3_dispatch_effect = yes
+	}
+}
+
+agi3_dispatch_effect = {
+	if = {
+		# pulse.refresh (code 1): emit current facts.
+		limit = { var:agi3_action = 1 }
+		set_variable = { name = agi3_status value = 1 }
+		set_variable = { name = agi3_done value = 1 }
+		agi3_publish_state_effect = yes
+		agi3_publish_gift_slots_effect = yes
+		agi3_publish_camp_slots_effect = yes
+		agi3_emit_result_effect = yes
+		debug_log = "agi3_state_line"
+	}
+	else_if = {
+		# checkpoint.save (code 2): stage; runner GUI fires the fixed
+		# `save agi3_checkpoint` string; post-save run-file clears the flag.
+		limit = { var:agi3_action = 2 }
+		set_variable = { name = agi3_done value = 0 }
+		set_variable = { name = agi3_want_save value = 1 }
+		set_variable = { name = agi3_status value = 2 }
+		debug_log = "agi3_ack_line"
+	}
+	else_if = {
+		# wait.7/30/90 (code 3): one flag per enumerated variant, because the
+		# runner GUI can only fire fixed command strings.
+		limit = { var:agi3_action = 3 var:agi3_days = 7 }
+		set_variable = { name = agi3_done value = 0 }
+		set_variable = { name = agi3_want_tick_7 value = 1 }
+		set_variable = { name = agi3_status value = 2 }
+		debug_log = "agi3_ack_line"
+	}
+	else_if = {
+		limit = { var:agi3_action = 3 var:agi3_days = 30 }
+		set_variable = { name = agi3_done value = 0 }
+		set_variable = { name = agi3_want_tick_30 value = 1 }
+		set_variable = { name = agi3_status value = 2 }
+		debug_log = "agi3_ack_line"
+	}
+	else_if = {
+		limit = { var:agi3_action = 3 var:agi3_days = 90 }
+		set_variable = { name = agi3_done value = 0 }
+		set_variable = { name = agi3_want_tick_90 value = 1 }
+		set_variable = { name = agi3_status value = 2 }
+		debug_log = "agi3_ack_line"
+	}
+	else_if = {
+		# decision.probe/take (code 7): allowlist index in agi3_slot.
+		limit = { var:agi3_action = 7 }
+		set_variable = { name = agi3_done value = 1 }
+		if = {
+			limit = { var:agi3_verb = 1 }
+			agi3_decision_probe_effect = yes
+		}
+		else = {
+			agi3_decision_execute_effect = yes
+		}
+	}
+	else_if = {
+		# move_camp.probe/move (code 4): fixed-title-holder slots.
+		limit = { var:agi3_action = 4 }
+		set_variable = { name = agi3_done value = 1 }
+		if = {
+			limit = { var:agi3_verb = 1 }
+			agi3_camp_probe_effect = yes
+		}
+		else = { agi3_camp_execute_effect = yes }
+	}
+	else_if = {
+		# gift.probe/send (code 5): courtier slots.
+		limit = { var:agi3_action = 5 }
+		set_variable = { name = agi3_done value = 1 }
+		if = {
+			limit = { var:agi3_verb = 1 }
+			agi3_gift_probe_effect = yes
+		}
+		else = { agi3_gift_execute_effect = yes }
+	}
+	else_if = {
+		# event_option.select (code 13): arm the deployed v2 generated-GUI
+		# selector (proven live in v2). The GUI gates on EventWindow.IsOnTop,
+		# EventOption.IsValid, NOT dangerous-flagged, index match; the
+		# scripted_gui consume-recorder closes the loop with our result line.
+		limit = { var:agi3_action = 13 }
+		set_variable = { name = agi3_done value = 0 }
+		set_variable = { name = agi_ck3_bridge_v2_request_id value = var:agi3_req_id }
+		set_variable = { name = agi_ck3_bridge_v2_action_type value = 16 }
+		set_variable = { name = agi_ck3_bridge_event_option_request_present value = 1 }
+		set_variable = { name = agi_ck3_bridge_event_option_requested_event_id value = var:agi3_evt_event_id }
+		set_variable = { name = agi_ck3_bridge_event_option_requested_index value = var:agi3_slot }
+		set_variable = { name = agi_ck3_bridge_event_option_requested_option_code value = 1 }
+		debug_log = "agi3_ack_line"
+	}
+	else = {
+		# Unported family: reject explicitly. Never silently absorb.
+		set_variable = { name = agi3_status value = 9 }
+		set_variable = { name = agi3_done value = 1 }
+		debug_log = "agi3_reject_line"
+	}
+}
+
+# Fired by the static post-save run file (run agi3_after_save.txt) that the
+# runner chains after `save agi3_checkpoint`.
+agi3_after_save_effect = {
+	set_variable = { name = agi3_want_save value = 0 }
+	set_variable = { name = agi3_done value = 1 }
+	agi3_emit_result_effect = yes
+}
+
+# Fired by the static post-tick run file after `tick_day N`.
+agi3_after_tick_effect = {
+	set_variable = { name = agi3_want_tick_7 value = 0 }
+	set_variable = { name = agi3_done value = 1 }
+	set_variable = { name = agi3_want_tick_30 value = 0 }
+	set_variable = { name = agi3_want_tick_90 value = 0 }
+	agi3_emit_result_effect = yes
+	debug_log_date = yes
+}
+
+# Decision family (code 7). Branches are GENERATED from the Python registry
+# allowlist order — see tests asserting the mapping; do not reorder by hand.
+agi3_decision_probe_effect = {
+	set_variable = { name = agi3_guard value = 0 }
+	if = {
+		limit = { var:agi3_slot = 0 can_execute_decision = change_election_candidacy_status_decision }
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 1 can_execute_decision = convert_to_local_culture_decision }
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 2 can_execute_decision = gather_provisions_decision }
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 3 can_execute_decision = go_fishing_decision }
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 4 can_execute_decision = invite_claimants_decision }
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 5 can_execute_decision = invite_knights_decision }
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 6 can_execute_decision = invite_poets_decision }
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 7 can_execute_decision = reform_carolingian_empire_decision }
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 8 can_execute_decision = restore_holy_roman_empire_decision }
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 9 can_execute_decision = scrape_the_barrel_decision }
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 10 can_execute_decision = hold_court_decision }
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 11 can_execute_decision = train_for_tournament_decision }
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 12 can_execute_decision = visit_local_settlement_decision }
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 13 can_execute_decision = zealous_missionary_prep_decision }
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 14 can_execute_decision = zealous_missionary_start_decision }
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_guard = 1 }
+		debug_log = "agi3_probe_ok_line"
+	}
+	else = {
+		debug_log = "agi3_probe_blocked_line"
+	}
+}
+
+agi3_decision_execute_effect = {
+	set_variable = { name = agi3_guard value = 0 }
+	if = {
+		limit = { var:agi3_slot = 0 can_execute_decision = change_election_candidacy_status_decision }
+		execute_decision = change_election_candidacy_status_decision
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 1 can_execute_decision = convert_to_local_culture_decision }
+		execute_decision = convert_to_local_culture_decision
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 2 can_execute_decision = gather_provisions_decision }
+		execute_decision = gather_provisions_decision
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 3 can_execute_decision = go_fishing_decision }
+		execute_decision = go_fishing_decision
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 4 can_execute_decision = invite_claimants_decision }
+		execute_decision = invite_claimants_decision
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 5 can_execute_decision = invite_knights_decision }
+		execute_decision = invite_knights_decision
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 6 can_execute_decision = invite_poets_decision }
+		execute_decision = invite_poets_decision
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 7 can_execute_decision = reform_carolingian_empire_decision }
+		execute_decision = reform_carolingian_empire_decision
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 8 can_execute_decision = restore_holy_roman_empire_decision }
+		execute_decision = restore_holy_roman_empire_decision
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 9 can_execute_decision = scrape_the_barrel_decision }
+		execute_decision = scrape_the_barrel_decision
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 10 can_execute_decision = hold_court_decision }
+		execute_decision = hold_court_decision
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 11 can_execute_decision = train_for_tournament_decision }
+		execute_decision = train_for_tournament_decision
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 12 can_execute_decision = visit_local_settlement_decision }
+		execute_decision = visit_local_settlement_decision
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 13 can_execute_decision = zealous_missionary_prep_decision }
+		execute_decision = zealous_missionary_prep_decision
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_slot = 14 can_execute_decision = zealous_missionary_start_decision }
+		execute_decision = zealous_missionary_start_decision
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_guard = 1 }
+		debug_log = "agi3_exec_ok_line"
+	}
+	else = {
+		debug_log = "agi3_exec_blocked_line"
+	}
+}
+
+# Slot publication (v3-spec D3): MECHANICAL criteria only — courtiers for
+# gift, fixed title-holders for move_camp. Never strategic curation: the
+# harness must not hint. Published on pulse.refresh dispatch, not on the
+# at-rest heartbeat (log economy). slot_clear flushes stale slots AND
+# revokes probe grants Python-side.
+
+agi3_publish_gift_slots_effect = {
+	debug_log = "agi3_slot_clear_gift_line"
+	set_variable = { name = agi3_pub_count value = 0 }
+	every_courtier = {
+		limit = { NOT = { this = root } root.var:agi3_pub_count < 16 }
+		if = {
+			limit = { root.var:agi3_pub_count = 0 }
+			root = { set_variable = { name = agi3_gift_slot_0 value = prev } }
+		}
+		else_if = {
+			limit = { root.var:agi3_pub_count = 1 }
+			root = { set_variable = { name = agi3_gift_slot_1 value = prev } }
+		}
+		else_if = {
+			limit = { root.var:agi3_pub_count = 2 }
+			root = { set_variable = { name = agi3_gift_slot_2 value = prev } }
+		}
+		else_if = {
+			limit = { root.var:agi3_pub_count = 3 }
+			root = { set_variable = { name = agi3_gift_slot_3 value = prev } }
+		}
+		else_if = {
+			limit = { root.var:agi3_pub_count = 4 }
+			root = { set_variable = { name = agi3_gift_slot_4 value = prev } }
+		}
+		else_if = {
+			limit = { root.var:agi3_pub_count = 5 }
+			root = { set_variable = { name = agi3_gift_slot_5 value = prev } }
+		}
+		else_if = {
+			limit = { root.var:agi3_pub_count = 6 }
+			root = { set_variable = { name = agi3_gift_slot_6 value = prev } }
+		}
+		else_if = {
+			limit = { root.var:agi3_pub_count = 7 }
+			root = { set_variable = { name = agi3_gift_slot_7 value = prev } }
+		}
+		else_if = {
+			limit = { root.var:agi3_pub_count = 8 }
+			root = { set_variable = { name = agi3_gift_slot_8 value = prev } }
+		}
+		else_if = {
+			limit = { root.var:agi3_pub_count = 9 }
+			root = { set_variable = { name = agi3_gift_slot_9 value = prev } }
+		}
+		else_if = {
+			limit = { root.var:agi3_pub_count = 10 }
+			root = { set_variable = { name = agi3_gift_slot_10 value = prev } }
+		}
+		else_if = {
+			limit = { root.var:agi3_pub_count = 11 }
+			root = { set_variable = { name = agi3_gift_slot_11 value = prev } }
+		}
+		else_if = {
+			limit = { root.var:agi3_pub_count = 12 }
+			root = { set_variable = { name = agi3_gift_slot_12 value = prev } }
+		}
+		else_if = {
+			limit = { root.var:agi3_pub_count = 13 }
+			root = { set_variable = { name = agi3_gift_slot_13 value = prev } }
+		}
+		else_if = {
+			limit = { root.var:agi3_pub_count = 14 }
+			root = { set_variable = { name = agi3_gift_slot_14 value = prev } }
+		}
+		else_if = {
+			limit = { root.var:agi3_pub_count = 15 }
+			root = { set_variable = { name = agi3_gift_slot_15 value = prev } }
+		}
+		root = {
+			set_variable = { name = agi3_pub_char value = prev }
+			set_variable = { name = agi3_pub_i value = var:agi3_pub_count }
+			debug_log = "agi3_slot_gift_line"
+			change_variable = { name = agi3_pub_count add = 1 }
+		}
+	}
+}
+
+agi3_publish_camp_slots_effect = {
+	debug_log = "agi3_slot_clear_camp_line"
+	if = {
+		limit = { exists = title:e_hre.holder }
+		title:e_hre.holder = {
+			root = {
+				set_variable = { name = agi3_camp_slot_0 value = prev }
+				set_variable = { name = agi3_pub_char value = prev }
+				set_variable = { name = agi3_pub_i value = 0 }
+				debug_log = "agi3_slot_camp_line"
+			}
+		}
+	}
+	if = {
+		limit = { exists = title:k_bohemia.holder }
+		title:k_bohemia.holder = {
+			root = {
+				set_variable = { name = agi3_camp_slot_1 value = prev }
+				set_variable = { name = agi3_pub_char value = prev }
+				set_variable = { name = agi3_pub_i value = 1 }
+				debug_log = "agi3_slot_camp_line"
+			}
+		}
+	}
+	if = {
+		limit = { exists = title:d_saxony.holder }
+		title:d_saxony.holder = {
+			root = {
+				set_variable = { name = agi3_camp_slot_2 value = prev }
+				set_variable = { name = agi3_pub_char value = prev }
+				set_variable = { name = agi3_pub_i value = 2 }
+				debug_log = "agi3_slot_camp_line"
+			}
+		}
+	}
+	if = {
+		limit = { exists = title:c_plzen.holder }
+		title:c_plzen.holder = {
+			root = {
+				set_variable = { name = agi3_camp_slot_3 value = prev }
+				set_variable = { name = agi3_pub_char value = prev }
+				set_variable = { name = agi3_pub_i value = 3 }
+				debug_log = "agi3_slot_camp_line"
+			}
+		}
+	}
+}
+
+agi3_resolve_gift_target_effect = {
+	if = {
+		limit = { var:agi3_slot = 0 exists = var:agi3_gift_slot_0 }
+		var:agi3_gift_slot_0 = { save_scope_as = agi3_target }
+	}
+	else_if = {
+		limit = { var:agi3_slot = 1 exists = var:agi3_gift_slot_1 }
+		var:agi3_gift_slot_1 = { save_scope_as = agi3_target }
+	}
+	else_if = {
+		limit = { var:agi3_slot = 2 exists = var:agi3_gift_slot_2 }
+		var:agi3_gift_slot_2 = { save_scope_as = agi3_target }
+	}
+	else_if = {
+		limit = { var:agi3_slot = 3 exists = var:agi3_gift_slot_3 }
+		var:agi3_gift_slot_3 = { save_scope_as = agi3_target }
+	}
+	else_if = {
+		limit = { var:agi3_slot = 4 exists = var:agi3_gift_slot_4 }
+		var:agi3_gift_slot_4 = { save_scope_as = agi3_target }
+	}
+	else_if = {
+		limit = { var:agi3_slot = 5 exists = var:agi3_gift_slot_5 }
+		var:agi3_gift_slot_5 = { save_scope_as = agi3_target }
+	}
+	else_if = {
+		limit = { var:agi3_slot = 6 exists = var:agi3_gift_slot_6 }
+		var:agi3_gift_slot_6 = { save_scope_as = agi3_target }
+	}
+	else_if = {
+		limit = { var:agi3_slot = 7 exists = var:agi3_gift_slot_7 }
+		var:agi3_gift_slot_7 = { save_scope_as = agi3_target }
+	}
+	else_if = {
+		limit = { var:agi3_slot = 8 exists = var:agi3_gift_slot_8 }
+		var:agi3_gift_slot_8 = { save_scope_as = agi3_target }
+	}
+	else_if = {
+		limit = { var:agi3_slot = 9 exists = var:agi3_gift_slot_9 }
+		var:agi3_gift_slot_9 = { save_scope_as = agi3_target }
+	}
+	else_if = {
+		limit = { var:agi3_slot = 10 exists = var:agi3_gift_slot_10 }
+		var:agi3_gift_slot_10 = { save_scope_as = agi3_target }
+	}
+	else_if = {
+		limit = { var:agi3_slot = 11 exists = var:agi3_gift_slot_11 }
+		var:agi3_gift_slot_11 = { save_scope_as = agi3_target }
+	}
+	else_if = {
+		limit = { var:agi3_slot = 12 exists = var:agi3_gift_slot_12 }
+		var:agi3_gift_slot_12 = { save_scope_as = agi3_target }
+	}
+	else_if = {
+		limit = { var:agi3_slot = 13 exists = var:agi3_gift_slot_13 }
+		var:agi3_gift_slot_13 = { save_scope_as = agi3_target }
+	}
+	else_if = {
+		limit = { var:agi3_slot = 14 exists = var:agi3_gift_slot_14 }
+		var:agi3_gift_slot_14 = { save_scope_as = agi3_target }
+	}
+	else_if = {
+		limit = { var:agi3_slot = 15 exists = var:agi3_gift_slot_15 }
+		var:agi3_gift_slot_15 = { save_scope_as = agi3_target }
+	}
+}
+
+agi3_resolve_camp_target_effect = {
+	if = {
+		limit = { var:agi3_slot = 0 exists = var:agi3_camp_slot_0 }
+		var:agi3_camp_slot_0 = { save_scope_as = agi3_target }
+	}
+	else_if = {
+		limit = { var:agi3_slot = 1 exists = var:agi3_camp_slot_1 }
+		var:agi3_camp_slot_1 = { save_scope_as = agi3_target }
+	}
+	else_if = {
+		limit = { var:agi3_slot = 2 exists = var:agi3_camp_slot_2 }
+		var:agi3_camp_slot_2 = { save_scope_as = agi3_target }
+	}
+	else_if = {
+		limit = { var:agi3_slot = 3 exists = var:agi3_camp_slot_3 }
+		var:agi3_camp_slot_3 = { save_scope_as = agi3_target }
+	}
+}
+
+agi3_gift_probe_effect = {
+	set_variable = { name = agi3_guard value = 0 }
+	agi3_resolve_gift_target_effect = yes
+	if = {
+		limit = {
+			exists = scope:agi3_target
+			is_character_interaction_valid = {
+				interaction = gift_interaction
+				recipient = scope:agi3_target
+			}
+		}
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_guard = 1 }
+		debug_log = "agi3_probe_ok_line"
+	}
+	else = { debug_log = "agi3_probe_blocked_line" }
+}
+
+agi3_gift_execute_effect = {
+	set_variable = { name = agi3_guard value = 0 }
+	agi3_resolve_gift_target_effect = yes
+	if = {
+		limit = {
+			exists = scope:agi3_target
+			is_character_interaction_valid = {
+				interaction = gift_interaction
+				recipient = scope:agi3_target
+			}
+		}
+		run_interaction = {
+			interaction = gift_interaction
+			actor = root
+			recipient = scope:agi3_target
+			execute_threshold = accept
+		}
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_guard = 1 }
+		debug_log = "agi3_exec_ok_line"
+	}
+	else = { debug_log = "agi3_exec_blocked_line" }
+}
+
+agi3_camp_probe_effect = {
+	set_variable = { name = agi3_guard value = 0 }
+	agi3_resolve_camp_target_effect = yes
+	if = {
+		limit = {
+			exists = scope:agi3_target
+			is_character_interaction_valid = {
+				interaction = relocate_camp_to_interaction
+				recipient = scope:agi3_target
+			}
+		}
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_guard = 1 }
+		debug_log = "agi3_probe_ok_line"
+	}
+	else = { debug_log = "agi3_probe_blocked_line" }
+}
+
+agi3_camp_execute_effect = {
+	set_variable = { name = agi3_guard value = 0 }
+	agi3_resolve_camp_target_effect = yes
+	if = {
+		limit = {
+			exists = scope:agi3_target
+			is_character_interaction_valid = {
+				interaction = relocate_camp_to_interaction
+				recipient = scope:agi3_target
+			}
+		}
+		run_interaction = {
+			interaction = relocate_camp_to_interaction
+			actor = root
+			recipient = scope:agi3_target
+			execute_threshold = accept
+		}
+		set_variable = { name = agi3_guard value = 1 }
+	}
+	if = {
+		limit = { var:agi3_guard = 1 }
+		debug_log = "agi3_exec_ok_line"
+	}
+	else = { debug_log = "agi3_exec_blocked_line" }
+}
+
+# Claim protocol: any visible layer may fire staged work; the FIRST chain
+# claims (flag 1->2), hiding every fire-widget copy. Frozen layers cannot
+# double-fire because hidden/inactive widgets do not animate - the same
+# property that stalls them. After-widgets (flag==2) complete from any
+# live layer; completion effects are idempotent.
+agi3_claim_save_effect = {
+	if = { limit = { var:agi3_want_save = 1 } set_variable = { name = agi3_want_save value = 2 } }
+}
+agi3_claim_t7_effect = {
+	if = { limit = { var:agi3_want_tick_7 = 1 } set_variable = { name = agi3_want_tick_7 value = 2 } }
+}
+agi3_claim_t30_effect = {
+	if = { limit = { var:agi3_want_tick_30 = 1 } set_variable = { name = agi3_want_tick_30 value = 2 } }
+}
+agi3_claim_t90_effect = {
+	if = { limit = { var:agi3_want_tick_90 = 1 } set_variable = { name = agi3_want_tick_90 value = 2 } }
+}
+
+# Ladder primitives, computed in-engine where scopes are native truth.
+# Mechanical facts only — no strategy hints (fairness commitment).
+agi3_publish_state_effect = {
+	set_variable = { name = agi3_f_gold value = gold }
+	set_variable = { name = agi3_f_prestige value = prestige }
+	set_variable = { name = agi3_f_tier value = highest_held_title_tier }
+	set_variable = { name = agi3_f_hre value = 0 }
+	if = {
+		limit = { exists = title:e_hre.holder title:e_hre.holder = root }
+		set_variable = { name = agi3_f_hre value = 1 }
+	}
+	# Landless adventurers hold a duchy-tier TITULAR title; tier alone
+	# falsely reads as landed (caught live: 25 ghost points for a tent).
+	set_variable = { name = agi3_f_landless value = 0 }
+	if = {
+		limit = { has_government = landless_adventurer_government }
+		set_variable = { name = agi3_f_landless value = 1 }
+	}
+}
+
+# Event detection via layer-liveness: event-window hosts run agi3_event_open,
+# the hud host runs agi3_event_clear — whichever layer animates tells the
+# truth. Transition-guarded to avoid log spam at 2 Hz.
+agi3_event_open_effect = {
+	if = {
+		limit = { NOT = { var:agi3_evt_present = 1 } }
+		set_variable = { name = agi3_evt_present value = 1 }
+		debug_log = "agi3_event_line"
+	}
+}
+agi3_event_clear_effect = {
+	if = {
+		limit = { var:agi3_evt_present = 1 }
+		set_variable = { name = agi3_evt_present value = 0 }
+		debug_log = "agi3_event_line"
+	}
+}
